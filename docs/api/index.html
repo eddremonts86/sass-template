@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Home</h1>
+
+    
+
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><h1>🚀 Template Trae - Modern Next.js Starter</h1>
+<p>A comprehensive Next.js 15 template with authentication, internationalization, and modern UI components.</p>
+<h2>✨ Features</h2>
+<ul>
+<li>🔐 <strong>Authentication</strong> - Clerk.js integration with sign-up/sign-in</li>
+<li>🌍 <strong>Internationalization</strong> - Multi-language support (EN, ES, FR)</li>
+<li>🎨 <strong>Modern UI</strong> - Shadcn/ui components with Tailwind CSS</li>
+<li>🌙 <strong>Dark Mode</strong> - Theme switching with system preference</li>
+<li>📱 <strong>Responsive</strong> - Mobile-first design</li>
+<li>🔒 <strong>Protected Routes</strong> - Authentication guards</li>
+<li>📊 <strong>Dashboard</strong> - Complete dashboard layout</li>
+<li>🧪 <strong>Testing</strong> - Jest and React Testing Library setup</li>
+<li>📝 <strong>TypeScript</strong> - Full type safety</li>
+<li>🎯 <strong>ESLint &amp; Prettier</strong> - Code quality and formatting</li>
+</ul>
+<h2>🚀 Quick Start</h2>
+<h3>1. Setup Environment</h3>
+<pre class="prettyprint source lang-bash"><code># Copy environment template
+cp .env.example .env.local
+</code></pre>
+<h3>2. Configure Clerk Authentication</h3>
+<p><strong>⚠️ IMPORTANT</strong>: You need to set up Clerk authentication before the app will work.</p>
+<ol>
+<li>Go to <a href="https://dashboard.clerk.com">Clerk Dashboard</a></li>
+<li>Create a new application</li>
+<li>Get your API keys from the API Keys section</li>
+<li>Update <code>.env.local</code> with your actual keys:</li>
+</ol>
+<pre class="prettyprint source lang-env"><code>NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_live_your_actual_key_here
+CLERK_SECRET_KEY=sk_live_your_actual_key_here
+</code></pre>
+<h3>3. Install and Run</h3>
+<pre class="prettyprint source lang-bash"><code>pnpm install
+pnpm dev
+</code></pre>
+<p>Open <a href="http://localhost:3000">http://localhost:3000</a> to see the result.</p>
+<h2>📖 Documentation</h2>
+<p>For detailed setup instructions, see <a href="./SETUP.md">SETUP.md</a></p>
+<h2>🛠️ Tech Stack</h2>
+<ul>
+<li><strong>Framework</strong>: Next.js 15 with App Router</li>
+<li><strong>Authentication</strong>: Clerk.js</li>
+<li><strong>Styling</strong>: Tailwind CSS</li>
+<li><strong>UI Components</strong>: Shadcn/ui</li>
+<li><strong>Icons</strong>: Lucide React</li>
+<li><strong>Internationalization</strong>: next-intl</li>
+<li><strong>State Management</strong>: Zustand</li>
+<li><strong>Type Safety</strong>: TypeScript</li>
+<li><strong>Code Quality</strong>: ESLint, Prettier</li>
+<li><strong>Testing</strong>: Jest, React Testing Library</li>
+</ul>
+<h2>📁 Project Structure</h2>
+<pre class="prettyprint source"><code>src/
+├── app/                 # Next.js App Router
+│   ├── [locale]/       # Internationalized routes
+│   └── globals.css     # Global styles
+├── components/         # React components
+│   ├── ui/            # Shadcn/ui components
+│   ├── common/        # Shared components
+│   ├── dashboard/     # Dashboard components
+│   └── layout/        # Layout components
+├── lib/               # Utilities and configurations
+├── hooks/             # Custom React hooks
+├── stores/            # Zustand stores
+└── types/             # TypeScript type definitions
+</code></pre>
+<h2>🔧 Available Scripts</h2>
+<ul>
+<li><code>pnpm dev</code> - Start development server</li>
+<li><code>pnpm build</code> - Build for production</li>
+<li><code>pnpm start</code> - Start production server</li>
+<li><code>pnpm lint</code> - Run ESLint</li>
+<li><code>pnpm test</code> - Run tests</li>
+</ul>
+<h2>🌐 Internationalization</h2>
+<p>Supports multiple languages out of the box:</p>
+<ul>
+<li>English (en) - Default</li>
+<li>Spanish (es)</li>
+<li>French (fr)</li>
+</ul>
+<p>Add new languages by creating message files in <code>/messages/</code> directory.</p>
+<h2>🎨 Customization</h2>
+<h3>Theme</h3>
+<ul>
+<li>Modify <code>src/app/globals.css</code> for global styles</li>
+<li>Update theme colors in <code>tailwind.config.js</code></li>
+<li>Customize Shadcn/ui components in <code>src/components/ui/</code></li>
+</ul>
+<h3>Authentication</h3>
+<ul>
+<li>Configure Clerk settings in <code>src/lib/auth/clerk-provider.tsx</code></li>
+<li>Customize auth pages styling</li>
+<li>Add custom user fields</li>
+</ul>
+<h2>🚨 Troubleshooting</h2>
+<h3>Authentication Error</h3>
+<p>If you see Clerk authentication errors, ensure you've:</p>
+<ol>
+<li>Set up your Clerk application</li>
+<li>Added the correct API keys to <code>.env.local</code></li>
+<li>Restarted the development server</li>
+</ol>
+<h3>Build Issues</h3>
+<ul>
+<li>Run <code>pnpm lint</code> to check for code issues</li>
+<li>Ensure all environment variables are set</li>
+<li>Clear Next.js cache: <code>rm -rf .next</code></li>
+</ul>
+<h2>📚 Learn More</h2>
+<ul>
+<li><a href="https://nextjs.org/docs">Next.js Documentation</a></li>
+<li><a href="https://clerk.com/docs">Clerk Authentication</a></li>
+<li><a href="https://ui.shadcn.com">Shadcn/ui Components</a></li>
+<li><a href="https://tailwindcss.com/docs">Tailwind CSS</a></li>
+</ul>
+<h2>🤝 Contributing</h2>
+<ol>
+<li>Fork the repository</li>
+<li>Create a feature branch</li>
+<li>Make your changes</li>
+<li>Run tests and linting</li>
+<li>Submit a pull request</li>
+</ol>
+<h2>📄 License</h2>
+<p>MIT License - see <a href="LICENSE">LICENSE</a> file for details.</p>
+<hr>
+<p><strong>Made with ❤️ using Next.js 15 and modern web technologies</strong></p></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#Footer">Footer</a></li><li><a href="global.html#Header">Header</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Sat Oct 04 2025 11:58:36 GMT+0200 (Central European Summer Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

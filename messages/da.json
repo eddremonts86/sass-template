@@ -1,0 +1,240 @@
+{
+  "common": {
+    "loading": "Indlæser...",
+    "error": "Fejl",
+    "success": "Succes",
+    "cancel": "Annuller",
+    "save": "Gem",
+    "delete": "Slet",
+    "edit": "Rediger",
+    "create": "Opret",
+    "search": "Søg",
+    "filter": "Filtrer",
+    "clear": "Ryd",
+    "submit": "Send",
+    "close": "Luk",
+    "open": "Åbn",
+    "back": "Tilbage",
+    "next": "Næste",
+    "previous": "Forrige",
+    "home": "Hjem",
+    "dashboard": "Dashboard",
+    "profile": "Profil",
+    "settings": "Indstillinger",
+    "logout": "Log ud",
+    "login": "Log ind",
+    "signup": "Tilmeld"
+  },
+  "navigation": {
+    "home": "Hjem",
+    "dashboard": "Dashboard",
+    "about": "Om",
+    "contact": "Kontakt",
+    "features": "Funktioner",
+    "pricing": "Priser"
+  },
+  "auth": {
+    "signIn": "Log ind",
+    "signUp": "Tilmeld",
+    "signOut": "Log ud",
+    "welcome": "Velkommen",
+    "welcomeBack": "Velkommen tilbage",
+    "email": "Email",
+    "password": "Adgangskode",
+    "firstName": "Fornavn",
+    "lastName": "Efternavn",
+    "forgotPassword": "Glemt adgangskode?",
+    "noAccount": "Har du ikke en konto?",
+    "hasAccount": "Har du allerede en konto?",
+    "createAccount": "Opret konto",
+    "signInWithGoogle": "Log ind med Google",
+    "signUpWithGoogle": "Tilmeld med Google"
+  },
+  "landing": {
+    "hero": {
+      "title": "Byg Fantastiske SaaS Applikationer",
+      "subtitle": "Oplev kraften i vores platform og hvordan den kan transformere dit workflow.",
+      "cta": "Kom I Gang",
+      "learnMore": "Lær Mere"
+    },
+    "features": {
+      "title": "Kraftfulde Funktioner",
+      "subtitle": "Alt hvad du behøver for at bygge moderne applikationer",
+      "internationalization": {
+        "title": "Internationalisering",
+        "description": "Flersproget support med next-intl for global rækkevidde"
+      },
+      "theming": {
+        "title": "Mørk Tilstand og Temaer",
+        "description": "Smukke mørke og lyse temaer med tilpasselige stilarter"
+      },
+      "authentication": {
+        "title": "Autentificering",
+        "description": "Sikker brugerautentificering med Clerk.js integration"
+      },
+      "performance": {
+        "title": "Høj Ydeevne",
+        "description": "Optimeret for hastighed med Next.js 15 og moderne bedste praksis"
+      },
+      "userManagement": {
+        "title": "Brugerstyring",
+        "description": "Komplet brugerstyringssystem med roller og tilladelser"
+      },
+      "analytics": {
+        "title": "Analyse og Indsigt",
+        "description": "Indbygget analyse til at spore brugeradfærd og ydeevne"
+      },
+      "security": {
+        "title": "Virksomhedssikkerhed",
+        "description": "Bankniveau sikkerhed med kryptering og overholdelse"
+      },
+      "responsive": {
+        "title": "Mobil Responsiv",
+        "description": "Perfekt oplevelse på tværs af alle enheder og skærmstørrelser"
+      },
+      "cloud": {
+        "title": "Cloud Integration",
+        "description": "Problemfri cloud deployment og skaleringsmuligheder"
+      },
+      "developer": {
+        "title": "Udvikleroplevelse",
+        "description": "Moderne værktøjer med TypeScript, ESLint og hot reload"
+      }
+    },
+    "benefits": {
+      "title": "Hvad Er Inkluderet",
+      "subtitle": "Alt hvad du behøver for at bygge moderne web applikationer",
+      "items": {
+        "nextjs": "Moderne Next.js 15 med App Router",
+        "typescript": "TypeScript for type sikkerhed",
+        "tailwind": "Tailwind CSS for styling",
+        "shadcn": "Shadcn/ui komponenter",
+        "clerk": "Clerk.js autentificering",
+        "zustand": "Zustand state management",
+        "intl": "Next-intl internationalisering",
+        "tools": "ESLint + Prettier + Husky"
+      }
+    },
+    "cta": {
+      "title": "Klar til at komme i gang?",
+      "subtitle": "Begynd at bygge dit næste projekt med vores moderne skabelon",
+      "signup": "Kom i Gang",
+      "demo": "Se Demo"
+    },
+    "stats": {
+      "users": "Aktive Brugere",
+      "countries": "Lande",
+      "uptime": "Oppetid",
+      "satisfaction": "Tilfredshed"
+    },
+    "testimonials": {
+      "testimonial1": {
+        "content": "Denne skabelon sparede os måneder af udviklingstid. Kodekvaliteten er exceptionel.",
+        "author": "Sarah Johnson",
+        "role": "Lead Udvikler",
+        "company": "TechCorp"
+      },
+      "testimonial2": {
+        "content": "Internationaliseringsfunktionerne er præcis hvad vi havde brug for til vores globale platform.",
+        "author": "Miguel Rodriguez",
+        "role": "CTO",
+        "company": "GlobalTech"
+      },
+      "testimonial3": {
+        "content": "Fremragende ydeevne og udvikleroplevelse. Stærkt anbefalet!",
+        "author": "Emma Chen",
+        "role": "Senior Ingeniør",
+        "company": "InnovateLab"
+      }
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "searchPlaceholder": "Søg...",
+    "nav": {
+      "overview": "Oversigt",
+      "analytics": "Analyser",
+      "users": "Brugere",
+      "documents": "Dokumenter",
+      "calendar": "Kalender",
+      "messages": "Beskeder",
+      "settings": "Indstillinger",
+      "help": "Hjælp"
+    },
+    "header": {
+      "toggleSidebar": "Skift sidebar",
+      "toggleMenu": "Skift menu",
+      "notifications": "Notifikationer"
+    },
+    "stats": {
+      "totalUsers": "Samlede Brugere",
+      "revenue": "Omsætning",
+      "activeUsers": "Aktive Brugere",
+      "growth": "Vækst",
+      "fromLastMonth": "fra sidste måned"
+    },
+    "quickActions": {
+      "title": "Hurtige Handlinger",
+      "description": "Almindelige opgaver og genveje",
+      "newUser": "Tilføj Ny Bruger",
+      "newUserDesc": "Opret en ny brugerkonto",
+      "createDocument": "Opret Dokument",
+      "createDocumentDesc": "Start et nyt dokument",
+      "sendMessage": "Send Besked",
+      "sendMessageDesc": "Send en besked til brugere",
+      "settings": "Indstillinger",
+      "settingsDesc": "Administrer dine præferencer"
+    },
+    "welcome": "Velkommen",
+    "welcomeMessage": "Her er hvad der sker med din konto i dag.",
+    "recentActivity": "Seneste Aktivitet",
+    "recentActivityDesc": "Dine seneste handlinger og opdateringer",
+    "activities": {
+      "newUserRegistration": "Ny brugerregistrering",
+      "newUserRegistrationDesc": "{{name}} tilsluttede sig platformen",
+      "paymentReceived": "Betaling modtaget",
+      "paymentReceivedDesc": "{{amount}} fra {{type}} abonnement",
+      "documentUploaded": "Dokument uploadet",
+      "documentUploadedDesc": "{{filename}}",
+      "systemUpdate": "Systemopdatering",
+      "systemUpdateDesc": "Sikkerhedsrettelser anvendt"
+    },
+    "timeAgo": {
+      "minutesAgo": "{{count}} minutter siden",
+      "hourAgo": "1 time siden",
+      "hoursAgo": "{{count}} timer siden"
+    }
+  },
+  "theme": {
+    "light": "Lys",
+    "dark": "Mørk",
+    "system": "System",
+    "toggle": "Skift tema"
+  },
+  "language": {
+    "select": "Vælg sprog",
+    "english": "Engelsk",
+    "spanish": "Spansk",
+    "danish": "Dansk"
+  },
+  "footer": {
+    "brand": {
+      "name": "sass-edd-template",
+      "description": "En moderne Next.js skabelon med autentificering, internationalisering og smukke UI-komponenter. Bygget med de nyeste teknologier."
+    },
+    "sections": {
+      "navigation": "Navigation",
+      "resources": "Ressourcer"
+    },
+    "copyright": "Alle rettigheder forbeholdes.",
+    "builtWith": "Bygget med ❤️ ved hjælp af moderne webteknologier"
+  },
+  "header": {
+    "brand": {
+      "name": "sass-edd-template"
+    },
+    "menu": {
+      "toggle": "Skift Menu"
+    }
+  }
+}

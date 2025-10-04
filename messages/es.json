@@ -1,0 +1,240 @@
+{
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "create": "Crear",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "clear": "Limpiar",
+    "submit": "Enviar",
+    "close": "Cerrar",
+    "open": "Abrir",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "home": "Inicio",
+    "dashboard": "Panel",
+    "profile": "Perfil",
+    "settings": "Configuración",
+    "logout": "Cerrar Sesión",
+    "login": "Iniciar Sesión",
+    "signup": "Registrarse"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "dashboard": "Panel",
+    "about": "Acerca de",
+    "contact": "Contacto",
+    "features": "Características",
+    "pricing": "Precios"
+  },
+  "auth": {
+    "signIn": "Iniciar Sesión",
+    "signUp": "Registrarse",
+    "signOut": "Cerrar Sesión",
+    "welcome": "Bienvenido",
+    "welcomeBack": "Bienvenido de nuevo",
+    "email": "Correo Electrónico",
+    "password": "Contraseña",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "noAccount": "¿No tienes una cuenta?",
+    "hasAccount": "¿Ya tienes una cuenta?",
+    "createAccount": "Crear Cuenta",
+    "signInWithGoogle": "Iniciar sesión con Google",
+    "signUpWithGoogle": "Registrarse con Google"
+  },
+  "landing": {
+    "hero": {
+      "title": "Construye Aplicaciones SaaS Increíbles",
+      "subtitle": "Descubre el poder de nuestra plataforma y cómo puede transformar tu flujo de trabajo.",
+      "cta": "Comenzar",
+      "learnMore": "Saber Más"
+    },
+    "features": {
+      "title": "Características Poderosas",
+      "subtitle": "Todo lo que necesitas para construir aplicaciones modernas",
+      "internationalization": {
+        "title": "Internacionalización",
+        "description": "Soporte multiidioma con next-intl para alcance global"
+      },
+      "theming": {
+        "title": "Modo Oscuro y Temas",
+        "description": "Hermosos temas oscuros y claros con estilos personalizables"
+      },
+      "authentication": {
+        "title": "Autenticación",
+        "description": "Autenticación segura de usuarios con integración de Clerk.js"
+      },
+      "performance": {
+        "title": "Alto Rendimiento",
+        "description": "Optimizado para velocidad con Next.js 15 y mejores prácticas modernas"
+      },
+      "userManagement": {
+        "title": "Gestión de Usuarios",
+        "description": "Sistema completo de gestión de usuarios con roles y permisos"
+      },
+      "analytics": {
+        "title": "Análisis e Insights",
+        "description": "Análisis integrados para rastrear comportamiento de usuarios y rendimiento"
+      },
+      "security": {
+        "title": "Seguridad Empresarial",
+        "description": "Seguridad de nivel bancario con encriptación y cumplimiento"
+      },
+      "responsive": {
+        "title": "Responsive Móvil",
+        "description": "Experiencia perfecta en todos los dispositivos y tamaños de pantalla"
+      },
+      "cloud": {
+        "title": "Integración en la Nube",
+        "description": "Capacidades de despliegue y escalado en la nube sin problemas"
+      },
+      "developer": {
+        "title": "Experiencia del Desarrollador",
+        "description": "Herramientas modernas con TypeScript, ESLint y recarga en caliente"
+      }
+    },
+    "benefits": {
+      "title": "Qué Está Incluido",
+      "subtitle": "Todo lo que necesitas para construir aplicaciones web modernas",
+      "items": {
+        "nextjs": "Next.js 15 moderno con App Router",
+        "typescript": "TypeScript para seguridad de tipos",
+        "tailwind": "Tailwind CSS para estilos",
+        "shadcn": "Componentes Shadcn/ui",
+        "clerk": "Autenticación Clerk.js",
+        "zustand": "Gestión de estado Zustand",
+        "intl": "Internacionalización Next-intl",
+        "tools": "ESLint + Prettier + Husky"
+      }
+    },
+    "cta": {
+      "title": "¿Listo para comenzar?",
+      "subtitle": "Comienza a construir tu próximo proyecto con nuestra plantilla moderna",
+      "signup": "Comenzar",
+      "demo": "Ver Demo"
+    },
+    "stats": {
+      "users": "Usuarios Activos",
+      "countries": "Países",
+      "uptime": "Tiempo Activo",
+      "satisfaction": "Satisfacción"
+    },
+    "testimonials": {
+      "testimonial1": {
+        "content": "Esta plantilla nos ahorró meses de tiempo de desarrollo. La calidad del código es excepcional.",
+        "author": "Sarah Johnson",
+        "role": "Desarrolladora Principal",
+        "company": "TechCorp"
+      },
+      "testimonial2": {
+        "content": "Las características de internacionalización son exactamente lo que necesitábamos para nuestra plataforma global.",
+        "author": "Miguel Rodriguez",
+        "role": "CTO",
+        "company": "GlobalTech"
+      },
+      "testimonial3": {
+        "content": "Rendimiento excepcional y experiencia de desarrollador. ¡Altamente recomendado!",
+        "author": "Emma Chen",
+        "role": "Ingeniera Senior",
+        "company": "InnovateLab"
+      }
+    }
+  },
+  "dashboard": {
+    "title": "Panel de Control",
+    "searchPlaceholder": "Buscar...",
+    "nav": {
+      "overview": "Resumen",
+      "analytics": "Analíticas",
+      "users": "Usuarios",
+      "documents": "Documentos",
+      "calendar": "Calendario",
+      "messages": "Mensajes",
+      "settings": "Configuración",
+      "help": "Ayuda"
+    },
+    "header": {
+      "toggleSidebar": "Alternar barra lateral",
+      "toggleMenu": "Alternar menú",
+      "notifications": "Notificaciones"
+    },
+    "stats": {
+      "totalUsers": "Total de Usuarios",
+      "revenue": "Ingresos",
+      "activeUsers": "Usuarios Activos",
+      "growth": "Crecimiento",
+      "fromLastMonth": "del mes pasado"
+    },
+    "quickActions": {
+      "title": "Acciones Rápidas",
+      "description": "Tareas comunes y atajos",
+      "newUser": "Agregar Nuevo Usuario",
+      "newUserDesc": "Crear una nueva cuenta de usuario",
+      "createDocument": "Crear Documento",
+      "createDocumentDesc": "Iniciar un nuevo documento",
+      "sendMessage": "Enviar Mensaje",
+      "sendMessageDesc": "Enviar un mensaje a los usuarios",
+      "settings": "Configuración",
+      "settingsDesc": "Gestionar tus preferencias"
+    },
+    "welcome": "Bienvenido",
+    "welcomeMessage": "Esto es lo que está pasando con tu cuenta hoy.",
+    "recentActivity": "Actividad Reciente",
+    "recentActivityDesc": "Tus últimas acciones y actualizaciones",
+    "activities": {
+      "newUserRegistration": "Nuevo registro de usuario",
+      "newUserRegistrationDesc": "{{name}} se unió a la plataforma",
+      "paymentReceived": "Pago recibido",
+      "paymentReceivedDesc": "{{amount}} de suscripción {{type}}",
+      "documentUploaded": "Documento subido",
+      "documentUploadedDesc": "{{filename}}",
+      "systemUpdate": "Actualización del sistema",
+      "systemUpdateDesc": "Parches de seguridad aplicados"
+    },
+    "timeAgo": {
+      "minutesAgo": "hace {{count}} minutos",
+      "hourAgo": "hace 1 hora",
+      "hoursAgo": "hace {{count}} horas"
+    }
+  },
+  "theme": {
+    "light": "Claro",
+    "dark": "Oscuro",
+    "system": "Sistema",
+    "toggle": "Cambiar tema"
+  },
+  "language": {
+    "select": "Seleccionar idioma",
+    "english": "Inglés",
+    "spanish": "Español",
+    "danish": "Danés"
+  },
+  "footer": {
+    "brand": {
+      "name": "sass-edd-template",
+      "description": "Una plantilla moderna de Next.js con autenticación, internacionalización y hermosos componentes de UI. Construida con las últimas tecnologías."
+    },
+    "sections": {
+      "navigation": "Navegación",
+      "resources": "Recursos"
+    },
+    "copyright": "Todos los derechos reservados.",
+    "builtWith": "Construido con ❤️ usando tecnologías web modernas"
+  },
+  "header": {
+    "brand": {
+      "name": "sass-edd-template"
+    },
+    "menu": {
+      "toggle": "Alternar Menú"
+    }
+  }
+}

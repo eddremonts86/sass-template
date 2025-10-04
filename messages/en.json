@@ -1,0 +1,240 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "search": "Search",
+    "filter": "Filter",
+    "clear": "Clear",
+    "submit": "Submit",
+    "close": "Close",
+    "open": "Open",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "settings": "Settings",
+    "logout": "Logout",
+    "login": "Login",
+    "signup": "Sign Up"
+  },
+  "navigation": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "about": "About",
+    "contact": "Contact",
+    "features": "Features",
+    "pricing": "Pricing"
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "signOut": "Sign Out",
+    "welcome": "Welcome",
+    "welcomeBack": "Welcome back",
+    "email": "Email",
+    "password": "Password",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "forgotPassword": "Forgot Password?",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "createAccount": "Create Account",
+    "signInWithGoogle": "Sign in with Google",
+    "signUpWithGoogle": "Sign up with Google"
+  },
+  "landing": {
+    "hero": {
+      "title": "Build Amazing SaaS Applications",
+      "subtitle": "Discover the power of our platform and how it can transform your workflow.",
+      "cta": "Get Started",
+      "learnMore": "Learn More"
+    },
+    "features": {
+      "title": "Powerful Features",
+      "subtitle": "Everything you need to build modern applications",
+      "internationalization": {
+        "title": "Internationalization",
+        "description": "Multi-language support with next-intl for global reach"
+      },
+      "theming": {
+        "title": "Dark Mode & Theming",
+        "description": "Beautiful dark and light themes with customizable styling"
+      },
+      "authentication": {
+        "title": "Authentication",
+        "description": "Secure user authentication with Clerk.js integration"
+      },
+      "performance": {
+        "title": "High Performance",
+        "description": "Optimized for speed with Next.js 15 and modern best practices"
+      },
+      "userManagement": {
+        "title": "User Management",
+        "description": "Complete user management system with roles and permissions"
+      },
+      "analytics": {
+        "title": "Analytics & Insights",
+        "description": "Built-in analytics to track user behavior and performance"
+      },
+      "security": {
+        "title": "Enterprise Security",
+        "description": "Bank-level security with encryption and compliance"
+      },
+      "responsive": {
+        "title": "Mobile Responsive",
+        "description": "Perfect experience across all devices and screen sizes"
+      },
+      "cloud": {
+        "title": "Cloud Integration",
+        "description": "Seamless cloud deployment and scaling capabilities"
+      },
+      "developer": {
+        "title": "Developer Experience",
+        "description": "Modern tooling with TypeScript, ESLint, and hot reload"
+      }
+    },
+    "benefits": {
+      "title": "What's Included",
+      "subtitle": "Everything you need to build modern web applications",
+      "items": {
+        "nextjs": "Modern Next.js 15 with App Router",
+        "typescript": "TypeScript for type safety",
+        "tailwind": "Tailwind CSS for styling",
+        "shadcn": "Shadcn/ui components",
+        "clerk": "Clerk.js authentication",
+        "zustand": "Zustand state management",
+        "intl": "Next-intl internationalization",
+        "tools": "ESLint + Prettier + Husky"
+      }
+    },
+    "cta": {
+      "title": "Ready to get started?",
+      "subtitle": "Start building your next project with our modern template",
+      "signup": "Get Started",
+      "demo": "View Demo"
+    },
+    "stats": {
+      "users": "Active Users",
+      "countries": "Countries",
+      "uptime": "Uptime",
+      "satisfaction": "Satisfaction"
+    },
+    "testimonials": {
+      "testimonial1": {
+        "content": "This template saved us months of development time. The code quality is exceptional.",
+        "author": "Sarah Johnson",
+        "role": "Lead Developer",
+        "company": "TechCorp"
+      },
+      "testimonial2": {
+        "content": "The internationalization features are exactly what we needed for our global platform.",
+        "author": "Miguel Rodriguez",
+        "role": "CTO",
+        "company": "GlobalTech"
+      },
+      "testimonial3": {
+        "content": "Outstanding performance and developer experience. Highly recommended!",
+        "author": "Emma Chen",
+        "role": "Senior Engineer",
+        "company": "InnovateLab"
+      }
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "searchPlaceholder": "Search...",
+    "welcome": "Welcome back",
+    "welcomeMessage": "Here's what's happening with your account today.",
+    "header": {
+      "toggleMenu": "Toggle menu",
+      "toggleSidebar": "Toggle sidebar",
+      "notifications": "Notifications"
+    },
+    "nav": {
+      "overview": "Overview",
+      "analytics": "Analytics",
+      "users": "Users",
+      "documents": "Documents",
+      "calendar": "Calendar",
+      "messages": "Messages",
+      "settings": "Settings",
+      "help": "Help"
+    },
+    "stats": {
+      "totalUsers": "Total Users",
+      "revenue": "Revenue",
+      "activeUsers": "Active Users",
+      "growth": "Growth Rate",
+      "fromLastMonth": "from last month"
+    },
+    "recentActivity": "Recent Activity",
+    "recentActivityDesc": "Your latest account activity",
+    "quickActions": {
+      "title": "Quick Actions",
+      "description": "Common tasks and shortcuts",
+      "newUser": "Add New User",
+      "newUserDesc": "Create a new user account",
+      "createDocument": "Create Document",
+      "createDocumentDesc": "Start a new document",
+      "sendMessage": "Send Message",
+      "sendMessageDesc": "Compose a new message",
+      "settings": "Settings",
+      "settingsDesc": "Manage your preferences"
+    },
+    "activities": {
+      "newUserRegistration": "New user registration",
+      "newUserRegistrationDesc": "{{name}} joined the platform",
+      "paymentReceived": "Payment received",
+      "paymentReceivedDesc": "{{amount}} from {{type}} subscription",
+      "documentUploaded": "Document uploaded",
+      "documentUploadedDesc": "{{filename}}",
+      "systemUpdate": "System update",
+      "systemUpdateDesc": "Security patches applied"
+    },
+    "timeAgo": {
+      "minutesAgo": "{{count}} minutes ago",
+      "hourAgo": "1 hour ago",
+      "hoursAgo": "{{count}} hours ago"
+    }
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "toggle": "Toggle theme"
+  },
+  "language": {
+    "select": "Select language",
+    "english": "English",
+    "spanish": "Spanish",
+    "danish": "Danish"
+  },
+  "footer": {
+    "brand": {
+      "name": "sass-edd-template",
+      "description": "A modern Next.js template with authentication, internationalization, and beautiful UI components. Built with the latest technologies."
+    },
+    "sections": {
+      "navigation": "Navigation",
+      "resources": "Resources"
+    },
+    "copyright": "All rights reserved.",
+    "builtWith": "Built with ❤️ using modern web technologies"
+  },
+  "header": {
+    "brand": {
+      "name": "sass-edd-template"
+    },
+    "menu": {
+      "toggle": "Toggle Menu"
+    }
+  }
+}

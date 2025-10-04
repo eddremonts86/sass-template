@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: footer.tsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: footer.tsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use client';
+
+import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { useAuthStore } from '@/stores/auth-store';
+
+/**
+ * Main footer component
+ */
+export function Footer() {
+  const t = useTranslations('navigation');
+  const { locale } = useAuthStore();
+
+  const navigation = {
+    main: [
+      { name: t('home'), href: `/${locale || 'en'}` },
+      { name: t('about'), href: `/${locale || 'en'}/about` },
+      { name: t('features'), href: `/${locale || 'en'}/features` },
+      { name: t('contact'), href: `/${locale || 'en'}/contact` },
+    ],
+  };
+
+  return (
+    &lt;footer className="border-t border-border">
+      &lt;div className="container py-8 md:py-12">
+        &lt;div className="grid grid-cols-1 gap-8 md:grid-cols-4">
+          {/* Brand */}
+          &lt;div className="md:col-span-2">
+            &lt;Link href={`/${locale || 'en'}`} className="flex items-center space-x-2">
+              &lt;span className="font-bold text-lg">Template Trae&lt;/span>
+            &lt;/Link>
+            &lt;p className="mt-4 text-sm text-muted-foreground max-w-md">
+              A modern Next.js template with authentication, internationalization, 
+              and beautiful UI components. Built with the latest technologies.
+            &lt;/p>
+          &lt;/div>
+
+          {/* Navigation */}
+          &lt;div>
+            &lt;h3 className="text-sm font-semibold">Navigation&lt;/h3>
+            &lt;ul className="mt-4 space-y-2">
+              {navigation.main.map((item) => (
+                &lt;li key={item.name}>
+                  &lt;Link
+                    href={item.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {item.name}
+                  &lt;/Link>
+                &lt;/li>
+              ))}
+            &lt;/ul>
+          &lt;/div>
+
+          {/* Resources */}
+          &lt;div>
+            &lt;h3 className="text-sm font-semibold">Resources&lt;/h3>
+            &lt;ul className="mt-4 space-y-2">
+              &lt;li>
+                &lt;Link
+                  href="https://nextjs.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Next.js
+                &lt;/Link>
+              &lt;/li>
+              &lt;li>
+                &lt;Link
+                  href="https://ui.shadcn.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Shadcn/ui
+                &lt;/Link>
+              &lt;/li>
+              &lt;li>
+                &lt;Link
+                  href="https://clerk.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Clerk
+                &lt;/Link>
+              &lt;/li>
+              &lt;li>
+                &lt;Link
+                  href="https://tailwindcss.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Tailwind CSS
+                &lt;/Link>
+              &lt;/li>
+            &lt;/ul>
+          &lt;/div>
+        &lt;/div>
+
+        &lt;div className="mt-8 border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center">
+          &lt;p className="text-sm text-muted-foreground">
+            © {new Date().getFullYear()} Template Trae. All rights reserved.
+          &lt;/p>
+          &lt;p className="text-sm text-muted-foreground mt-2 md:mt-0">
+            Built with ❤️ using modern web technologies
+          &lt;/p>
+        &lt;/div>
+      &lt;/div>
+    &lt;/footer>
+  );
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#Footer">Footer</a></li><li><a href="global.html#Header">Header</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Sat Oct 04 2025 11:58:36 GMT+0200 (Central European Summer Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
