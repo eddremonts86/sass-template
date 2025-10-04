@@ -3,20 +3,18 @@
  * Centralized feature definitions and landing page content
  */
 
-import { 
-  Globe, 
-  Palette, 
-  Shield, 
-  Zap, 
-  Users, 
+import {
+  Globe,
+  Palette,
+  Shield,
+  Zap,
+  Users,
   BarChart3,
   Lock,
   Smartphone,
   Cloud,
   Code,
-  Heart,
-  Star
-} from 'lucide-react'
+} from 'lucide-react';
 
 export const FEATURES = {
   // Main features for landing page
@@ -201,6 +199,6 @@ export const FEATURES = {
       },
     },
   },
-} as const
+} as const;
 
-export type Features = typeof FEATURES
+export type Features = typeof FEATURES;

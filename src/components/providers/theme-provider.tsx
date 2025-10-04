@@ -28,9 +28,7 @@ export function ThemeProvider({
   children,
   defaultTheme = 'system',
   storageKey = 'ui-theme',
-  attribute = 'class',
   enableSystem = true,
-  disableTransitionOnChange = false,
   ...props
 }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(() => {
@@ -38,7 +36,7 @@ export function ThemeProvider({
     if (typeof window === 'undefined') {
       return defaultTheme;
     }
-    
+
     try {
       const stored = localStorage.getItem(storageKey) as Theme;
       return stored || defaultTheme;

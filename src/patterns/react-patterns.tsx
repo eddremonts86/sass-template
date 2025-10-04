@@ -1,11 +1,17 @@
 /**
  * 🎯 React Design Patterns - Ejemplos Prácticos
- * 
+ *
  * Este archivo contiene implementaciones de ejemplo de los patrones de diseño
  * más importantes utilizados en Template Trae.
  */
 
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useCallback,
+} from 'react';
 
 // ============================================================================
 // 1. PROVIDER PATTERN
@@ -63,7 +69,8 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
 
   const setValue = (value: T | ((val: T) => T)) => {
     try {
-      const valueToStore = value instanceof Function ? value(storedValue) : value;
+      const valueToStore =
+        value instanceof Function ? value(storedValue) : value;
       setStoredValue(valueToStore);
       if (typeof window !== 'undefined') {
         window.localStorage.setItem(key, JSON.stringify(valueToStore));
@@ -81,11 +88,11 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
  */
 export function useToggle(initialValue = false) {
   const [value, setValue] = useState(initialValue);
-  
+
   const toggle = () => setValue(prev => !prev);
   const setTrue = () => setValue(true);
   const setFalse = () => setValue(false);
-  
+
   return { value, toggle, setTrue, setFalse, setValue };
 }
 
@@ -102,11 +109,11 @@ const CardContext = createContext<CardContextType>({ variant: 'default' });
 /**
  * Compound Component Pattern - Componentes que trabajan juntos
  */
-export function Card({ 
-  children, 
+export function Card({
+  children,
   variant = 'default',
-  className = '' 
-}: { 
+  className = '',
+}: {
   children: ReactNode;
   variant?: 'default' | 'outlined' | 'elevated';
   className?: string;
@@ -115,7 +122,7 @@ export function Card({
   const variantClasses = {
     default: 'bg-white',
     outlined: 'border border-gray-200',
-    elevated: 'shadow-lg bg-white'
+    elevated: 'shadow-lg bg-white',
   };
 
   return (
@@ -127,33 +134,45 @@ export function Card({
   );
 }
 
-Card.Header = function CardHeader({ children, className = '' }: { children: ReactNode; className?: string }) {
-  return (
-    <div className={`mb-4 ${className}`}>
-      {children}
-    </div>
-  );
+Card.Header = function CardHeader({
+  children,
+  className = '',
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return <div className={`mb-4 ${className}`}>{children}</div>;
 };
 
-Card.Title = function CardTitle({ children, className = '' }: { children: ReactNode; className?: string }) {
-  return (
-    <h3 className={`text-lg font-semibold ${className}`}>
-      {children}
-    </h3>
-  );
+Card.Title = function CardTitle({
+  children,
+  className = '',
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return <h3 className={`text-lg font-semibold ${className}`}>{children}</h3>;
 };
 
-Card.Content = function CardContent({ children, className = '' }: { children: ReactNode; className?: string }) {
-  return (
-    <div className={`${className}`}>
-      {children}
-    </div>
-  );
+Card.Content = function CardContent({
+  children,
+  className = '',
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return <div className={`${className}`}>{children}</div>;
 };
 
-Card.Footer = function CardFooter({ children, className = '' }: { children: ReactNode; className?: string }) {
+Card.Footer = function CardFooter({
+  children,
+  className = '',
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   return (
-    <div className={`mt-4 pt-4 border-t border-gray-100 ${className}`}>
+    <div className={`mt-4 border-t border-gray-100 pt-4 ${className}`}>
       {children}
     </div>
   );
@@ -172,11 +191,11 @@ export function withLoading<P extends object>(
 ) {
   return function WithLoadingComponent(props: P & { isLoading?: boolean }) {
     const { isLoading, ...restProps } = props;
-    
+
     if (isLoading) {
       return loadingComponent || <div>Loading...</div>;
     }
-    
+
     return <Component {...(restProps as P)} />;
   };
 }
@@ -187,11 +206,11 @@ export function withLoading<P extends object>(
 export function withAuth<P extends object>(Component: React.ComponentType<P>) {
   return function WithAuthComponent(props: P) {
     const { user } = useAppContext();
-    
+
     if (!user) {
       return <div>Please log in to access this content.</div>;
     }
-    
+
     return <Component {...props} />;
   };
 }
@@ -218,7 +237,7 @@ export function FetchData<T>({ url, children }: FetchDataProps<T>) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
@@ -231,11 +250,11 @@ export function FetchData<T>({ url, children }: FetchDataProps<T>) {
     } finally {
       setLoading(false);
     }
-  };
+  }, [url]);
 
   React.useEffect(() => {
     fetchData();
-  }, [url]);
+  }, [url, fetchData]);
 
   return <>{children({ data, loading, error, refetch: fetchData })}</>;
 }
@@ -247,19 +266,19 @@ export function FetchData<T>({ url, children }: FetchDataProps<T>) {
 /**
  * Presentational Component - Solo se encarga de la UI
  */
-export function UserListPresentation({ 
-  users, 
-  onUserClick 
-}: { 
+export function UserListPresentation({
+  users,
+  onUserClick,
+}: {
   users: Array<{ id: string; name: string; email: string }>;
   onUserClick: (id: string) => void;
 }) {
   return (
     <div className="space-y-2">
       {users.map(user => (
-        <div 
+        <div
           key={user.id}
-          className="p-3 border rounded cursor-pointer hover:bg-gray-50"
+          className="cursor-pointer rounded border p-3 hover:bg-gray-50"
           onClick={() => onUserClick(user.id)}
         >
           <h4 className="font-medium">{user.name}</h4>
@@ -275,7 +294,7 @@ export function UserListPresentation({
  */
 export function UserListContainer() {
   const [selectedUserId, setSelectedUserId] = useState<string | null>(null);
-  
+
   // Simulación de datos - en una app real vendría de una API
   const users = [
     { id: '1', name: 'Juan Pérez', email: 'juan@example.com' },
@@ -290,7 +309,7 @@ export function UserListContainer() {
 
   return (
     <div>
-      <h2 className="text-xl font-bold mb-4">Lista de Usuarios</h2>
+      <h2 className="mb-4 text-xl font-bold">Lista de Usuarios</h2>
       <UserListPresentation users={users} onUserClick={handleUserClick} />
       {selectedUserId && (
         <p className="mt-4 text-sm text-blue-600">
@@ -320,25 +339,26 @@ interface ButtonConfig {
  */
 export function createButton(config: ButtonConfig) {
   const baseClasses = 'font-medium rounded focus:outline-none focus:ring-2';
-  
+
   const variantClasses = {
     primary: 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500',
-    secondary: 'bg-gray-200 text-gray-900 hover:bg-gray-300 focus:ring-gray-500',
+    secondary:
+      'bg-gray-200 text-gray-900 hover:bg-gray-300 focus:ring-gray-500',
     danger: 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500',
-    success: 'bg-green-600 text-white hover:bg-green-700 focus:ring-green-500'
+    success: 'bg-green-600 text-white hover:bg-green-700 focus:ring-green-500',
   };
-  
+
   const sizeClasses = {
     sm: 'px-3 py-1.5 text-sm',
     md: 'px-4 py-2 text-base',
-    lg: 'px-6 py-3 text-lg'
+    lg: 'px-6 py-3 text-lg',
   };
 
   return function Button() {
     return (
       <button
         className={`${baseClasses} ${variantClasses[config.variant]} ${sizeClasses[config.size]} ${
-          config.disabled ? 'opacity-50 cursor-not-allowed' : ''
+          config.disabled ? 'cursor-not-allowed opacity-50' : ''
         }`}
         onClick={config.onClick}
         disabled={config.disabled}
@@ -365,20 +385,20 @@ export function PatternExamples() {
     variant: 'primary',
     size: 'md',
     children: 'Click me!',
-    onClick: toggle
+    onClick: toggle,
   });
 
   const SecondaryButton = createButton({
     variant: 'secondary',
     size: 'sm',
     children: 'Toggle Card',
-    onClick: toggle
+    onClick: toggle,
   });
 
   return (
-    <div className="p-6 space-y-6">
+    <div className="space-y-6 p-6">
       <h1 className="text-2xl font-bold">React Design Patterns Examples</h1>
-      
+
       {/* Factory Pattern */}
       <div className="space-x-2">
         <PrimaryButton />
@@ -396,7 +416,7 @@ export function PatternExamples() {
             <p>Tema actual: {theme}</p>
           </Card.Content>
           <Card.Footer>
-            <button 
+            <button
               onClick={toggle}
               className="text-sm text-blue-600 hover:text-blue-800"
             >
@@ -409,14 +429,14 @@ export function PatternExamples() {
       {/* Render Props Pattern */}
       <FetchData<{ message: string }> url="/api/example">
         {({ data, loading, error, refetch }) => (
-          <div className="border p-4 rounded">
-            <h3 className="font-semibold mb-2">Fetch Data Example</h3>
+          <div className="rounded border p-4">
+            <h3 className="mb-2 font-semibold">Fetch Data Example</h3>
             {loading && <p>Cargando...</p>}
             {error && <p className="text-red-600">Error: {error}</p>}
             {data && <p>Datos: {data.message}</p>}
-            <button 
+            <button
               onClick={refetch}
-              className="mt-2 px-3 py-1 bg-blue-500 text-white rounded text-sm"
+              className="mt-2 rounded bg-blue-500 px-3 py-1 text-sm text-white"
             >
               Refetch
             </button>

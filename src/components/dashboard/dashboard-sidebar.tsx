@@ -22,13 +22,13 @@ export function DashboardSidebar({ className }: DashboardSidebarProps) {
   const { sidebarCollapsed, locale } = useAuthStore();
 
   const sidebarItems = NAVIGATION.main.map(item => ({
-    title: t(item.translationKey as any),
+    title: t(item.translationKey as string),
     href: `/${locale}${item.href}`,
     icon: item.icon,
   }));
 
   const bottomItems = NAVIGATION.secondary.map(item => ({
-    title: t(item.translationKey as any),
+    title: t(item.translationKey as string),
     href: `/${locale}${item.href}`,
     icon: item.icon,
   }));
@@ -36,7 +36,7 @@ export function DashboardSidebar({ className }: DashboardSidebarProps) {
   return (
     <div
       className={cn(
-        'flex h-full flex-col border-r bg-background transition-all duration-300',
+        'bg-background flex h-full flex-col border-r transition-all duration-300',
         sidebarCollapsed ? 'w-16' : 'w-64',
         className
       )}
@@ -44,19 +44,17 @@ export function DashboardSidebar({ className }: DashboardSidebarProps) {
       {/* Logo */}
       <div className="flex h-16 items-center border-b px-4">
         <Link href={`/${locale}/dashboard`} className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+          <div className="bg-primary text-primary-foreground flex h-8 w-8 items-center justify-center rounded-lg">
             <span className="text-sm font-bold">T</span>
           </div>
-          {!sidebarCollapsed && (
-            <span className="font-semibold">Template</span>
-          )}
+          {!sidebarCollapsed && <span className="font-semibold">Template</span>}
         </Link>
       </div>
 
       {/* Navigation */}
       <ScrollArea className="flex-1 px-3 py-4">
         <nav className="space-y-2">
-          {sidebarItems.map((item) => {
+          {sidebarItems.map(item => {
             const Icon = item.icon;
             const isActive = pathname === item.href;
 
@@ -85,7 +83,7 @@ export function DashboardSidebar({ className }: DashboardSidebarProps) {
       {/* Bottom navigation */}
       <div className="border-t px-3 py-4">
         <nav className="space-y-2">
-          {bottomItems.map((item) => {
+          {bottomItems.map(item => {
             const Icon = item.icon;
             const isActive = pathname === item.href;
 
