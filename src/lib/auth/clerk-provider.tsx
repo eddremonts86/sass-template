@@ -54,7 +54,8 @@ export function ClerkAuthProvider({ children }: ClerkAuthProviderProps) {
           colorInputText: 'hsl(var(--foreground))',
         },
         elements: {
-          formButtonPrimary: 'bg-primary text-primary-foreground hover:bg-primary/90',
+          formButtonPrimary:
+            'bg-primary text-primary-foreground hover:bg-primary/90',
           card: 'bg-card text-card-foreground border border-border',
         },
       }}

@@ -240,6 +240,6 @@ export const THEME_CONFIG = {
       },
     },
   },
-} as const
+} as const;
 
-export type ThemeConfig = typeof THEME_CONFIG
+export type ThemeConfig = typeof THEME_CONFIG;

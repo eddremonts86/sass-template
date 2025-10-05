@@ -2,8 +2,14 @@
 
 import { useTranslations } from 'next-intl';
 import { useUser } from '@clerk/nextjs';
-import { StatsCard } from '@/components/dashboard/stats-card';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { StatsCard } from '@/components/features/dashboard/stats-card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import {
@@ -59,21 +65,28 @@ export default function DashboardPage() {
     {
       id: 1,
       title: t('dashboard.activities.newUserRegistration'),
-      description: t('dashboard.activities.newUserRegistrationDesc', { name: 'John Doe' }),
+      description: t('dashboard.activities.newUserRegistrationDesc', {
+        name: 'John Doe',
+      }),
       time: t('dashboard.timeAgo.minutesAgo', { count: 2 }),
       type: 'user',
     },
     {
       id: 2,
       title: t('dashboard.activities.paymentReceived'),
-      description: t('dashboard.activities.paymentReceivedDesc', { amount: '$299.00', type: 'Premium' }),
+      description: t('dashboard.activities.paymentReceivedDesc', {
+        amount: '$299.00',
+        type: 'Premium',
+      }),
       time: t('dashboard.timeAgo.minutesAgo', { count: 5 }),
       type: 'payment',
     },
     {
       id: 3,
       title: t('dashboard.activities.documentUploaded'),
-      description: t('dashboard.activities.documentUploadedDesc', { filename: 'Project proposal.pdf' }),
+      description: t('dashboard.activities.documentUploadedDesc', {
+        filename: 'Project proposal.pdf',
+      }),
       time: t('dashboard.timeAgo.minutesAgo', { count: 10 }),
       type: 'document',
     },
@@ -119,7 +132,8 @@ export default function DashboardPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">
-            {t('dashboard.welcome')}, {user?.firstName || user?.emailAddresses[0]?.emailAddress}
+            {t('dashboard.welcome')},{' '}
+            {user?.firstName || user?.emailAddresses[0]?.emailAddress}
           </h1>
           <p className="text-muted-foreground">
             {t('dashboard.welcomeMessage')}
@@ -158,23 +172,29 @@ export default function DashboardPage() {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {recentActivities.map((activity) => (
+              {recentActivities.map(activity => (
                 <div
                   key={activity.id}
                   className="flex items-start gap-3 rounded-lg border p-3"
                 >
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-muted">
+                  <div className="bg-muted flex h-8 w-8 items-center justify-center rounded-full">
                     {activity.type === 'user' && <Users className="h-4 w-4" />}
-                    {activity.type === 'payment' && <DollarSign className="h-4 w-4" />}
-                    {activity.type === 'document' && <FileText className="h-4 w-4" />}
-                    {activity.type === 'system' && <Settings className="h-4 w-4" />}
+                    {activity.type === 'payment' && (
+                      <DollarSign className="h-4 w-4" />
+                    )}
+                    {activity.type === 'document' && (
+                      <FileText className="h-4 w-4" />
+                    )}
+                    {activity.type === 'system' && (
+                      <Settings className="h-4 w-4" />
+                    )}
                   </div>
                   <div className="flex-1 space-y-1">
                     <p className="text-sm font-medium">{activity.title}</p>
-                    <p className="text-xs text-muted-foreground">
+                    <p className="text-muted-foreground text-xs">
                       {activity.description}
                     </p>
-                    <p className="text-xs text-muted-foreground">
+                    <p className="text-muted-foreground text-xs">
                       {activity.time}
                     </p>
                   </div>
@@ -202,12 +222,12 @@ export default function DashboardPage() {
                   asChild
                 >
                   <div className="flex items-start gap-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
+                    <div className="bg-primary/10 flex h-8 w-8 items-center justify-center rounded-lg">
                       {action.icon}
                     </div>
                     <div className="text-left">
                       <p className="font-medium">{action.title}</p>
-                      <p className="text-xs text-muted-foreground">
+                      <p className="text-muted-foreground text-xs">
                         {action.description}
                       </p>
                     </div>

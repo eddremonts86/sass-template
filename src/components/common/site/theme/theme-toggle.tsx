@@ -47,7 +47,7 @@ export function ThemeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        {themes.map((themeOption) => (
+        {themes.map(themeOption => (
           <DropdownMenuItem
             key={themeOption.value}
             onClick={() => setTheme(themeOption.value)}

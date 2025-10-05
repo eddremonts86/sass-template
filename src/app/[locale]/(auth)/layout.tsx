@@ -8,9 +8,5 @@ interface AuthLayoutProps {
  * Layout for authentication pages
  */
 export default function AuthLayout({ children }: AuthLayoutProps) {
-  return (
-    <div className="min-h-screen bg-background">
-      {children}
-    </div>
-  );
+  return <div className="bg-background min-h-screen">{children}</div>;
 }

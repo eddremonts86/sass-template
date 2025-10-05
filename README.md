@@ -93,6 +93,7 @@ src/
 ## 🌐 Internationalization
 
 Supports multiple languages out of the box:
+
 - English (en) - Default
 - Spanish (es)
 - Danish (da)
@@ -102,11 +103,13 @@ Add new languages by creating message files in `/messages/` directory.
 ## 🎨 Customization
 
 ### Theme
+
 - Modify `src/app/globals.css` for global styles
 - Update theme colors in `tailwind.config.js`
 - Customize Shadcn/ui components in `src/components/ui/`
 
 ### Authentication
+
 - Configure Clerk settings in `src/lib/auth/clerk-provider.tsx`
 - Customize auth pages styling
 - Add custom user fields
@@ -114,12 +117,15 @@ Add new languages by creating message files in `/messages/` directory.
 ## 🚨 Troubleshooting
 
 ### Authentication Error
+
 If you see Clerk authentication errors, ensure you've:
+
 1. Set up your Clerk application
 2. Added the correct API keys to `.env.local`
 3. Restarted the development server
 
 ### Build Issues
+
 - Run `pnpm lint` to check for code issues
 - Ensure all environment variables are set
 - Clear Next.js cache: `rm -rf .next`

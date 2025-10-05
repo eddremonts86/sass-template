@@ -236,5 +236,77 @@
     "menu": {
       "toggle": "Toggle Menu"
     }
+  },
+  "pages": {
+    "about": {
+      "title": "About Us",
+      "description": "Learn more about our company, mission, and values. This section is under development and will soon contain detailed information about our team and history.",
+      "backToHome": "Back to Home"
+    },
+    "features": {
+      "title": "Features",
+      "description": "Discover all the features and functionalities of our platform. This section is under development and will soon showcase the complete capabilities of our system.",
+      "backToHome": "Back to Home"
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Get in touch with our team. This section is under development and will soon include contact forms and support information.",
+      "backToHome": "Back to Home"
+    },
+    "pricing": {
+      "title": "Pricing",
+      "description": "Explore our plans and pricing. This section is under development and will soon show detailed subscription options.",
+      "backToHome": "Back to Home"
+    },
+    "docs": {
+      "title": "Documentation",
+      "description": "Access our complete documentation. This section is under development and will soon contain detailed guides and API references.",
+      "backToHome": "Back to Home"
+    },
+    "support": {
+      "title": "Technical Support",
+      "description": "Get help and technical support. This section is under development and will soon include a complete help center.",
+      "backToHome": "Back to Home"
+    },
+    "apiDocs": {
+      "title": "API Documentation",
+      "description": "Explore our API documentation. This section is under development and will soon contain complete endpoint references.",
+      "backToHome": "Back to Home"
+    },
+    "analytics": {
+      "title": "Analytics",
+      "description": "View detailed metrics and analytics. This section is under development and will soon show interactive dashboards.",
+      "backToHome": "Back to Home"
+    },
+    "users": {
+      "title": "User Management",
+      "description": "Manage users and permissions. This section is under development and will soon include complete management tools.",
+      "backToHome": "Back to Home"
+    },
+    "documents": {
+      "title": "Document Management",
+      "description": "Organize and manage documents. This section is under development and will soon allow uploading, organizing, and sharing files.",
+      "backToHome": "Back to Home"
+    },
+    "calendar": {
+      "title": "Event Calendar",
+      "description": "Manage events and appointments. This section is under development and will soon include a complete interactive calendar.",
+      "backToHome": "Back to Home"
+    },
+    "messages": {
+      "title": "Message Center",
+      "description": "Manage communications and messages. This section is under development and will soon include a complete messaging system.",
+      "backToHome": "Back to Home"
+    },
+    "settings": {
+      "title": "Settings",
+      "description": "Customize your experience. This section is under development and will soon include complete configuration options.",
+      "backToHome": "Back to Home"
+    },
+    "help": {
+      "title": "Help Center",
+      "description": "Find answers and help resources. This section is under development and will soon include a complete knowledge base.",
+      "backToHome": "Back to Home"
+    }
   }
 }

@@ -40,17 +40,17 @@ const isPublicRoute = createRouteMatcher([
 export default clerkMiddleware(async (auth, req) => {
   // Handle internationalization first
   const intlResponse = intlMiddleware(req);
-  
+
   // If it's a public route, continue
   if (isPublicRoute(req)) {
     return intlResponse;
   }
-  
+
   // If the route is protected and user is not authenticated, redirect to sign-in
   if (isProtectedRoute(req)) {
     await auth.protect();
   }
-  
+
   return intlResponse;
 });
 

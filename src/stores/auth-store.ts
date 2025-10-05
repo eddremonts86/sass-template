@@ -25,12 +25,12 @@ interface AuthState {
   // User data
   user: User | null;
   isAuthenticated: boolean;
-  
+
   // UI preferences
   theme: Theme;
   locale: Locale;
   sidebarCollapsed: boolean;
-  
+
   // Actions
   setUser: (user: User | null) => void;
   setAuthenticated: (authenticated: boolean) => void;
@@ -57,51 +57,55 @@ const initialState = {
  */
 export const useAuthStore = create<AuthState>()(
   persist(
-    (set) => ({
+    set => ({
       ...initialState,
-      
+
       setUser: (user: User | null) => {
         set({ user, isAuthenticated: !!user });
       },
-      
+
       setAuthenticated: (authenticated: boolean) => {
         set({ isAuthenticated: authenticated });
         if (!authenticated) {
           set({ user: null });
         }
       },
-      
+
       setTheme: (theme: Theme) => {
         set({ theme });
         // Apply theme to document
         if (typeof window !== 'undefined') {
           const root = window.document.documentElement;
           root.classList.remove('light', 'dark');
-          
+
           if (theme === 'system') {
-            const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            const systemTheme = window.matchMedia(
+              '(prefers-color-scheme: dark)'
+            ).matches
+              ? 'dark'
+              : 'light';
             root.classList.add(systemTheme);
           } else {
             root.classList.add(theme);
           }
         }
       },
-      
+
       setLocale: (locale: Locale) => {
-    set({ locale });
-  },
-      
+        set({ locale });
+      },
+
       setSidebarCollapsed: (collapsed: boolean) => {
         set({ sidebarCollapsed: collapsed });
       },
-      
+
       reset: () => {
         set(initialState);
       },
     }),
     {
       name: 'auth-store',
-      partialize: (state) => ({
+      partialize: state => ({
         theme: state.theme,
         locale: state.locale,
         sidebarCollapsed: state.sidebarCollapsed,

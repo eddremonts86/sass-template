@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - pnpm (recommended) or npm
 - A Clerk account for authentication
 
@@ -19,6 +19,7 @@ pnpm install
 ### 2. Environment Configuration
 
 #### Step 1: Copy the environment template
+
 ```bash
 cp .env.example .env.local
 ```
@@ -61,6 +62,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ## 🌐 Internationalization
 
 The app supports multiple languages:
+
 - English (en) - Default
 - Spanish (es)
 - Danish (da)
@@ -70,6 +72,7 @@ Language files are located in `/messages/` directory.
 ## 🎨 UI Components
 
 This template uses:
+
 - **Shadcn/ui** - Modern React components
 - **Tailwind CSS** - Utility-first CSS framework
 - **Lucide React** - Beautiful icons
@@ -85,6 +88,7 @@ This template uses:
 ## 📱 Responsive Design
 
 The template is fully responsive and includes:
+
 - Mobile-first design
 - Dark/Light theme toggle
 - Language switcher
@@ -101,6 +105,7 @@ If you see: `@clerk/nextjs: The publishableKey passed to Clerk is invalid`
 ### Build Errors
 
 If the build fails, ensure:
+
 1. All environment variables are set correctly
 2. Run `pnpm lint` to check for code issues
 3. Run `pnpm type-check` to verify TypeScript
@@ -108,6 +113,7 @@ If the build fails, ensure:
 ### Development Server Issues
 
 If the dev server won't start:
+
 1. Check if port 3000 is available
 2. Clear Next.js cache: `rm -rf .next`
 3. Reinstall dependencies: `rm -rf node_modules && pnpm install`

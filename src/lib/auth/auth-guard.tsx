@@ -18,10 +18,10 @@ interface AuthGuardProps {
  * Protects routes that require authentication
  * Redirects unauthenticated users to sign-in page
  */
-export function AuthGuard({ 
-  children, 
+export function AuthGuard({
+  children,
   fallback = <div>Loading...</div>,
-  redirectTo = '/sign-in'
+  redirectTo = '/sign-in',
 }: AuthGuardProps) {
   const { isSignedIn, isLoaded } = useAuth();
   const router = useRouter();

@@ -3,16 +3,16 @@
  * Centralized navigation structure and routing
  */
 
-import { 
-  BarChart3, 
-  Calendar, 
-  FileText, 
-  HelpCircle, 
-  Home, 
-  MessageSquare, 
-  Settings, 
-  Users 
-} from 'lucide-react'
+import {
+  BarChart3,
+  Calendar,
+  FileText,
+  HelpCircle,
+  Home,
+  MessageSquare,
+  Settings,
+  Users,
+} from 'lucide-react';
 
 export const NAVIGATION = {
   // Main navigation items
@@ -54,7 +54,7 @@ export const NAVIGATION = {
       translationKey: 'dashboard.nav.messages',
     },
   ],
-  
+
   // Secondary navigation items
   secondary: [
     {
@@ -70,7 +70,7 @@ export const NAVIGATION = {
       translationKey: 'dashboard.nav.help',
     },
   ],
-  
+
   // Footer navigation
   footer: {
     navigation: [
@@ -108,7 +108,7 @@ export const NAVIGATION = {
       },
     ],
   },
-  
+
   // Header navigation
   header: [
     {
@@ -127,7 +127,7 @@ export const NAVIGATION = {
       translationKey: 'navigation.docs',
     },
   ],
-  
+
   // Breadcrumb configurations
   breadcrumbs: {
     dashboard: {
@@ -163,6 +163,6 @@ export const NAVIGATION = {
       href: '/dashboard/help',
     },
   },
-} as const
+} as const;
 
-export type Navigation = typeof NAVIGATION
+export type Navigation = typeof NAVIGATION;

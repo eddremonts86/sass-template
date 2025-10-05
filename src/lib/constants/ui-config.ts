@@ -13,7 +13,7 @@ export const UI_CONFIG = {
     maxContentWidth: '1200px',
     containerPadding: '1rem',
   },
-  
+
   // Animation durations (in milliseconds)
   animations: {
     fast: 150,
@@ -23,7 +23,7 @@ export const UI_CONFIG = {
     modal: 250,
     tooltip: 100,
   },
-  
+
   // Breakpoints (matching Tailwind CSS)
   breakpoints: {
     sm: '640px',
@@ -32,7 +32,7 @@ export const UI_CONFIG = {
     xl: '1280px',
     '2xl': '1536px',
   },
-  
+
   // Z-index layers
   zIndex: {
     dropdown: 1000,
@@ -44,7 +44,7 @@ export const UI_CONFIG = {
     tooltip: 1070,
     toast: 1080,
   },
-  
+
   // Border radius values
   borderRadius: {
     none: '0',
@@ -56,7 +56,7 @@ export const UI_CONFIG = {
     '2xl': '1rem',
     full: '9999px',
   },
-  
+
   // Shadow configurations
   shadows: {
     sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
@@ -65,7 +65,7 @@ export const UI_CONFIG = {
     lg: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
     xl: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
   },
-  
+
   // Icon sizes
   iconSizes: {
     xs: '0.75rem',
@@ -75,7 +75,7 @@ export const UI_CONFIG = {
     xl: '2rem',
     '2xl': '2.5rem',
   },
-  
+
   // Button configurations
   button: {
     sizes: {
@@ -96,7 +96,7 @@ export const UI_CONFIG = {
       },
     },
   },
-  
+
   // Input configurations
   input: {
     height: '2.5rem',
@@ -104,21 +104,21 @@ export const UI_CONFIG = {
     fontSize: '0.875rem',
     borderWidth: '1px',
   },
-  
+
   // Card configurations
   card: {
     padding: '1.5rem',
     borderRadius: '0.5rem',
     borderWidth: '1px',
   },
-  
+
   // Modal configurations
   modal: {
     maxWidth: '32rem',
     padding: '1.5rem',
     borderRadius: '0.5rem',
   },
-  
+
   // Toast configurations
   toast: {
     width: '24rem',
@@ -126,6 +126,6 @@ export const UI_CONFIG = {
     borderRadius: '0.375rem',
     duration: 5000,
   },
-} as const
+} as const;
 
-export type UIConfig = typeof UI_CONFIG
+export type UIConfig = typeof UI_CONFIG;

@@ -2,7 +2,7 @@ import { redirect } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { isValidLocale } from '@/lib/i18n/config';
-import { ThemeProvider } from '@/components/providers/theme-provider';
+import { ThemeProvider } from '@/components/common/site/theme/providers/theme-provider';
 
 export default async function LocaleLayout({
   children,
@@ -12,7 +12,7 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  
+
   // Validate that the incoming `locale` parameter is valid
   if (!isValidLocale(locale)) {
     redirect('/en');

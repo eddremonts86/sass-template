@@ -31,14 +31,12 @@ export function StatsCard({
     <Card className={cn('', className)}>
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
         <CardTitle className="text-sm font-medium">{title}</CardTitle>
-        {icon && (
-          <div className="h-4 w-4 text-muted-foreground">{icon}</div>
-        )}
+        {icon && <div className="text-muted-foreground h-4 w-4">{icon}</div>}
       </CardHeader>
       <CardContent>
         <div className="text-2xl font-bold">{value}</div>
         {(description || trend) && (
-          <div className="flex items-center gap-2 text-xs text-muted-foreground">
+          <div className="text-muted-foreground flex items-center gap-2 text-xs">
             {trend && (
               <span
                 className={cn(

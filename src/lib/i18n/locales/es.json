@@ -236,5 +236,77 @@
     "menu": {
       "toggle": "Alternar Menú"
     }
+  },
+  "pages": {
+    "about": {
+      "title": "Acerca de Nosotros",
+      "description": "Conoce más sobre nuestra empresa, misión y valores. Esta sección está en desarrollo y pronto contendrá información detallada sobre nuestro equipo y historia.",
+      "backToHome": "Volver al Inicio"
+    },
+    "features": {
+      "title": "Características",
+      "description": "Descubre todas las características y funcionalidades de nuestra plataforma. Esta sección está en desarrollo y pronto mostrará las capacidades completas de nuestro sistema.",
+      "backToHome": "Volver al Inicio"
+    },
+    "contact": {
+      "title": "Contacto",
+      "description": "Ponte en contacto con nuestro equipo. Esta sección está en desarrollo y pronto incluirá formularios de contacto y información de soporte.",
+      "backToHome": "Volver al Inicio"
+    },
+    "pricing": {
+      "title": "Precios",
+      "description": "Explora nuestros planes y precios. Esta sección está en desarrollo y pronto mostrará opciones de suscripción detalladas.",
+      "backToHome": "Volver al Inicio"
+    },
+    "docs": {
+      "title": "Documentación",
+      "description": "Accede a nuestra documentación completa. Esta sección está en desarrollo y pronto contendrá guías detalladas y referencias de API.",
+      "backToHome": "Volver al Inicio"
+    },
+    "support": {
+      "title": "Soporte Técnico",
+      "description": "Obtén ayuda y soporte técnico. Esta sección está en desarrollo y pronto incluirá un centro de ayuda completo.",
+      "backToHome": "Volver al Inicio"
+    },
+    "apiDocs": {
+      "title": "Documentación API",
+      "description": "Explora nuestra documentación de API. Esta sección está en desarrollo y pronto contendrá referencias completas de endpoints.",
+      "backToHome": "Volver al Inicio"
+    },
+    "analytics": {
+      "title": "Analíticas",
+      "description": "Visualiza métricas y análisis detallados. Esta sección está en desarrollo y pronto mostrará dashboards interactivos.",
+      "backToHome": "Volver al Inicio"
+    },
+    "users": {
+      "title": "Gestión de Usuarios",
+      "description": "Administra usuarios y permisos. Esta sección está en desarrollo y pronto incluirá herramientas completas de gestión.",
+      "backToHome": "Volver al Inicio"
+    },
+    "documents": {
+      "title": "Gestión de Documentos",
+      "description": "Organiza y gestiona documentos. Esta sección está en desarrollo y pronto permitirá subir, organizar y compartir archivos.",
+      "backToHome": "Volver al Inicio"
+    },
+    "calendar": {
+      "title": "Calendario de Eventos",
+      "description": "Gestiona eventos y citas. Esta sección está en desarrollo y pronto incluirá un calendario interactivo completo.",
+      "backToHome": "Volver al Inicio"
+    },
+    "messages": {
+      "title": "Centro de Mensajes",
+      "description": "Gestiona comunicaciones y mensajes. Esta sección está en desarrollo y pronto incluirá un sistema de mensajería completo.",
+      "backToHome": "Volver al Inicio"
+    },
+    "settings": {
+      "title": "Configuración",
+      "description": "Personaliza tu experiencia. Esta sección está en desarrollo y pronto incluirá opciones completas de configuración.",
+      "backToHome": "Volver al Inicio"
+    },
+    "help": {
+      "title": "Centro de Ayuda",
+      "description": "Encuentra respuestas y recursos de ayuda. Esta sección está en desarrollo y pronto incluirá una base de conocimientos completa.",
+      "backToHome": "Volver al Inicio"
+    }
   }
 }

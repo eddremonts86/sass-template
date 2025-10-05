@@ -236,5 +236,77 @@
     "menu": {
       "toggle": "Skift Menu"
     }
+  },
+  "pages": {
+    "about": {
+      "title": "Om Os",
+      "description": "Lær mere om vores virksomhed, mission og værdier. Dette afsnit er under udvikling og vil snart indeholde detaljerede oplysninger om vores team og historie.",
+      "backToHome": "Tilbage til Hjem"
+    },
+    "features": {
+      "title": "Funktioner",
+      "description": "Opdag alle funktioner og funktionaliteter på vores platform. Dette afsnit er under udvikling og vil snart vise de komplette muligheder i vores system.",
+      "backToHome": "Tilbage til Hjem"
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Kom i kontakt med vores team. Dette afsnit er under udvikling og vil snart indeholde kontaktformularer og supportinformation.",
+      "backToHome": "Tilbage til Hjem"
+    },
+    "pricing": {
+      "title": "Priser",
+      "description": "Udforsk vores planer og priser. Dette afsnit er under udvikling og vil snart vise detaljerede abonnementsmuligheder.",
+      "backToHome": "Tilbage til Hjem"
+    },
+    "docs": {
+      "title": "Dokumentation",
+      "description": "Få adgang til vores komplette dokumentation. Dette afsnit er under udvikling og vil snart indeholde detaljerede guider og API-referencer.",
+      "backToHome": "Tilbage til Hjem"
+    },
+    "support": {
+      "title": "Teknisk Support",
+      "description": "Få hjælp og teknisk support. Dette afsnit er under udvikling og vil snart indeholde et komplet hjælpecenter.",
+      "backToHome": "Tilbage til Hjem"
+    },
+    "apiDocs": {
+      "title": "API Dokumentation",
+      "description": "Udforsk vores API-dokumentation. Dette afsnit er under udvikling og vil snart indeholde komplette endpoint-referencer.",
+      "backToHome": "Tilbage til Hjem"
+    },
+    "analytics": {
+      "title": "Analyser",
+      "description": "Se detaljerede metrics og analyser. Dette afsnit er under udvikling og vil snart vise interaktive dashboards.",
+      "backToHome": "Tilbage til Hjem"
+    },
+    "users": {
+      "title": "Brugerstyring",
+      "description": "Administrer brugere og tilladelser. Dette afsnit er under udvikling og vil snart indeholde komplette styringsværktøjer.",
+      "backToHome": "Tilbage til Hjem"
+    },
+    "documents": {
+      "title": "Dokumentstyring",
+      "description": "Organiser og administrer dokumenter. Dette afsnit er under udvikling og vil snart tillade upload, organisering og deling af filer.",
+      "backToHome": "Tilbage til Hjem"
+    },
+    "calendar": {
+      "title": "Begivenhedskalender",
+      "description": "Administrer begivenheder og aftaler. Dette afsnit er under udvikling og vil snart indeholde en komplet interaktiv kalender.",
+      "backToHome": "Tilbage til Hjem"
+    },
+    "messages": {
+      "title": "Beskedcenter",
+      "description": "Administrer kommunikation og beskeder. Dette afsnit er under udvikling og vil snart indeholde et komplet beskedsystem.",
+      "backToHome": "Tilbage til Hjem"
+    },
+    "settings": {
+      "title": "Indstillinger",
+      "description": "Tilpas din oplevelse. Dette afsnit er under udvikling og vil snart indeholde komplette konfigurationsmuligheder.",
+      "backToHome": "Tilbage til Hjem"
+    },
+    "help": {
+      "title": "Hjælpecenter",
+      "description": "Find svar og hjælperessourcer. Dette afsnit er under udvikling og vil snart indeholde en komplet vidensbase.",
+      "backToHome": "Tilbage til Hjem"
+    }
   }
 }

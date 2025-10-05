@@ -17,7 +17,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: 'Template Trae - Modern Next.js Template',
-  description: 'A modern Next.js template with authentication, internationalization, and beautiful UI components.',
+  description:
+    'A modern Next.js template with authentication, internationalization, and beautiful UI components.',
 };
 
 export default async function RootLayout({

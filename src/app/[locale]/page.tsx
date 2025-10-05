@@ -7,8 +7,9 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Header } from '@/components/layout/header';
-import { Footer } from '@/components/layout/footer';
+import { Header } from '@/components/common/site/layout/header';
+import { Footer } from '@/components/common/site/layout/footer';
+import { PageSection } from '@/components/common/containers';
 import { FEATURES } from '@/lib/constants';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle } from 'lucide-react';
@@ -42,8 +43,8 @@ export default function HomePage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="container space-y-6 pt-6 pb-8 md:pt-10 md:pb-12 lg:py-32">
-          <div className="mx-auto flex max-w-[980px] flex-col items-center gap-2 text-center">
+        <PageSection padding="xl" className="space-y-6">
+          <div className="flex flex-col items-center gap-2 text-center">
             <h1 className="text-3xl leading-tight font-bold tracking-tighter md:text-6xl lg:leading-[1.1]">
               {t('hero.title')}
             </h1>
@@ -62,14 +63,11 @@ export default function HomePage() {
               </Button>
             </div>
           </div>
-        </section>
+        </PageSection>
 
         {/* Features Section */}
-        <section
-          id="features"
-          className="container space-y-6 py-8 md:py-12 lg:py-24"
-        >
-          <div className="mx-auto flex max-w-[980px] flex-col items-center gap-2 text-center">
+        <PageSection padding="lg" className="space-y-6">
+          <div className="flex flex-col items-center gap-2 text-center">
             <h2 className="text-3xl leading-tight font-bold tracking-tighter md:text-5xl">
               {t('features.title')}
             </h2>
@@ -78,7 +76,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
+          <div className="grid justify-center gap-4 sm:grid-cols-2 md:grid-cols-3">
             {features.map((feature, index) => (
               <Card key={index} className="relative overflow-hidden">
                 <CardHeader>
@@ -95,11 +93,11 @@ export default function HomePage() {
               </Card>
             ))}
           </div>
-        </section>
+        </PageSection>
 
         {/* Benefits Section */}
-        <section className="bg-muted/50 container space-y-6 py-8 md:py-12 lg:py-24">
-          <div className="mx-auto flex max-w-[980px] flex-col items-center gap-2 text-center">
+        <PageSection background="muted" padding="lg" className="space-y-6">
+          <div className="flex flex-col items-center gap-2 text-center">
             <h2 className="text-3xl leading-tight font-bold tracking-tighter md:text-5xl">
               {t('benefits.title')}
             </h2>
@@ -108,21 +106,19 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="mx-auto max-w-[64rem]">
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 flex-shrink-0 text-green-500" />
-                  <span className="text-sm font-medium">{benefit}</span>
-                </div>
-              ))}
-            </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {benefits.map((benefit, index) => (
+              <div key={index} className="flex items-center gap-2">
+                <CheckCircle className="h-5 w-5 flex-shrink-0 text-green-500" />
+                <span className="text-sm font-medium">{benefit}</span>
+              </div>
+            ))}
           </div>
-        </section>
+        </PageSection>
 
         {/* CTA Section */}
-        <section className="container space-y-6 py-8 md:py-12 lg:py-24">
-          <div className="mx-auto flex max-w-[980px] flex-col items-center gap-2 text-center">
+        <PageSection padding="lg" className="space-y-6">
+          <div className="flex flex-col items-center gap-2 text-center">
             <h2 className="text-3xl leading-tight font-bold tracking-tighter md:text-5xl">
               {t('cta.title')}
             </h2>
@@ -141,7 +137,7 @@ export default function HomePage() {
               </Button>
             </div>
           </div>
-        </section>
+        </PageSection>
       </main>
 
       <Footer />

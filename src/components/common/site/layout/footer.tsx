@@ -22,28 +22,33 @@ export function Footer() {
   };
 
   return (
-    <footer className="border-t border-border">
-      <div className="container py-8 md:py-12">
+    <footer className="bg-background border-t">
+      <div className="mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           {/* Brand */}
           <div className="md:col-span-2">
-            <Link href={`/${locale || 'en'}`} className="flex items-center space-x-2">
-              <span className="font-bold text-lg">{tFooter('brand.name')}</span>
+            <Link
+              href={`/${locale || 'en'}`}
+              className="flex items-center space-x-2"
+            >
+              <span className="text-lg font-bold">{tFooter('brand.name')}</span>
             </Link>
-            <p className="mt-4 text-sm text-muted-foreground max-w-md">
+            <p className="text-muted-foreground mt-4 max-w-md text-sm">
               {tFooter('brand.description')}
             </p>
           </div>
 
           {/* Navigation */}
           <div>
-            <h3 className="text-sm font-semibold">{tFooter('sections.navigation')}</h3>
+            <h3 className="text-sm font-semibold">
+              {tFooter('sections.navigation')}
+            </h3>
             <ul className="mt-4 space-y-2">
-              {navigation.main.map((item) => (
+              {navigation.main.map(item => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-muted-foreground hover:text-foreground text-sm transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -54,14 +59,16 @@ export function Footer() {
 
           {/* Resources */}
           <div>
-            <h3 className="text-sm font-semibold">{tFooter('sections.resources')}</h3>
+            <h3 className="text-sm font-semibold">
+              {tFooter('sections.resources')}
+            </h3>
             <ul className="mt-4 space-y-2">
               <li>
                 <Link
                   href="https://nextjs.org"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-muted-foreground hover:text-foreground text-sm transition-colors"
                 >
                   Next.js
                 </Link>
@@ -71,7 +78,7 @@ export function Footer() {
                   href="https://ui.shadcn.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-muted-foreground hover:text-foreground text-sm transition-colors"
                 >
                   Shadcn/ui
                 </Link>
@@ -81,7 +88,7 @@ export function Footer() {
                   href="https://clerk.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-muted-foreground hover:text-foreground text-sm transition-colors"
                 >
                   Clerk
                 </Link>
@@ -91,7 +98,7 @@ export function Footer() {
                   href="https://tailwindcss.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-muted-foreground hover:text-foreground text-sm transition-colors"
                 >
                   Tailwind CSS
                 </Link>
@@ -100,11 +107,12 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} {tFooter('brand.name')}. {tFooter('copyright')}
+        <div className="border-border mt-8 flex flex-col items-center justify-between border-t pt-8 md:flex-row">
+          <p className="text-muted-foreground text-sm">
+            © {new Date().getFullYear()} {tFooter('brand.name')}.{' '}
+            {tFooter('copyright')}
           </p>
-          <p className="text-sm text-muted-foreground mt-2 md:mt-0">
+          <p className="text-muted-foreground mt-2 text-sm md:mt-0">
             {tFooter('builtWith')}
           </p>
         </div>

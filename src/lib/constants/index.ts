@@ -4,16 +4,16 @@
  */
 
 // Application configuration
-export * from './app-config'
+export * from './app-config';
 
 // UI configuration
-export * from './ui-config'
+export * from './ui-config';
 
 // Navigation configuration
-export * from './navigation'
+export * from './navigation';
 
 // Features configuration
-export * from './features'
+export * from './features';
 
 // Theme configuration
-export * from './theme-config'
+export * from './theme-config';

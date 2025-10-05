@@ -9,7 +9,12 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useAuthStore } from '@/stores/auth-store';
-import { locales, localeLabels, localeFlags, type Locale } from '@/lib/i18n/config';
+import {
+  locales,
+  localeLabels,
+  localeFlags,
+  type Locale,
+} from '@/lib/i18n/config';
 import { useTranslations } from 'next-intl';
 import { useRouter, usePathname } from 'next/navigation';
 import { useLocale } from 'next-intl';
@@ -27,7 +32,7 @@ export function LanguageToggle() {
 
   const handleLocaleChange = (newLocale: Locale) => {
     setLocale(newLocale);
-    
+
     // Update URL with new locale
     const segments = pathname.split('/');
     if (locales.includes(segments[1] as Locale)) {
@@ -35,7 +40,7 @@ export function LanguageToggle() {
     } else {
       segments.unshift('', newLocale);
     }
-    
+
     const newPath = segments.join('/');
     router.push(newPath);
   };
@@ -52,7 +57,7 @@ export function LanguageToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        {locales.map((localeOption) => (
+        {locales.map(localeOption => (
           <DropdownMenuItem
             key={localeOption}
             onClick={() => handleLocaleChange(localeOption)}
@@ -81,9 +86,9 @@ export function SimpleLanguageToggle() {
     const currentIndex = locales.indexOf(currentLocale);
     const nextIndex = (currentIndex + 1) % locales.length;
     const newLocale = locales[nextIndex];
-    
+
     setLocale(newLocale);
-    
+
     // Update URL with new locale
     const segments = pathname.split('/');
     if (locales.includes(segments[1] as Locale)) {
@@ -91,7 +96,7 @@ export function SimpleLanguageToggle() {
     } else {
       segments.unshift('', newLocale);
     }
-    
+
     const newPath = segments.join('/');
     router.push(newPath);
   };
