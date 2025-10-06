@@ -239,24 +239,61 @@
   },
   "pages": {
     "about": {
-      "title": "About Us",
-      "description": "Learn more about our company, mission, and values. This section is under development and will soon contain detailed information about our team and history.",
-      "backToHome": "Back to Home"
+      "hero": {
+        "title": "About Us",
+        "subtitle": "Meet our team, discover our values, and learn how we balance work, life, and everything in between."
+      },
+      "vision": {
+        "title": "Our Vision",
+        "description1": "For years, the process of building custom software has been challenging. Today, companies need technical expertise and a lot of time. This requires companies and individuals to hire expensive developers.",
+        "description2": "What if you could create custom software without writing a single line of code? What if you could build your own work?",
+        "description3": "We believe that everyone should be able to build their own solutions, regardless of their technical background."
+      },
+      "creators": {
+        "title": "Our Creators",
+        "description1": "Our company has been building with tools for over a decade, focusing on making each project unique. We know that the best software is the one you can create yourself.",
+        "description2": "We specifically developed these solutions for our team, and now everyone can benefit from them. We are proud to offer a platform that is truly superior.",
+        "description3": "Our team is made up of talented individuals who are passionate about creating tools that actually work with your goals, and we can't wait to see what you build."
+      },
+      "globalTeam": {
+        "title": "Part of",
+        "subtitle": "Our Global Team",
+        "cta": "Join Our Team"
+      }
     },
     "features": {
       "title": "Features",
-      "description": "Discover all the features and functionalities of our platform. This section is under development and will soon showcase the complete capabilities of our system.",
-      "backToHome": "Back to Home"
+      "subtitle": "Discover all the powerful features we offer"
     },
     "contact": {
       "title": "Contact",
-      "description": "Get in touch with our team. This section is under development and will soon include contact forms and support information.",
-      "backToHome": "Back to Home"
+      "subtitle": "Get in touch with us"
     },
     "pricing": {
       "title": "Pricing",
-      "description": "Explore our plans and pricing. This section is under development and will soon show detailed subscription options.",
-      "backToHome": "Back to Home"
+      "subtitle": "Choose the perfect plan for your needs",
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "save": "Save",
+      "mostPopular": "Most Popular",
+      "getStarted": "Get Started",
+      "contactSales": "Contact Sales",
+      "features": "Features",
+      "unlimited": "Unlimited",
+      "support": "Support",
+      "analytics": "Analytics",
+      "customization": "Customization",
+      "integration": "Integration",
+      "security": "Security",
+      "backup": "Backup",
+      "api": "API Access",
+      "sla": "99.9% SLA",
+      "priority": "Priority Support",
+      "dedicated": "Dedicated Manager",
+      "onboarding": "Custom Onboarding",
+      "training": "Training",
+      "compliance": "Compliance",
+      "audit": "Audit Logs"
     },
     "docs": {
       "title": "Documentation",

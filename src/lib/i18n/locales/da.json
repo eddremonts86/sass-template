@@ -239,9 +239,27 @@
   },
   "pages": {
     "about": {
-      "title": "Om Os",
-      "description": "Lær mere om vores virksomhed, mission og værdier. Dette afsnit er under udvikling og vil snart indeholde detaljerede oplysninger om vores team og historie.",
-      "backToHome": "Tilbage til Hjem"
+      "hero": {
+        "title": "Om Os",
+        "subtitle": "Mød vores team, opdag vores værdier, og lær hvordan vi balancerer arbejde, liv og alt derimellem."
+      },
+      "vision": {
+        "title": "Vores Vision",
+        "description1": "I årevis har processen med at bygge tilpasset software været udfordrende. I dag har virksomheder brug for teknisk ekspertise og meget tid. Dette kræver, at virksomheder og enkeltpersoner ansætter dyre udviklere.",
+        "description2": "Hvad hvis du kunne skabe tilpasset software uden at skrive en eneste linje kode? Hvad hvis du kunne bygge dit eget arbejde?",
+        "description3": "Vi tror på, at alle skal kunne bygge deres egne løsninger, uanset deres tekniske baggrund."
+      },
+      "creators": {
+        "title": "Vores Skabere",
+        "description1": "Vores virksomhed har bygget med værktøjer i over et årti, med fokus på at gøre hvert projekt unikt. Vi ved, at den bedste software er den, du selv kan skabe.",
+        "description2": "Vi udviklede specifikt disse løsninger til vores team, og nu kan alle drage fordel af dem. Vi er stolte af at tilbyde en platform, der virkelig er overlegen.",
+        "description3": "Vores team består af talentfulde individer, der brænder for at skabe værktøjer, der faktisk fungerer med dine mål, og vi kan ikke vente med at se, hvad du bygger."
+      },
+      "globalTeam": {
+        "title": "Del af",
+        "subtitle": "Vores Globale Team",
+        "cta": "Bliv en Del af Teamet"
+      }
     },
     "features": {
       "title": "Funktioner",

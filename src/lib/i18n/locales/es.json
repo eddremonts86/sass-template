@@ -239,24 +239,61 @@
   },
   "pages": {
     "about": {
-      "title": "Acerca de Nosotros",
-      "description": "Conoce más sobre nuestra empresa, misión y valores. Esta sección está en desarrollo y pronto contendrá información detallada sobre nuestro equipo y historia.",
-      "backToHome": "Volver al Inicio"
+      "hero": {
+        "title": "Acerca de Nosotros",
+        "subtitle": "Conoce a nuestro equipo, descubre nuestros valores, y aprende cómo equilibramos trabajo, vida y todo lo que está en el medio."
+      },
+      "vision": {
+        "title": "Nuestra Visión",
+        "description1": "Durante años, el proceso de construcción de software personalizado ha sido desafiante. Hoy, las empresas necesitan experiencia técnica y mucho tiempo. Esto requiere que las empresas e individuos contraten desarrolladores costosos.",
+        "description2": "¿Qué pasaría si pudieras crear software personalizado sin escribir una sola línea de código? ¿Qué pasaría si pudieras construir tu propio trabajo?",
+        "description3": "Creemos que todos deberían poder construir sus propias soluciones, independientemente de su experiencia técnica."
+      },
+      "creators": {
+        "title": "Nuestros Creadores",
+        "description1": "Nuestra empresa ha estado construyendo con herramientas durante más de una década, enfocándose en hacer que cada proyecto sea único. Sabemos que el mejor software es el que puedes crear tú mismo.",
+        "description2": "Hemos desarrollado específicamente estas soluciones para nuestro equipo, y ahora todos pueden beneficiarse de ellas. Estamos orgullosos de ofrecer una plataforma que es verdaderamente superior.",
+        "description3": "Nuestro equipo está compuesto por individuos talentosos que son apasionados por crear herramientas que realmente funcionan con tus objetivos, y no podemos esperar a ver lo que construyes."
+      },
+      "globalTeam": {
+        "title": "Parte de",
+        "subtitle": "Nuestro Equipo Global",
+        "cta": "Únete a Nuestro Equipo"
+      }
     },
     "features": {
       "title": "Características",
-      "description": "Descubre todas las características y funcionalidades de nuestra plataforma. Esta sección está en desarrollo y pronto mostrará las capacidades completas de nuestro sistema.",
-      "backToHome": "Volver al Inicio"
+      "subtitle": "Descubre todas las características poderosas que ofrecemos"
     },
     "contact": {
       "title": "Contacto",
-      "description": "Ponte en contacto con nuestro equipo. Esta sección está en desarrollo y pronto incluirá formularios de contacto y información de soporte.",
-      "backToHome": "Volver al Inicio"
+      "subtitle": "Ponte en contacto con nosotros"
     },
     "pricing": {
       "title": "Precios",
-      "description": "Explora nuestros planes y precios. Esta sección está en desarrollo y pronto mostrará opciones de suscripción detalladas.",
-      "backToHome": "Volver al Inicio"
+      "subtitle": "Elige el plan perfecto para tus necesidades",
+      "monthly": "Mensual",
+      "yearly": "Anual",
+      "save": "Ahorra",
+      "mostPopular": "Más Popular",
+      "getStarted": "Comenzar",
+      "contactSales": "Contactar Ventas",
+      "features": "Características",
+      "unlimited": "Ilimitado",
+      "support": "Soporte",
+      "analytics": "Análisis",
+      "customization": "Personalización",
+      "integration": "Integración",
+      "security": "Seguridad",
+      "backup": "Respaldo",
+      "api": "Acceso API",
+      "sla": "SLA 99.9%",
+      "priority": "Soporte Prioritario",
+      "dedicated": "Gerente Dedicado",
+      "onboarding": "Incorporación Personalizada",
+      "training": "Entrenamiento",
+      "compliance": "Cumplimiento",
+      "audit": "Registros de Auditoría"
     },
     "docs": {
       "title": "Documentación",
