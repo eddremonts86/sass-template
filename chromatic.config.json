@@ -1,0 +1,17 @@
+{
+  "projectToken": "chpt_your_project_token_here",
+  "buildScriptName": "build-storybook",
+  "exitZeroOnChanges": true,
+  "exitOnceUploaded": true,
+  "onlyChanged": true,
+  "skip": "dependabot/**",
+  "ignoreLastBuildOnBranch": "main",
+  "threshold": 0.2,
+  "diffThreshold": 0.063,
+  "delay": 300,
+  "pauseAnimationAtEnd": true,
+  "diffIncludeAntiAliasing": false,
+  "externals": ["public/**"],
+  "fileHashing": true,
+  "zip": true
+}
