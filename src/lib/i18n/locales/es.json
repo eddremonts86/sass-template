@@ -23,7 +23,28 @@
     "settings": "Configuración",
     "logout": "Cerrar Sesión",
     "login": "Iniciar Sesión",
-    "signup": "Registrarse"
+    "signup": "Registrarse",
+    "project": "Proyecto",
+    "currentStatus": "Estado Actual",
+    "progress": "Progreso",
+    "recentActivity": "Actividad Reciente",
+    "smartLayoutApp": "Aplicación Smart Layout",
+    "react": "React",
+    "typescript": "TypeScript",
+    "tailwind": "Tailwind",
+    "pendingTasks": "Tareas Pendientes",
+    "completeTasksDescription": "Completa estas tareas para mejorar tu experiencia",
+    "performance": "Rendimiento",
+    "responseTime": "Tiempo de respuesta",
+    "completedTasks": "Tareas completadas",
+    "overallProgress": "Progreso General",
+    "progress": "Progreso",
+    "start": "Iniciar",
+    "complete": "Completar",
+    "skip": "Saltar",
+    "confirm": "Confirmar",
+    "cancel": "Cancelar",
+    "allTasksCompleted": "Todas las tareas completadas"
   },
   "navigation": {
     "home": "Inicio",
@@ -31,7 +52,8 @@
     "about": "Acerca de",
     "contact": "Contacto",
     "features": "Características",
-    "pricing": "Precios"
+    "pricing": "Precios",
+    "docs": "Documentación"
   },
   "auth": {
     "signIn": "Iniciar Sesión",
@@ -39,16 +61,18 @@
     "signOut": "Cerrar Sesión",
     "welcome": "Bienvenido",
     "welcomeBack": "Bienvenido de nuevo",
-    "email": "Correo Electrónico",
+    "email": "Correo electrónico",
     "password": "Contraseña",
     "firstName": "Nombre",
     "lastName": "Apellido",
     "forgotPassword": "¿Olvidaste tu contraseña?",
     "noAccount": "¿No tienes una cuenta?",
     "hasAccount": "¿Ya tienes una cuenta?",
-    "createAccount": "Crear Cuenta",
+    "createAccount": "Crear una cuenta",
     "signInWithGoogle": "Iniciar sesión con Google",
-    "signUpWithGoogle": "Registrarse con Google"
+    "signUpWithGoogle": "Registrarse con Google",
+    "signInDescription": "Inicia sesión en tu cuenta para continuar",
+    "signUpDescription": "Ingresa tus datos para crear tu cuenta"
   },
   "landing": {
     "hero": {
@@ -151,6 +175,27 @@
   "dashboard": {
     "title": "Panel de Control",
     "searchPlaceholder": "Buscar...",
+    "welcomeBack": "Bienvenido de vuelta",
+    "goodMorning": "Buenos días",
+    "goodAfternoon": "Buenas tardes",
+    "goodEvening": "Buenas noches",
+    "header": {
+      "toggleSidebar": "Alternar barra lateral",
+      "toggleMenu": "Alternar menú",
+      "notifications": "Notificaciones",
+      "navigation": {
+        "overview": "Resumen",
+        "analytics": "Analíticas",
+        "reports": "Reportes",
+        "settings": "Configuración",
+        "dashboard": "[DA: Dashboard]",
+        "users": "[DA: Brugere]",
+        "documents": "[DA: Dokumenter]",
+        "calendar": "[DA: Kalender]",
+        "messages": "[DA: Beskeder]",
+        "help": "[DA: Hjælp]"
+      }
+    },
     "nav": {
       "overview": "Resumen",
       "analytics": "Analíticas",
@@ -161,48 +206,93 @@
       "settings": "Configuración",
       "help": "Ayuda"
     },
-    "header": {
-      "toggleSidebar": "Alternar barra lateral",
-      "toggleMenu": "Alternar menú",
-      "notifications": "Notificaciones"
-    },
     "stats": {
-      "totalUsers": "Total de Usuarios",
-      "revenue": "Ingresos",
+      "totalUsers": "Usuarios Totales",
+      "fromLastMonth": "del mes pasado",
       "activeUsers": "Usuarios Activos",
+      "revenue": "Ingresos",
       "growth": "Crecimiento",
-      "fromLastMonth": "del mes pasado"
+      "totalRevenue": "[DA: Samlet Omsætning]",
+      "conversionRate": "[DA: Konverteringsrate]"
     },
     "quickActions": {
       "title": "Acciones Rápidas",
-      "description": "Tareas comunes y atajos",
-      "newUser": "Agregar Nuevo Usuario",
-      "newUserDesc": "Crear una nueva cuenta de usuario",
+      "description": "Acciones utilizadas frecuentemente para un flujo de trabajo más rápido",
+      "newUser": "Crear Nuevo Usuario",
+      "newUserDesc": "Agregar un nuevo usuario al sistema",
       "createDocument": "Crear Documento",
-      "createDocumentDesc": "Iniciar un nuevo documento",
+      "createDocumentDesc": "Crear un nuevo documento o archivo",
       "sendMessage": "Enviar Mensaje",
-      "sendMessageDesc": "Enviar un mensaje a los usuarios",
+      "sendMessageDesc": "Enviar un mensaje a usuarios o equipo",
       "settings": "Configuración",
-      "settingsDesc": "Gestionar tus preferencias"
+      "settingsDesc": "Gestionar configuración del sistema y usuario",
+      "newUserDescription": "[DA: Tilføj en ny bruger til systemet]",
+      "createDocumentDescription": "[DA: Opret et nyt dokument eller fil]",
+      "sendMessageDescription": "[DA: Send en besked til brugere eller teams]",
+      "settingsDescription": "[DA: Konfigurer systemindstillinger]"
+    },
+    "recentActivity": {
+      "title": "Actividad reciente",
+      "noActivity": "Sin actividad reciente",
+      "activities": {
+        "userRegistered": "Nuevo usuario registrado",
+        "reportGenerated": "Reporte generado",
+        "settingsUpdated": "Configuración actualizada",
+        "dataExported": "Datos exportados",
+        "newUserRegistration": "Registro de Nuevo Usuario",
+        "newUserRegistrationDesc": "El usuario {name} se ha registrado",
+        "paymentReceived": "Pago Recibido",
+        "paymentReceivedDesc": "Recibido {amount} por plan {type}",
+        "documentUploaded": "Documento Subido",
+        "documentUploadedDesc": "El archivo {filename} fue subido",
+        "systemUpdate": "Actualización del Sistema",
+        "systemUpdateDesc": "El sistema se ha actualizado exitosamente"
+      },
+      "description": "[DA: Se de seneste handlinger og opdateringer]",
+      "newUserRegistration": "[DA: Ny brugerregistrering]",
+      "newUserRegistrationDescription": "[DA: {name} tilmeldte sig systemet]",
+      "paymentReceived": "[DA: Betaling modtaget]",
+      "paymentReceivedDescription": "[DA: Modtog betaling på {amount} fra {name}]",
+      "documentUploaded": "[DA: Dokument uploadet]",
+      "documentUploadedDescription": "[DA: {name} uploadede {filename}]",
+      "systemUpdate": "[DA: Systemopdatering]",
+      "systemUpdateDescription": "[DA: System blev opdateret til version {version}]"
     },
     "welcome": "Bienvenido",
-    "welcomeMessage": "Esto es lo que está pasando con tu cuenta hoy.",
-    "recentActivity": "Actividad Reciente",
-    "recentActivityDesc": "Tus últimas acciones y actualizaciones",
+    "recentActivityDesc": "Tu actividad más reciente y actualizaciones",
     "activities": {
-      "newUserRegistration": "Nuevo registro de usuario",
-      "newUserRegistrationDesc": "{{name}} se unió a la plataforma",
-      "paymentReceived": "Pago recibido",
-      "paymentReceivedDesc": "{{amount}} de suscripción {{type}}",
-      "documentUploaded": "Documento subido",
-      "documentUploadedDesc": "{{filename}}",
-      "systemUpdate": "Actualización del sistema",
-      "systemUpdateDesc": "Parches de seguridad aplicados"
+      "newUserRegistration": "Registro de Nuevo Usuario",
+      "newUserRegistrationDescription": "El usuario {name} se ha registrado",
+      "newUserRegistrationDesc": "El usuario {name} se ha registrado",
+      "paymentReceived": "Pago Recibido",
+      "paymentReceivedDesc": "Recibido {amount} por plan {type}",
+      "documentUploaded": "Documento Subido",
+      "documentUploadedDesc": "El archivo {filename} fue subido",
+      "systemUpdate": "Actualización del Sistema",
+      "systemUpdateDesc": "El sistema se ha actualizado exitosamente",
+      "paymentReceivedDescription": "[DA: Modtog betaling på {amount} fra {name}]",
+      "documentUploadedDescription": "[DA: {name} uploadede {filename}]",
+      "systemUpdateDescription": "[DA: System blev opdateret til version {version}]"
     },
     "timeAgo": {
-      "minutesAgo": "hace {{count}} minutos",
-      "hourAgo": "hace 1 hora",
-      "hoursAgo": "hace {{count}} horas"
+      "minutesAgo": "hace {count} minutos",
+      "hourAgo": "hace 1 hora"
+    },
+    "greeting": {
+      "morning": "[DA: God morgen]",
+      "afternoon": "[DA: God eftermiddag]",
+      "evening": "[DA: God aften]"
+    },
+    "navigation": {
+      "dashboard": "[DA: Dashboard]",
+      "analytics": "[DA: Analyser]",
+      "reports": "[DA: Rapporter]",
+      "users": "[DA: Brugere]",
+      "documents": "[DA: Dokumenter]",
+      "calendar": "[DA: Kalender]",
+      "messages": "[DA: Beskeder]",
+      "settings": "[DA: Indstillinger]",
+      "help": "[DA: Hjælp]"
     }
   },
   "theme": {
@@ -211,34 +301,75 @@
     "system": "Sistema",
     "toggle": "Cambiar tema"
   },
-  "language": {
-    "select": "Seleccionar idioma",
-    "english": "Inglés",
-    "spanish": "Español",
-    "danish": "Danés"
+  "network": {
+    "online": "En línea",
+    "offline": "Sin conexión",
+    "offlineBanner": "Actualmente estás sin conexión. Algunas funciones pueden estar limitadas."
+  },
+  "pwa": {
+    "install": {
+      "title": "Instalar App",
+      "description": "Instala esta aplicación en tu dispositivo para una mejor experiencia",
+      "button": "Instalar",
+      "installing": "Instalando...",
+      "later": "Más tarde"
+    }
+  },
+  "offline": {
+    "title": "Estás Sin Conexión",
+    "description": "Parece que has perdido tu conexión a internet. No te preocupes, aún puedes navegar por contenido que ha sido almacenado en caché.",
+    "tryAgain": "Intentar de Nuevo",
+    "goHome": "Ir al Inicio",
+    "whatYouCanDo": "Lo que puedes hacer sin conexión:",
+    "features": {
+      "browsePrevious": "Navegar páginas visitadas anteriormente",
+      "viewCached": "Ver contenido en caché",
+      "basicFeatures": "Usar funciones básicas de la app"
+    },
+    "connectionRestore": "Tu conexión se restaurará automáticamente cuando vuelvas a estar en línea."
+  },
+  "ui": {
+    "close": "Cerrar",
+    "theme": {
+      "toggle": "Cambiar tema",
+      "light": "Claro",
+      "dark": "Oscuro",
+      "system": "Sistema"
+    }
+  },
+  "header": {
+    "brand": {
+      "name": "Plantilla Trae"
+    },
+    "menu": {
+      "toggle": "Alternar menú"
+    }
   },
   "footer": {
     "brand": {
-      "name": "sass-edd-template",
-      "description": "Una plantilla moderna de Next.js con autenticación, internacionalización y hermosos componentes de UI. Construida con las últimas tecnologías."
+      "name": "Plantilla Trae",
+      "description": "Una plantilla de aplicación web moderna y escalable construida con Next.js y TypeScript."
     },
     "sections": {
       "navigation": "Navegación",
       "resources": "Recursos"
     },
-    "copyright": "Todos los derechos reservados.",
-    "builtWith": "Construido con ❤️ usando tecnologías web modernas"
-  },
-  "header": {
-    "brand": {
-      "name": "sass-edd-template"
-    },
-    "menu": {
-      "toggle": "Alternar Menú"
+    "copyright": "© 2024 Plantilla Trae. Todos los derechos reservados.",
+    "builtWith": "Construido con ❤️ usando Next.js",
+    "resources": {
+      "documentation": "Documentación",
+      "support": "Soporte",
+      "api": "API",
+      "nextjs": "Next.js",
+      "shadcn": "shadcn/ui",
+      "clerk": "Clerk",
+      "tailwind": "Tailwind CSS"
     }
   },
   "pages": {
     "about": {
+      "title": "Acerca de Nosotros",
+      "description": "Conoce más sobre nuestra empresa y misión.",
       "hero": {
         "title": "Acerca de Nosotros",
         "subtitle": "Conoce a nuestro equipo, descubre nuestros valores, y aprende cómo equilibramos trabajo, vida y todo lo que está en el medio."
@@ -261,13 +392,25 @@
         "cta": "Únete a Nuestro Equipo"
       }
     },
-    "features": {
-      "title": "Características",
-      "subtitle": "Descubre todas las características poderosas que ofrecemos"
-    },
     "contact": {
       "title": "Contacto",
-      "subtitle": "Ponte en contacto con nosotros"
+      "description": "Ponte en contacto con nosotros.",
+      "subtitle": "Ponte en contacto con nosotros",
+      "backToHome": "Volver al Inicio"
+    },
+    "privacy": {
+      "title": "Política de Privacidad",
+      "description": "Nuestra política de privacidad y prácticas de manejo de datos."
+    },
+    "terms": {
+      "title": "Términos de Servicio",
+      "description": "Términos y condiciones para usar nuestro servicio."
+    },
+    "features": {
+      "title": "Características",
+      "subtitle": "Descubre todas las características poderosas que ofrecemos",
+      "description": "Descubre todas las características poderosas que ofrecemos",
+      "backToHome": "Volver al Inicio"
     },
     "pricing": {
       "title": "Precios",
@@ -297,17 +440,20 @@
     },
     "docs": {
       "title": "Documentación",
-      "description": "Accede a nuestra documentación completa. Esta sección está en desarrollo y pronto contendrá guías detalladas y referencias de API.",
+      "description": "Esta página contendrá la documentación completa de la aplicación, guías de uso, API reference y tutoriales. Próximamente estará disponible.",
+      "cta": "Volver al Inicio",
       "backToHome": "Volver al Inicio"
     },
     "support": {
       "title": "Soporte Técnico",
-      "description": "Obtén ayuda y soporte técnico. Esta sección está en desarrollo y pronto incluirá un centro de ayuda completo.",
+      "description": "Esta página contendrá opciones de soporte técnico, chat en vivo, sistema de tickets, base de conocimientos y formas de contactar con nuestro equipo de soporte. Próximamente estará disponible.",
+      "cta": "Volver al Inicio",
       "backToHome": "Volver al Inicio"
     },
     "apiDocs": {
       "title": "Documentación API",
-      "description": "Explora nuestra documentación de API. Esta sección está en desarrollo y pronto contendrá referencias completas de endpoints.",
+      "description": "Esta página contendrá la documentación completa de la API, endpoints disponibles, ejemplos de uso, autenticación y guías para desarrolladores. Próximamente estará disponible.",
+      "cta": "Volver al Inicio",
       "backToHome": "Volver al Inicio"
     },
     "analytics": {
@@ -344,6 +490,117 @@
       "title": "Centro de Ayuda",
       "description": "Encuentra respuestas y recursos de ayuda. Esta sección está en desarrollo y pronto incluirá una base de conocimientos completa.",
       "backToHome": "Volver al Inicio"
+    }
+  },
+  "patterns": {
+    "examples": {
+      "title": "Ejemplos de Patrones de Diseño React",
+      "buttons": {
+        "clickMe": "¡Haz clic!",
+        "toggleCard": "Alternar Tarjeta",
+        "close": "Cerrar",
+        "refetch": "Recargar"
+      },
+      "card": {
+        "title": "Ejemplo de Tarjeta",
+        "description": "Este es un ejemplo del patrón Compound Component.",
+        "currentTheme": "Tema actual"
+      },
+      "fetchData": {
+        "title": "Ejemplo de Obtención de Datos",
+        "loading": "Cargando...",
+        "error": "Error",
+        "data": "Datos"
+      },
+      "userList": {
+        "title": "Lista de Usuarios",
+        "selectedUser": "Usuario seleccionado"
+      },
+      "auth": {
+        "loginRequired": "Por favor inicia sesión para acceder a este contenido."
+      },
+      "loading": "Cargando...",
+      "errorOccurred": "Ocurrió un error",
+      "failedToFetch": "Error al obtener datos",
+      "contextError": "useAppContext debe usarse dentro de AppProvider",
+      "localStorageError": "Error al leer la clave de localStorage",
+      "setLocalStorageError": "Error al establecer la clave de localStorage",
+      "userSelected": "Usuario seleccionado"
+    }
+  },
+  "dashboard": {
+    "header": "Panel de Control",
+    "searchPlaceholder": "Buscar...",
+    "nav": {
+      "overview": "Resumen",
+      "analytics": "Análisis",
+      "users": "Usuarios",
+      "documents": "Documentos",
+      "calendar": "Calendario",
+      "messages": "Mensajes",
+      "settings": "Configuración",
+      "help": "Ayuda"
+    },
+    "analytics": {
+      "subtitle": "Ve tus análisis y métricas de rendimiento",
+      "empty": {
+        "title": "No hay datos de análisis disponibles",
+        "description": "Comienza a usar la aplicación para ver datos de análisis aquí"
+      }
+    },
+    "users": {
+      "subtitle": "Gestiona usuarios y sus permisos",
+      "empty": {
+        "title": "No se encontraron usuarios",
+        "description": "Agrega usuarios a tu organización para comenzar"
+      }
+    },
+    "documents": {
+      "subtitle": "Organiza y gestiona tus documentos",
+      "empty": {
+        "title": "No hay documentos disponibles",
+        "description": "Sube o crea documentos para organizar tu contenido"
+      }
+    },
+    "calendar": {
+      "subtitle": "Programa y gestiona tus eventos",
+      "empty": {
+        "title": "No hay eventos programados",
+        "description": "Crea eventos para organizar tu horario"
+      }
+    },
+    "messages": {
+      "subtitle": "Ve y gestiona tus mensajes",
+      "empty": {
+        "title": "No hay mensajes",
+        "description": "Los mensajes aparecerán aquí cuando los recibas"
+      }
+    },
+    "settings": {
+      "subtitle": "Configura las preferencias de tu aplicación",
+      "empty": {
+        "title": "No hay configuraciones establecidas",
+        "description": "Personaliza la configuración de tu aplicación para comenzar"
+      }
+    },
+    "help": {
+      "subtitle": "Obtén ayuda y recursos de soporte",
+      "empty": {
+        "title": "No hay artículos de ayuda disponibles",
+        "description": "La documentación de ayuda estará disponible pronto"
+      }
+    }
+  },
+  "language": {
+    "select": "Seleccionar idioma",
+    "english": "Inglés",
+    "spanish": "Español",
+    "danish": "Danés",
+    "toggle": "Cambiar idioma"
+  },
+  "sidebar": {
+    "brand": {
+      "name": "Plantilla"
     }
   }
 }

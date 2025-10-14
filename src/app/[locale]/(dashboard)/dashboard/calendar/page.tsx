@@ -14,25 +14,16 @@ export default function CalendarPage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold tracking-tight">
-          {t('nav.calendar', { default: 'Calendario' })}
+          {t('navigation.calendar')}
         </h1>
-        <p className="text-muted-foreground">
-          {t('calendar.subtitle', {
-            default: 'Gestiona eventos, citas y programación',
-          })}
-        </p>
+        <p className="text-muted-foreground">{t('calendar.subtitle')}</p>
       </div>
 
       <div className="flex min-h-[400px] items-center justify-center">
         <Empty
           icon={Calendar}
-          title={t('calendar.empty.title', {
-            default: 'Calendario de Eventos',
-          })}
-          description={t('calendar.empty.description', {
-            default:
-              'Aquí se mostrará un calendario interactivo con opciones para crear eventos, programar citas, establecer recordatorios y gestionar la agenda. Próximamente estará disponible.',
-          })}
+          title={t('calendar.empty.title')}
+          description={t('calendar.empty.description')}
         />
       </div>
     </div>

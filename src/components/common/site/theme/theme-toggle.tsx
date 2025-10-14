@@ -9,6 +9,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useTheme } from '@/hooks/use-theme';
+import { useTranslations } from 'next-intl';
 import type { Theme } from '@/stores/auth-store';
 
 /**
@@ -17,21 +18,22 @@ import type { Theme } from '@/stores/auth-store';
  */
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
+  const t = useTranslations('theme');
 
   const themes: { value: Theme; label: string; icon: React.ReactNode }[] = [
     {
       value: 'light',
-      label: 'Light',
+      label: t('light'),
       icon: <Sun className="h-4 w-4" />,
     },
     {
       value: 'dark',
-      label: 'Dark',
+      label: t('dark'),
       icon: <Moon className="h-4 w-4" />,
     },
     {
       value: 'system',
-      label: 'System',
+      label: t('system'),
       icon: <Monitor className="h-4 w-4" />,
     },
   ];
@@ -43,7 +45,7 @@ export function ThemeToggle() {
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon" className="h-9 w-9">
           {currentTheme?.icon}
-          <span className="sr-only">Toggle theme</span>
+          <span className="sr-only">{t('toggle')}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
@@ -68,6 +70,7 @@ export function ThemeToggle() {
  */
 export function SimpleThemeToggle() {
   const { toggleTheme, resolvedTheme } = useTheme();
+  const t = useTranslations('theme');
 
   return (
     <Button
@@ -81,7 +84,7 @@ export function SimpleThemeToggle() {
       ) : (
         <Moon className="h-4 w-4" />
       )}
-      <span className="sr-only">Toggle theme</span>
+      <span className="sr-only">{t('toggle')}</span>
     </Button>
   );
 }

@@ -14,23 +14,16 @@ export default function AnalyticsPage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold tracking-tight">
-          {t('nav.analytics', { default: 'Analytics' })}
+          {t('navigation.analytics')}
         </h1>
-        <p className="text-muted-foreground">
-          {t('analytics.subtitle', {
-            default: 'Visualiza métricas y estadísticas de tu aplicación',
-          })}
-        </p>
+        <p className="text-muted-foreground">{t('analytics.subtitle')}</p>
       </div>
 
       <div className="flex min-h-[400px] items-center justify-center">
         <Empty
           icon={BarChart3}
-          title={t('analytics.empty.title', { default: 'Analytics Dashboard' })}
-          description={t('analytics.empty.description', {
-            default:
-              'Aquí se mostrarán gráficos, métricas de rendimiento, estadísticas de usuarios y análisis detallados de la aplicación. Próximamente estará disponible.',
-          })}
+          title={t('analytics.empty.title')}
+          description={t('analytics.empty.description')}
         />
       </div>
     </div>

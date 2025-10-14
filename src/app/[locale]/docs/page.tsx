@@ -15,12 +15,10 @@ export default function DocsPage() {
     <PageSection padding="xl" className="min-h-[60vh]">
       <Empty
         icon={BookOpen}
-        title={t('docs.title', { default: 'Documentación' })}
-        description={t('docs.description', { 
-          default: 'Esta página contendrá la documentación completa de la aplicación, guías de uso, API reference y tutoriales. Próximamente estará disponible.' 
-        })}
+        title={t('docs.title')}
+        description={t('docs.description')}
         action={{
-          label: t('docs.cta', { default: 'Volver al Inicio' }),
+          label: t('docs.cta'),
           onClick: () => window.history.back()
         }}
       />

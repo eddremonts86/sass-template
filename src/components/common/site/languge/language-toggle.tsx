@@ -16,7 +16,7 @@ import {
   type Locale,
 } from '@/lib/i18n/config';
 import { useTranslations } from 'next-intl';
-import { useRouter, usePathname } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { useLocale } from 'next-intl';
 
 /**
@@ -27,7 +27,6 @@ export function LanguageToggle() {
   const t = useTranslations('language');
   const currentLocale = useLocale() as Locale;
   const { setLocale } = useAuthStore();
-  const router = useRouter();
   const pathname = usePathname();
 
   const handleLocaleChange = (newLocale: Locale) => {
@@ -42,7 +41,8 @@ export function LanguageToggle() {
     }
 
     const newPath = segments.join('/');
-    router.push(newPath);
+    // Force full page reload to update all translated content
+    window.location.href = newPath;
   };
 
   const currentFlag = localeFlags[currentLocale];
@@ -77,9 +77,9 @@ export function LanguageToggle() {
  * Cycles through available locales
  */
 export function SimpleLanguageToggle() {
+  const t = useTranslations('language');
   const currentLocale = useLocale() as Locale;
   const { setLocale } = useAuthStore();
-  const router = useRouter();
   const pathname = usePathname();
 
   const handleToggle = () => {
@@ -98,7 +98,8 @@ export function SimpleLanguageToggle() {
     }
 
     const newPath = segments.join('/');
-    router.push(newPath);
+    // Force full page reload to update all translated content
+    window.location.href = newPath;
   };
 
   const currentFlag = localeFlags[currentLocale];
@@ -111,7 +112,7 @@ export function SimpleLanguageToggle() {
       className="h-9 w-9 p-0"
     >
       <span className="text-base">{currentFlag}</span>
-      <span className="sr-only">Toggle language</span>
+      <span className="sr-only">{t('toggle')}</span>
     </Button>
   );
 }

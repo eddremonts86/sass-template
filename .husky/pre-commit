@@ -1,1 +1,17 @@
+#!/bin/sh
+
+echo "🔍 Verificando traducciones antes del commit..."
+
+# Verificar sincronización de traducciones
+npm run check:translations
+
+if [ $? -ne 0 ]; then
+  echo "❌ Error: Las traducciones no están sincronizadas"
+  echo "💡 Ejecuta 'npm run sync:translations' para ayuda con la sincronización"
+  exit 1
+fi
+
+echo "✅ Traducciones verificadas correctamente"
+
+# Ejecutar lint-staged para otros checks
 pnpm lint-staged

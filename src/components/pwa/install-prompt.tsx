@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { X, Download, Smartphone } from 'lucide-react';
 import { installPWA, isPWAInstallable, isPWAInstalled } from '@/lib/pwa';
+import { useTranslations } from 'next-intl';
 
 interface InstallPromptProps {
   onInstall?: () => void;
@@ -18,6 +19,7 @@ export function InstallPrompt({
 }: InstallPromptProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [isInstalling, setIsInstalling] = useState(false);
+  const t = useTranslations('pwa.install');
 
   useEffect(() => {
     // Check if PWA is already installed
@@ -89,10 +91,10 @@ export function InstallPrompt({
 
           <div className="min-w-0 flex-1">
             <h3 className="text-foreground text-sm font-semibold">
-              Install App
+              {t('title')}
             </h3>
             <p className="text-muted-foreground mt-1 text-xs">
-              Install this app on your device for a better experience
+              {t('description')}
             </p>
 
             <div className="mt-3 flex gap-2">
@@ -103,7 +105,7 @@ export function InstallPrompt({
                 className="flex-1"
               >
                 <Download className="mr-1 h-4 w-4" />
-                {isInstalling ? 'Installing...' : 'Install'}
+                {isInstalling ? t('installing') : t('button')}
               </Button>
 
               <Button
@@ -112,7 +114,7 @@ export function InstallPrompt({
                 onClick={handleDismiss}
                 disabled={isInstalling}
               >
-                Later
+                {t('later')}
               </Button>
             </div>
           </div>

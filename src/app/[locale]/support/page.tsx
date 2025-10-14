@@ -15,13 +15,10 @@ export default function SupportPage() {
     <PageSection padding="xl" className="min-h-[60vh]">
       <Empty
         icon={Headphones}
-        title={t('support.title', { default: 'Soporte Técnico' })}
-        description={t('support.description', {
-          default:
-            'Esta página contendrá opciones de soporte técnico, chat en vivo, sistema de tickets, base de conocimientos y formas de contactar con nuestro equipo de soporte. Próximamente estará disponible.',
-        })}
+        title={t('support.title')}
+        description={t('support.description')}
         action={{
-          label: t('support.cta', { default: 'Volver al Inicio' }),
+          label: t('support.cta'),
           onClick: () => window.history.back(),
         }}
       />

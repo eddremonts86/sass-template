@@ -70,7 +70,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-foreground text-sm transition-colors"
                 >
-                  Next.js
+                  {tFooter('resources.nextjs')}
                 </Link>
               </li>
               <li>
@@ -80,7 +80,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-foreground text-sm transition-colors"
                 >
-                  Shadcn/ui
+                  {tFooter('resources.shadcn')}
                 </Link>
               </li>
               <li>
@@ -90,7 +90,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-foreground text-sm transition-colors"
                 >
-                  Clerk
+                  {tFooter('resources.clerk')}
                 </Link>
               </li>
               <li>
@@ -100,7 +100,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-foreground text-sm transition-colors"
                 >
-                  Tailwind CSS
+                  {tFooter('resources.tailwind')}
                 </Link>
               </li>
             </ul>

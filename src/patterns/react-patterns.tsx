@@ -12,6 +12,7 @@ import React, {
   ReactNode,
   useCallback,
 } from 'react';
+import { useTranslations } from 'next-intl';
 
 // ============================================================================
 // 1. PROVIDER PATTERN
@@ -41,9 +42,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
 }
 
 export function useAppContext() {
+  const t = useTranslations('patterns.examples');
   const context = useContext(AppContext);
   if (!context) {
-    throw new Error('useAppContext must be used within AppProvider');
+    throw new Error(t('contextError'));
   }
   return context;
 }
@@ -56,13 +58,14 @@ export function useAppContext() {
  * Custom Hook - Encapsular lógica reutilizable
  */
 export function useLocalStorage<T>(key: string, initialValue: T) {
+  const t = useTranslations('patterns.examples');
   const [storedValue, setStoredValue] = useState<T>(() => {
     try {
       if (typeof window === 'undefined') return initialValue;
       const item = window.localStorage.getItem(key);
       return item ? JSON.parse(item) : initialValue;
     } catch (error) {
-      console.error(`Error reading localStorage key "${key}":`, error);
+      console.error(`${t('localStorageError')} "${key}":`, error);
       return initialValue;
     }
   });
@@ -76,7 +79,7 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
         window.localStorage.setItem(key, JSON.stringify(valueToStore));
       }
     } catch (error) {
-      console.error(`Error setting localStorage key "${key}":`, error);
+      console.error(`${t('setLocalStorageError')} "${key}":`, error);
     }
   };
 
@@ -191,9 +194,10 @@ export function withLoading<P extends object>(
 ) {
   return function WithLoadingComponent(props: P & { isLoading?: boolean }) {
     const { isLoading, ...restProps } = props;
+    const t = useTranslations('patterns.examples');
 
     if (isLoading) {
-      return loadingComponent || <div>Loading...</div>;
+      return loadingComponent || <div>{t('loading')}</div>;
     }
 
     return <Component {...(restProps as P)} />;
@@ -206,9 +210,10 @@ export function withLoading<P extends object>(
 export function withAuth<P extends object>(Component: React.ComponentType<P>) {
   return function WithAuthComponent(props: P) {
     const { user } = useAppContext();
+    const t = useTranslations('patterns.examples');
 
     if (!user) {
-      return <div>Please log in to access this content.</div>;
+      return <div>{t('auth.loginRequired')}</div>;
     }
 
     return <Component {...props} />;
@@ -233,6 +238,7 @@ interface FetchDataProps<T> {
  * Render Props Pattern - Compartir lógica mediante funciones
  */
 export function FetchData<T>({ url, children }: FetchDataProps<T>) {
+  const t = useTranslations('patterns.examples');
   const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -242,15 +248,15 @@ export function FetchData<T>({ url, children }: FetchDataProps<T>) {
       setLoading(true);
       setError(null);
       const response = await fetch(url);
-      if (!response.ok) throw new Error('Failed to fetch');
+      if (!response.ok) throw new Error(t('failedToFetch'));
       const result = await response.json();
       setData(result);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'An error occurred');
+      setError(err instanceof Error ? err.message : t('errorOccurred'));
     } finally {
       setLoading(false);
     }
-  }, [url]);
+  }, [url, t]);
 
   React.useEffect(() => {
     fetchData();
@@ -293,6 +299,7 @@ export function UserListPresentation({
  * Container Component - Maneja la lógica de negocio
  */
 export function UserListContainer() {
+  const t = useTranslations('patterns.examples');
   const [selectedUserId, setSelectedUserId] = useState<string | null>(null);
 
   // Simulación de datos - en una app real vendría de una API
@@ -304,16 +311,16 @@ export function UserListContainer() {
 
   const handleUserClick = (id: string) => {
     setSelectedUserId(id);
-    console.log('Usuario seleccionado:', id);
+    console.log(t('userSelected'), id);
   };
 
   return (
     <div>
-      <h2 className="mb-4 text-xl font-bold">Lista de Usuarios</h2>
+      <h2 className="mb-4 text-xl font-bold">{t('userList.title')}</h2>
       <UserListPresentation users={users} onUserClick={handleUserClick} />
       {selectedUserId && (
         <p className="mt-4 text-sm text-blue-600">
-          Usuario seleccionado: {selectedUserId}
+          {t('userList.selectedUser')}: {selectedUserId}
         </p>
       )}
     </div>
@@ -377,6 +384,7 @@ export function createButton(config: ButtonConfig) {
  * Ejemplo de uso de todos los patrones
  */
 export function PatternExamples() {
+  const t = useTranslations('patterns.examples');
   const { toggle, value: showCard } = useToggle(false);
   const [theme] = useLocalStorage('theme', 'light');
 
@@ -384,20 +392,20 @@ export function PatternExamples() {
   const PrimaryButton = createButton({
     variant: 'primary',
     size: 'md',
-    children: 'Click me!',
+    children: t('buttons.clickMe'),
     onClick: toggle,
   });
 
   const SecondaryButton = createButton({
     variant: 'secondary',
     size: 'sm',
-    children: 'Toggle Card',
+    children: t('buttons.toggleCard'),
     onClick: toggle,
   });
 
   return (
     <div className="space-y-6 p-6">
-      <h1 className="text-2xl font-bold">React Design Patterns Examples</h1>
+      <h1 className="text-2xl font-bold">{t('title')}</h1>
 
       {/* Factory Pattern */}
       <div className="space-x-2">
@@ -409,18 +417,20 @@ export function PatternExamples() {
       {showCard && (
         <Card variant="elevated">
           <Card.Header>
-            <Card.Title>Ejemplo de Card</Card.Title>
+            <Card.Title>{t('card.title')}</Card.Title>
           </Card.Header>
           <Card.Content>
-            <p>Este es un ejemplo del patrón Compound Component.</p>
-            <p>Tema actual: {theme}</p>
+            <p>{t('card.description')}</p>
+            <p>
+              {t('card.currentTheme')}: {theme}
+            </p>
           </Card.Content>
           <Card.Footer>
             <button
               onClick={toggle}
               className="text-sm text-blue-600 hover:text-blue-800"
             >
-              Cerrar
+              {t('buttons.close')}
             </button>
           </Card.Footer>
         </Card>
@@ -430,15 +440,23 @@ export function PatternExamples() {
       <FetchData<{ message: string }> url="/api/example">
         {({ data, loading, error, refetch }) => (
           <div className="rounded border p-4">
-            <h3 className="mb-2 font-semibold">Fetch Data Example</h3>
-            {loading && <p>Cargando...</p>}
-            {error && <p className="text-red-600">Error: {error}</p>}
-            {data && <p>Datos: {data.message}</p>}
+            <h3 className="mb-2 font-semibold">{t('fetchData.title')}</h3>
+            {loading && <p>{t('fetchData.loading')}</p>}
+            {error && (
+              <p className="text-red-600">
+                {t('fetchData.error')}: {error}
+              </p>
+            )}
+            {data && (
+              <p>
+                {t('fetchData.data')}: {data.message}
+              </p>
+            )}
             <button
               onClick={refetch}
               className="mt-2 rounded bg-blue-500 px-3 py-1 text-sm text-white"
             >
-              Refetch
+              {t('buttons.refetch')}
             </button>
           </div>
         )}

@@ -65,7 +65,7 @@ export default function DashboardPage() {
     {
       id: 1,
       title: t('dashboard.activities.newUserRegistration'),
-      description: t('dashboard.activities.newUserRegistrationDesc', {
+      description: t('dashboard.activities.newUserRegistrationDescription', {
         name: 'John Doe',
       }),
       time: t('dashboard.timeAgo.minutesAgo', { count: 2 }),
@@ -74,9 +74,9 @@ export default function DashboardPage() {
     {
       id: 2,
       title: t('dashboard.activities.paymentReceived'),
-      description: t('dashboard.activities.paymentReceivedDesc', {
+      description: t('dashboard.activities.paymentReceivedDescription', {
         amount: '$299.00',
-        type: 'Premium',
+        name: 'Premium Customer',
       }),
       time: t('dashboard.timeAgo.minutesAgo', { count: 5 }),
       type: 'payment',
@@ -84,7 +84,8 @@ export default function DashboardPage() {
     {
       id: 3,
       title: t('dashboard.activities.documentUploaded'),
-      description: t('dashboard.activities.documentUploadedDesc', {
+      description: t('dashboard.activities.documentUploadedDescription', {
+        name: 'Jane Smith',
         filename: 'Project proposal.pdf',
       }),
       time: t('dashboard.timeAgo.minutesAgo', { count: 10 }),
@@ -93,8 +94,10 @@ export default function DashboardPage() {
     {
       id: 4,
       title: t('dashboard.activities.systemUpdate'),
-      description: t('dashboard.activities.systemUpdateDesc'),
-      time: t('dashboard.timeAgo.hourAgo'),
+      description: t('dashboard.activities.systemUpdateDescription', {
+        version: '2.1.0',
+      }),
+      time: t('dashboard.timeAgo.hourAgo', { count: 1 }),
       type: 'system',
     },
   ];
@@ -102,25 +105,25 @@ export default function DashboardPage() {
   const quickActions = [
     {
       title: t('dashboard.quickActions.newUser'),
-      description: t('dashboard.quickActions.newUserDesc'),
+      description: t('dashboard.quickActions.newUserDescription'),
       icon: <Users className="h-5 w-5" />,
       href: '/dashboard/users/new',
     },
     {
       title: t('dashboard.quickActions.createDocument'),
-      description: t('dashboard.quickActions.createDocumentDesc'),
+      description: t('dashboard.quickActions.createDocumentDescription'),
       icon: <FileText className="h-5 w-5" />,
       href: '/dashboard/documents/new',
     },
     {
       title: t('dashboard.quickActions.sendMessage'),
-      description: t('dashboard.quickActions.sendMessageDesc'),
+      description: t('dashboard.quickActions.sendMessageDescription'),
       icon: <Mail className="h-5 w-5" />,
       href: '/dashboard/messages/new',
     },
     {
       title: t('dashboard.quickActions.settings'),
-      description: t('dashboard.quickActions.settingsDesc'),
+      description: t('dashboard.quickActions.settingsDescription'),
       icon: <Settings className="h-5 w-5" />,
       href: '/dashboard/settings',
     },
@@ -165,7 +168,7 @@ export default function DashboardPage() {
         {/* Recent Activity */}
         <Card>
           <CardHeader>
-            <CardTitle>{t('dashboard.recentActivity')}</CardTitle>
+            <CardTitle>{t('dashboard.recentActivity.title')}</CardTitle>
             <CardDescription>
               {t('dashboard.recentActivityDesc')}
             </CardDescription>

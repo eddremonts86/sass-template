@@ -15,13 +15,10 @@ export default function ApiDocsPage() {
     <PageSection padding="xl" className="min-h-[60vh]">
       <Empty
         icon={Code}
-        title={t('apiDocs.title', { default: 'Documentación API' })}
-        description={t('apiDocs.description', {
-          default:
-            'Esta página contendrá la documentación completa de la API, endpoints disponibles, ejemplos de uso, autenticación y guías para desarrolladores. Próximamente estará disponible.',
-        })}
+        title={t('apiDocs.title')}
+        description={t('apiDocs.description')}
         action={{
-          label: t('apiDocs.cta', { default: 'Volver al Inicio' }),
+          label: t('apiDocs.cta'),
           onClick: () => window.history.back(),
         }}
       />

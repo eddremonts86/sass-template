@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Wifi, WifiOff, AlertCircle } from 'lucide-react';
 import { getNetworkStatus, onNetworkChange } from '@/lib/pwa';
+import { useTranslations } from 'next-intl';
 
 interface NetworkStatusProps {
   showWhenOnline?: boolean;
@@ -13,6 +14,7 @@ export function NetworkStatus({
   showWhenOnline = false,
   className,
 }: NetworkStatusProps) {
+  const t = useTranslations('network');
   const [isOnline, setIsOnline] = useState(true);
   const [connectionType, setConnectionType] = useState<string>('');
 
@@ -49,13 +51,13 @@ export function NetworkStatus({
         <>
           <Wifi className="h-4 w-4 text-green-500" />
           <span className="text-green-700 dark:text-green-400">
-            Online {connectionType && `(${connectionType})`}
+            {t('online')} {connectionType && `(${connectionType})`}
           </span>
         </>
       ) : (
         <>
           <WifiOff className="h-4 w-4 text-red-500" />
-          <span className="text-red-700 dark:text-red-400">Offline</span>
+          <span className="text-red-700 dark:text-red-400">{t('offline')}</span>
         </>
       )}
     </div>
@@ -64,6 +66,7 @@ export function NetworkStatus({
 
 // Banner component for offline state
 export function OfflineBanner() {
+  const t = useTranslations('network');
   const [isOnline, setIsOnline] = useState(true);
 
   useEffect(() => {
@@ -84,9 +87,7 @@ export function OfflineBanner() {
       <div className="container mx-auto px-4 py-2">
         <div className="flex items-center gap-2 text-yellow-800 dark:text-yellow-200">
           <AlertCircle className="h-4 w-4" />
-          <span className="text-sm font-medium">
-            You&apos;re currently offline. Some features may be limited.
-          </span>
+          <span className="text-sm font-medium">{t('offlineBanner')}</span>
         </div>
       </div>
     </div>

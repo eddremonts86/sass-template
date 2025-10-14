@@ -18,6 +18,7 @@ interface DashboardSidebarProps {
  */
 export function DashboardSidebar({ className }: DashboardSidebarProps) {
   const t = useTranslations();
+  const tSidebar = useTranslations('sidebar');
   const pathname = usePathname();
   const { sidebarCollapsed, locale } = useAuthStore();
 
@@ -47,7 +48,9 @@ export function DashboardSidebar({ className }: DashboardSidebarProps) {
           <div className="bg-primary text-primary-foreground flex h-8 w-8 items-center justify-center rounded-lg">
             <span className="text-sm font-bold">T</span>
           </div>
-          {!sidebarCollapsed && <span className="font-semibold">Template</span>}
+          {!sidebarCollapsed && (
+            <span className="font-semibold">{tSidebar('brand.name')}</span>
+          )}
         </Link>
       </div>
 
