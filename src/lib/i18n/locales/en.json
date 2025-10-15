@@ -188,12 +188,12 @@
         "analytics": "Analytics",
         "reports": "Reports",
         "settings": "Settings",
-        "dashboard": "[DA: Dashboard]",
-        "users": "[DA: Brugere]",
-        "documents": "[DA: Dokumenter]",
-        "calendar": "[DA: Kalender]",
-        "messages": "[DA: Beskeder]",
-        "help": "[DA: Hjælp]"
+        "dashboard": "Dashboard",
+        "users": "Users",
+        "documents": "Documents",
+        "calendar": "Calendar",
+        "messages": "Messages",
+        "help": "Help"
       }
     },
     "nav": {
@@ -212,8 +212,8 @@
       "activeUsers": "Active Users",
       "revenue": "Revenue",
       "growth": "Growth",
-      "totalRevenue": "[DA: Samlet Omsætning]",
-      "conversionRate": "[DA: Konverteringsrate]"
+      "totalRevenue": "Total Revenue",
+      "conversionRate": "Conversion Rate"
     },
     "quickActions": {
       "title": "Quick Actions",
@@ -226,10 +226,10 @@
       "sendMessageDesc": "Send a message to users or team",
       "settings": "Settings",
       "settingsDesc": "Manage system and user settings",
-      "newUserDescription": "[DA: Tilføj en ny bruger til systemet]",
-      "createDocumentDescription": "[DA: Opret et nyt dokument eller fil]",
-      "sendMessageDescription": "[DA: Send en besked til brugere eller teams]",
-      "settingsDescription": "[DA: Konfigurer systemindstillinger]"
+      "newUserDescription": "Add a new user to the system",
+      "createDocumentDescription": "Create a new document or file",
+      "sendMessageDescription": "Send a message to users or team",
+      "settingsDescription": "Configure system settings"
     },
     "recentActivity": {
       "title": "Recent Activity",
@@ -248,15 +248,15 @@
         "systemUpdate": "System Update",
         "systemUpdateDesc": "System has been updated successfully"
       },
-      "description": "[DA: Se de seneste handlinger og opdateringer]",
-      "newUserRegistration": "[DA: Ny brugerregistrering]",
-      "newUserRegistrationDescription": "[DA: {name} tilmeldte sig systemet]",
-      "paymentReceived": "[DA: Betaling modtaget]",
-      "paymentReceivedDescription": "[DA: Modtog betaling på {amount} fra {name}]",
-      "documentUploaded": "[DA: Dokument uploadet]",
-      "documentUploadedDescription": "[DA: {name} uploadede {filename}]",
-      "systemUpdate": "[DA: Systemopdatering]",
-      "systemUpdateDescription": "[DA: System blev opdateret til version {version}]"
+      "description": "View the latest actions and updates",
+      "newUserRegistration": "New user registration",
+      "newUserRegistrationDescription": "{name} signed up",
+      "paymentReceived": "Payment received",
+      "paymentReceivedDescription": "Received payment of {amount} from {name}",
+      "documentUploaded": "Document uploaded",
+      "documentUploadedDescription": "{name} uploaded {filename}",
+      "systemUpdate": "System update",
+      "systemUpdateDescription": "System updated to version {version}"
     },
     "welcome": "Welcome",
     "recentActivityDesc": "Your latest activity and updates",
@@ -279,20 +279,69 @@
       "hourAgo": "1 hour ago"
     },
     "greeting": {
-      "morning": "[DA: God morgen]",
-      "afternoon": "[DA: God eftermiddag]",
-      "evening": "[DA: God aften]"
+      "morning": "Good morning",
+      "afternoon": "Good afternoon",
+      "evening": "Good evening"
     },
     "navigation": {
-      "dashboard": "[DA: Dashboard]",
-      "analytics": "[DA: Analyser]",
-      "reports": "[DA: Rapporter]",
-      "users": "[DA: Brugere]",
-      "documents": "[DA: Dokumenter]",
-      "calendar": "[DA: Kalender]",
-      "messages": "[DA: Beskeder]",
-      "settings": "[DA: Indstillinger]",
-      "help": "[DA: Hjælp]"
+      "dashboard": "Dashboard",
+      "analytics": "Analytics",
+      "reports": "Reports",
+      "users": "Users",
+      "documents": "Documents",
+      "calendar": "Calendar",
+      "messages": "Messages",
+      "settings": "Settings",
+      "help": "Help"
+    },
+    "analytics": {
+      "subtitle": "View your analytics and performance metrics",
+      "empty": {
+        "title": "No analytics data available",
+        "description": "Start using the application to see analytics data here"
+      }
+    },
+    "users": {
+      "subtitle": "Manage users and their permissions",
+      "empty": {
+        "title": "No users found",
+        "description": "Add users to your organization to get started"
+      }
+    },
+    "documents": {
+      "subtitle": "Organize and manage your documents",
+      "empty": {
+        "title": "No documents available",
+        "description": "Upload or create documents to organize your content"
+      }
+    },
+    "calendar": {
+      "subtitle": "Schedule and manage your events",
+      "empty": {
+        "title": "No events scheduled",
+        "description": "Create events to organize your schedule"
+      }
+    },
+    "messages": {
+      "subtitle": "View and manage your messages",
+      "empty": {
+        "title": "No messages",
+        "description": "Messages will appear here when you receive them"
+      }
+    },
+    "settings": {
+      "subtitle": "Configure your application preferences",
+      "empty": {
+        "title": "No settings configured",
+        "description": "Customize your application settings to get started"
+      }
+    },
+    "help": {
+      "subtitle": "Get help and support resources",
+      "empty": {
+        "title": "No help articles available",
+        "description": "Help documentation will be available soon"
+      }
     }
   },
   "theme": {
@@ -504,69 +553,7 @@
       "backToHome": "[ES: Volver al Inicio]"
     }
   },
-  "dashboard": {
-    "header": "Dashboard",
-    "searchPlaceholder": "Search...",
-    "nav": {
-      "overview": "Overview",
-      "analytics": "Analytics",
-      "users": "Users",
-      "documents": "Documents",
-      "calendar": "Calendar",
-      "messages": "Messages",
-      "settings": "Settings",
-      "help": "Help"
-    },
-    "analytics": {
-      "subtitle": "View your analytics and performance metrics",
-      "empty": {
-        "title": "No analytics data available",
-        "description": "Start using the application to see analytics data here"
-      }
-    },
-    "users": {
-      "subtitle": "Manage users and their permissions",
-      "empty": {
-        "title": "No users found",
-        "description": "Add users to your organization to get started"
-      }
-    },
-    "documents": {
-      "subtitle": "Organize and manage your documents",
-      "empty": {
-        "title": "No documents available",
-        "description": "Upload or create documents to organize your content"
-      }
-    },
-    "calendar": {
-      "subtitle": "Schedule and manage your events",
-      "empty": {
-        "title": "No events scheduled",
-        "description": "Create events to organize your schedule"
-      }
-    },
-    "messages": {
-      "subtitle": "View and manage your messages",
-      "empty": {
-        "title": "No messages",
-        "description": "Messages will appear here when you receive them"
-      }
-    },
-    "settings": {
-      "subtitle": "Configure your application preferences",
-      "empty": {
-        "title": "No settings configured",
-        "description": "Customize your application settings to get started"
-      }
-    },
-    "help": {
-      "subtitle": "Get help and support resources",
-      "empty": {
-        "title": "No help articles available",
-        "description": "Help documentation will be available soon"
-      }
-    }
-  },
+
   "patterns": {
     "examples": {
       "title": "React Design Patterns Examples",

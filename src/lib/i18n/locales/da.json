@@ -293,6 +293,55 @@
       "messages": "Beskeder",
       "settings": "Indstillinger",
       "help": "Hjælp"
+    },
+    "analytics": {
+      "subtitle": "Se dine analyser og præstationsmålinger",
+      "empty": {
+        "title": "Ingen analysedata tilgængelig",
+        "description": "Begynd at bruge applikationen for at se analysedata her"
+      }
+    },
+    "users": {
+      "subtitle": "Administrer brugere og deres tilladelser",
+      "empty": {
+        "title": "Ingen brugere fundet",
+        "description": "Tilføj brugere til din organisation for at komme i gang"
+      }
+    },
+    "documents": {
+      "subtitle": "Organiser og administrer dine dokumenter",
+      "empty": {
+        "title": "Ingen dokumenter tilgængelige",
+        "description": "Upload eller opret dokumenter for at organisere dit indhold"
+      }
+    },
+    "calendar": {
+      "subtitle": "Planlæg og administrer dine begivenheder",
+      "empty": {
+        "title": "Ingen begivenheder planlagt",
+        "description": "Opret begivenheder for at organisere din tidsplan"
+      }
+    },
+    "messages": {
+      "subtitle": "Se og administrer dine beskeder",
+      "empty": {
+        "title": "Ingen beskeder",
+        "description": "Beskeder vil vises her når du modtager dem"
+      }
+    },
+    "settings": {
+      "subtitle": "Konfigurer dine applikationsindstillinger",
+      "empty": {
+        "title": "Ingen indstillinger konfigureret",
+        "description": "Tilpas dine applikationsindstillinger for at komme i gang"
+      }
+    },
+    "help": {
+      "subtitle": "Få hjælp og supportressourcer",
+      "empty": {
+        "title": "Ingen hjælpeartikler tilgængelige",
+        "description": "Hjælpedokumentation vil være tilgængelig snart"
+      }
     }
   },
   "theme": {
@@ -538,69 +587,6 @@
       "localStorageError": "Fejl ved læsning af localStorage nøgle",
       "setLocalStorageError": "Fejl ved indstilling af localStorage nøgle",
       "userSelected": "Bruger valgt"
-    }
-  },
-  "dashboard": {
-    "header": "Dashboard",
-    "searchPlaceholder": "Søg...",
-    "nav": {
-      "overview": "Oversigt",
-      "analytics": "Analyser",
-      "users": "Brugere",
-      "documents": "Dokumenter",
-      "calendar": "Kalender",
-      "messages": "Beskeder",
-      "settings": "Indstillinger",
-      "help": "Hjælp"
-    },
-    "analytics": {
-      "subtitle": "Se dine analyser og præstationsmålinger",
-      "empty": {
-        "title": "Ingen analysedata tilgængelig",
-        "description": "Begynd at bruge applikationen for at se analysedata her"
-      }
-    },
-    "users": {
-      "subtitle": "Administrer brugere og deres tilladelser",
-      "empty": {
-        "title": "Ingen brugere fundet",
-        "description": "Tilføj brugere til din organisation for at komme i gang"
-      }
-    },
-    "documents": {
-      "subtitle": "Organiser og administrer dine dokumenter",
-      "empty": {
-        "title": "Ingen dokumenter tilgængelige",
-        "description": "Upload eller opret dokumenter for at organisere dit indhold"
-      }
-    },
-    "calendar": {
-      "subtitle": "Planlæg og administrer dine begivenheder",
-      "empty": {
-        "title": "Ingen begivenheder planlagt",
-        "description": "Opret begivenheder for at organisere din tidsplan"
-      }
-    },
-    "messages": {
-      "subtitle": "Se og administrer dine beskeder",
-      "empty": {
-        "title": "Ingen beskeder",
-        "description": "Beskeder vil vises her når du modtager dem"
-      }
-    },
-    "settings": {
-      "subtitle": "Konfigurer dine applikationsindstillinger",
-      "empty": {
-        "title": "Ingen indstillinger konfigureret",
-        "description": "Tilpas dine applikationsindstillinger for at komme i gang"
-      }
-    },
-    "help": {
-      "subtitle": "Få hjælp og supportressourcer",
-      "empty": {
-        "title": "Ingen hjælpeartikler tilgængelige",
-        "description": "Hjælpedokumentation vil være tilgængelig snart"
-      }
     }
   }
 }

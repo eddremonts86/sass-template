@@ -188,12 +188,12 @@
         "analytics": "Analíticas",
         "reports": "Reportes",
         "settings": "Configuración",
-        "dashboard": "[DA: Dashboard]",
-        "users": "[DA: Brugere]",
-        "documents": "[DA: Dokumenter]",
-        "calendar": "[DA: Kalender]",
-        "messages": "[DA: Beskeder]",
-        "help": "[DA: Hjælp]"
+        "dashboard": "Panel",
+        "users": "Usuarios",
+        "documents": "Documentos",
+        "calendar": "Calendario",
+        "messages": "Mensajes",
+        "help": "Ayuda"
       }
     },
     "nav": {
@@ -212,8 +212,8 @@
       "activeUsers": "Usuarios Activos",
       "revenue": "Ingresos",
       "growth": "Crecimiento",
-      "totalRevenue": "[DA: Samlet Omsætning]",
-      "conversionRate": "[DA: Konverteringsrate]"
+      "totalRevenue": "Ingresos Totales",
+      "conversionRate": "Tasa de Conversión"
     },
     "quickActions": {
       "title": "Acciones Rápidas",
@@ -226,10 +226,10 @@
       "sendMessageDesc": "Enviar un mensaje a usuarios o equipo",
       "settings": "Configuración",
       "settingsDesc": "Gestionar configuración del sistema y usuario",
-      "newUserDescription": "[DA: Tilføj en ny bruger til systemet]",
-      "createDocumentDescription": "[DA: Opret et nyt dokument eller fil]",
-      "sendMessageDescription": "[DA: Send en besked til brugere eller teams]",
-      "settingsDescription": "[DA: Konfigurer systemindstillinger]"
+      "newUserDescription": "Agregar un nuevo usuario al sistema",
+      "createDocumentDescription": "Crear un nuevo documento o archivo",
+      "sendMessageDescription": "Enviar un mensaje a usuarios o equipo",
+      "settingsDescription": "Configurar ajustes del sistema"
     },
     "recentActivity": {
       "title": "Actividad reciente",
@@ -248,15 +248,15 @@
         "systemUpdate": "Actualización del Sistema",
         "systemUpdateDesc": "El sistema se ha actualizado exitosamente"
       },
-      "description": "[DA: Se de seneste handlinger og opdateringer]",
-      "newUserRegistration": "[DA: Ny brugerregistrering]",
-      "newUserRegistrationDescription": "[DA: {name} tilmeldte sig systemet]",
-      "paymentReceived": "[DA: Betaling modtaget]",
-      "paymentReceivedDescription": "[DA: Modtog betaling på {amount} fra {name}]",
-      "documentUploaded": "[DA: Dokument uploadet]",
-      "documentUploadedDescription": "[DA: {name} uploadede {filename}]",
-      "systemUpdate": "[DA: Systemopdatering]",
-      "systemUpdateDescription": "[DA: System blev opdateret til version {version}]"
+      "description": "Ver las últimas acciones y actualizaciones",
+      "newUserRegistration": "Registro de Nuevo Usuario",
+      "newUserRegistrationDescription": "El usuario {name} se ha registrado",
+      "paymentReceived": "Pago Recibido",
+      "paymentReceivedDescription": "Recibido {amount} por plan {type}",
+      "documentUploaded": "Documento Subido",
+      "documentUploadedDescription": "El archivo {filename} fue subido",
+      "systemUpdate": "Actualización del Sistema",
+      "systemUpdateDescription": "El sistema se ha actualizado exitosamente"
     },
     "welcome": "Bienvenido",
     "recentActivityDesc": "Tu actividad más reciente y actualizaciones",
@@ -284,15 +284,64 @@
       "evening": "[DA: God aften]"
     },
     "navigation": {
-      "dashboard": "[DA: Dashboard]",
-      "analytics": "[DA: Analyser]",
-      "reports": "[DA: Rapporter]",
-      "users": "[DA: Brugere]",
-      "documents": "[DA: Dokumenter]",
-      "calendar": "[DA: Kalender]",
-      "messages": "[DA: Beskeder]",
-      "settings": "[DA: Indstillinger]",
-      "help": "[DA: Hjælp]"
+      "dashboard": "Panel",
+      "analytics": "Analíticas",
+      "reports": "Reportes",
+      "users": "Usuarios",
+      "documents": "Documentos",
+      "calendar": "Calendario",
+      "messages": "Mensajes",
+      "settings": "Configuración",
+      "help": "Ayuda"
+    },
+    "analytics": {
+      "subtitle": "Ve tus análisis y métricas de rendimiento",
+      "empty": {
+        "title": "No hay datos de análisis disponibles",
+        "description": "Comienza a usar la aplicación para ver datos de análisis aquí"
+      }
+    },
+    "users": {
+      "subtitle": "Gestiona usuarios y sus permisos",
+      "empty": {
+        "title": "No se encontraron usuarios",
+        "description": "Agrega usuarios a tu organización para comenzar"
+      }
+    },
+    "documents": {
+      "subtitle": "Organiza y gestiona tus documentos",
+      "empty": {
+        "title": "No hay documentos disponibles",
+        "description": "Sube o crea documentos para organizar tu contenido"
+      }
+    },
+    "calendar": {
+      "subtitle": "Programa y gestiona tus eventos",
+      "empty": {
+        "title": "No hay eventos programados",
+        "description": "Crea eventos para organizar tu agenda"
+      }
+    },
+    "messages": {
+      "subtitle": "Ve y gestiona tus mensajes",
+      "empty": {
+        "title": "No hay mensajes",
+        "description": "Los mensajes aparecerán aquí cuando los recibas"
+      }
+    },
+    "settings": {
+      "subtitle": "Configura las preferencias de tu aplicación",
+      "empty": {
+        "title": "No hay configuraciones establecidas",
+        "description": "Personaliza la configuración de tu aplicación para comenzar"
+      }
+    },
+    "help": {
+      "subtitle": "Obtén ayuda y recursos de soporte",
+      "empty": {
+        "title": "No hay artículos de ayuda disponibles",
+        "description": "La documentación de ayuda estará disponible pronto"
+      }
     }
   },
   "theme": {
@@ -528,69 +577,7 @@
       "userSelected": "Usuario seleccionado"
     }
   },
-  "dashboard": {
-    "header": "Panel de Control",
-    "searchPlaceholder": "Buscar...",
-    "nav": {
-      "overview": "Resumen",
-      "analytics": "Análisis",
-      "users": "Usuarios",
-      "documents": "Documentos",
-      "calendar": "Calendario",
-      "messages": "Mensajes",
-      "settings": "Configuración",
-      "help": "Ayuda"
-    },
-    "analytics": {
-      "subtitle": "Ve tus análisis y métricas de rendimiento",
-      "empty": {
-        "title": "No hay datos de análisis disponibles",
-        "description": "Comienza a usar la aplicación para ver datos de análisis aquí"
-      }
-    },
-    "users": {
-      "subtitle": "Gestiona usuarios y sus permisos",
-      "empty": {
-        "title": "No se encontraron usuarios",
-        "description": "Agrega usuarios a tu organización para comenzar"
-      }
-    },
-    "documents": {
-      "subtitle": "Organiza y gestiona tus documentos",
-      "empty": {
-        "title": "No hay documentos disponibles",
-        "description": "Sube o crea documentos para organizar tu contenido"
-      }
-    },
-    "calendar": {
-      "subtitle": "Programa y gestiona tus eventos",
-      "empty": {
-        "title": "No hay eventos programados",
-        "description": "Crea eventos para organizar tu horario"
-      }
-    },
-    "messages": {
-      "subtitle": "Ve y gestiona tus mensajes",
-      "empty": {
-        "title": "No hay mensajes",
-        "description": "Los mensajes aparecerán aquí cuando los recibas"
-      }
-    },
-    "settings": {
-      "subtitle": "Configura las preferencias de tu aplicación",
-      "empty": {
-        "title": "No hay configuraciones establecidas",
-        "description": "Personaliza la configuración de tu aplicación para comenzar"
-      }
-    },
-    "help": {
-      "subtitle": "Obtén ayuda y recursos de soporte",
-      "empty": {
-        "title": "No hay artículos de ayuda disponibles",
-        "description": "La documentación de ayuda estará disponible pronto"
-      }
-    }
-  },
+
   "language": {
     "select": "Seleccionar idioma",
     "english": "Inglés",
