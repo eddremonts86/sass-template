@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
-import { AIAssistantLayout } from '../layouts/ai-assistant-layout';
+import { AIAssistantLayout } from '@/components/layouts/ai-assistant-layout';
 import type {
   AppContext,
   ProximityGroup,
-} from '../layouts/ai-assistant-layout';
+} from '@/components/layouts/ai-assistant-layout';
 
 // Mock data
 const mockContext: AppContext = {

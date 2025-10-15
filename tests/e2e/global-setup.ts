@@ -30,7 +30,7 @@ async function globalSetup(_config: FullConfig) {
       await page.waitForURL('/dashboard', { timeout: 10000 });
 
       // Save authentication state
-      await page.context().storageState({ path: 'e2e/auth.json' });
+      await page.context().storageState({ path: 'tests/e2e/auth.json' });
       console.log('✅ Authentication state saved');
     }
   } catch (error) {

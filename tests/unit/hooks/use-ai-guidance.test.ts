@@ -1,6 +1,6 @@
 import { renderHook, act } from '@testing-library/react';
-import { useAIGuidance } from '../use-ai-guidance';
-import type { AIGuidanceConfig } from '../use-ai-guidance';
+import { useAIGuidance } from '@/hooks/use-ai-guidance';
+import type { AIGuidanceConfig } from '@/hooks/use-ai-guidance';
 
 // Mock performance.now for consistent timing tests
 const mockPerformanceNow = jest.fn();

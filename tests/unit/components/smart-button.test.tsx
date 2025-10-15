@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import { SmartButton } from '../ui/smart-button';
-import type { SmartButtonProps } from '../ui/smart-button';
+import { SmartButton } from '@/components/ui/smart-button';
+import type { SmartButtonProps } from '@/components/ui/smart-button';
 
 const mockOnClick = jest.fn();
 

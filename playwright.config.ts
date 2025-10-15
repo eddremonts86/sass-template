@@ -4,7 +4,10 @@ import { defineConfig, devices } from '@playwright/test';
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
-  testDir: './e2e',
+  testDir: './tests/e2e',
+  
+  // Folder for test artifacts (screenshots, videos, traces, etc.)
+  outputDir: './tests/reports/test-results',
   
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -20,9 +23,9 @@ export default defineConfig({
   
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
-    ['html'],
-    ['json', { outputFile: 'playwright-report/results.json' }],
-    ['junit', { outputFile: 'playwright-report/results.xml' }],
+    ['html', { outputFolder: './tests/reports/playwright-report' }],
+    ['json', { outputFile: './tests/reports/playwright-report/results.json' }],
+    ['junit', { outputFile: './tests/reports/playwright-report/results.xml' }],
   ],
   
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -87,8 +90,8 @@ export default defineConfig({
   },
   
   /* Global setup and teardown */
-  globalSetup: require.resolve('./e2e/global-setup.ts'),
-  globalTeardown: require.resolve('./e2e/global-teardown.ts'),
+  globalSetup: require.resolve('./tests/e2e/global-setup.ts'),
+  globalTeardown: require.resolve('./tests/e2e/global-teardown.ts'),
   
   /* Test timeout */
   timeout: 30 * 1000,

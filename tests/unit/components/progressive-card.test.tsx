@@ -1,6 +1,9 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { ProgressiveCard } from '../ui/progressive-card';
-import type { ProgressiveCardProps, Subtask } from '../ui/progressive-card';
+import { ProgressiveCard } from '@/components/ui/progressive-card';
+import type {
+  ProgressiveCardProps,
+  Subtask,
+} from '@/components/ui/progressive-card';
 
 // Mock data
 const mockSubTasks: Subtask[] = [

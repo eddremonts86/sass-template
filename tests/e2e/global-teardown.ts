@@ -13,8 +13,8 @@ async function globalTeardown(_config: FullConfig) {
 
   // Clean up authentication files
   try {
-    if (fs.existsSync('e2e/auth.json')) {
-      fs.unlinkSync('e2e/auth.json');
+    if (fs.existsSync('tests/e2e/auth.json')) {
+      fs.unlinkSync('tests/e2e/auth.json');
       console.log('🔐 Authentication state cleaned up');
     }
   } catch (error) {
