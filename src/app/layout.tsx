@@ -23,9 +23,9 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   // For root layout, we'll use a default locale for messages
   const messages = await getMessages({ locale: 'en' });
 
