@@ -61,6 +61,29 @@ export function Header() {
           <span className="sr-only">{tHeader('menu.toggle')}</span>
         </Button>
 
+        {/* Mobile right-side controls (visible without opening menu) */}
+        <div className="flex items-center space-x-2 md:hidden">
+          {isSignedIn ? (
+            <UserButton
+              data-testid="user-button"
+              appearance={{
+                elements: {
+                  avatarBox: 'h-8 w-8',
+                },
+              }}
+            />
+          ) : (
+            <Button variant="ghost" size="sm" asChild>
+              <Link
+                href={`/${locale || 'en'}/sign-in`}
+                data-testid="sign-in-button"
+              >
+                {tAuth('signIn')}
+              </Link>
+            </Button>
+          )}
+        </div>
+
         {/* Desktop Navigation */}
         <nav className="hidden md:flex md:flex-1 md:items-center md:justify-between">
           <div className="flex items-center space-x-6 text-sm font-medium">
@@ -92,6 +115,7 @@ export function Header() {
 
             {isSignedIn ? (
               <UserButton
+                data-testid="user-button"
                 appearance={{
                   elements: {
                     avatarBox: 'h-8 w-8',
@@ -101,7 +125,10 @@ export function Header() {
             ) : (
               <div className="flex items-center space-x-2">
                 <Button variant="ghost" size="sm" asChild>
-                  <Link href={`/${locale || 'en'}/sign-in`}>
+                  <Link
+                    href={`/${locale || 'en'}/sign-in`}
+                    data-testid="sign-in-button"
+                  >
                     {tAuth('signIn')}
                   </Link>
                 </Button>
@@ -150,6 +177,7 @@ export function Header() {
 
                   {isSignedIn ? (
                     <UserButton
+                      data-testid="user-button"
                       appearance={{
                         elements: {
                           avatarBox: 'h-8 w-8',
@@ -159,7 +187,10 @@ export function Header() {
                   ) : (
                     <div className="flex items-center space-x-2">
                       <Button variant="ghost" size="sm" asChild>
-                        <Link href={`/${locale || 'en'}/sign-in`}>
+                        <Link
+                          href={`/${locale || 'en'}/sign-in`}
+                          data-testid="sign-in-button"
+                        >
                           {tAuth('signIn')}
                         </Link>
                       </Button>

@@ -1,5 +1,9 @@
 import '@testing-library/jest-dom';
 import 'jest-axe/extend-expect';
+import React from 'react';
+// Ensure React act environment is enabled globally to prevent false-positive warnings
+// with React 19 and Testing Library when hooks update state synchronously.
+global.IS_REACT_ACT_ENVIRONMENT = true;
 
 // Mock Next.js router
 jest.mock('next/navigation', () => ({
@@ -109,4 +113,24 @@ afterAll(() => {
 // Clean up after each test
 afterEach(() => {
   jest.clearAllMocks();
+});
+
+// Mock next-intl to avoid ESM import issues in Jest
+jest.mock('next-intl', () => {
+  const messages = {
+    common: {
+      confirm: 'Confirmar',
+      cancel: 'Cancelar',
+    },
+  };
+  return {
+    useTranslations: ns => key => messages[ns || 'common']?.[key] ?? key,
+    useFormatter: () => ({
+      number: n => `${n}`,
+      dateTime: d => `${d}`,
+    }),
+    NextIntlClientProvider: ({ children }) =>
+      React.createElement(React.Fragment, null, children),
+    useLocale: () => 'en',
+  };
 });

@@ -38,12 +38,10 @@
     "responseTime": "Response Time",
     "completedTasks": "Completed Tasks",
     "overallProgress": "Overall Progress",
-    "progress": "Progress",
     "start": "Start",
     "complete": "Complete",
     "skip": "Skip",
     "confirm": "Confirm",
-    "cancel": "Cancel",
     "allTasksCompleted": "All tasks completed"
   },
   "navigation": {
@@ -270,9 +268,9 @@
       "documentUploadedDesc": "File {filename} was uploaded",
       "systemUpdate": "System Update",
       "systemUpdateDesc": "System has been updated successfully",
-      "paymentReceivedDescription": "[DA: Modtog betaling på {amount} fra {name}]",
-      "documentUploadedDescription": "[DA: {name} uploadede {filename}]",
-      "systemUpdateDescription": "[DA: System blev opdateret til version {version}]"
+      "paymentReceivedDescription": "Received payment of {amount} from {name}",
+      "documentUploadedDescription": "{name} uploaded {filename}",
+      "systemUpdateDescription": "System updated to version {version}"
     },
     "timeAgo": {
       "minutesAgo": "{count} minutes ago",
@@ -457,13 +455,13 @@
       "title": "Contact",
       "description": "Get in touch with us.",
       "backToHome": "Back to Home",
-      "subtitle": "[ES: Ponte en contacto con nosotros]"
+      "subtitle": "Get in touch with us"
     },
     "features": {
       "title": "Features",
       "description": "Discover all the powerful features we offer",
       "backToHome": "Back to Home",
-      "subtitle": "[ES: Descubre todas las características poderosas que ofrecemos]"
+      "subtitle": "Discover all the powerful features we offer"
     },
     "privacy": {
       "title": "Privacy Policy",
@@ -477,80 +475,80 @@
       "title": "Documentation",
       "description": "This page will contain the complete application documentation, usage guides, API reference and tutorials. Coming soon.",
       "cta": "Back to Home",
-      "backToHome": "[ES: Volver al Inicio]"
+      "backToHome": "Back to Home"
     },
     "support": {
       "title": "Technical Support",
       "description": "This page will contain technical support options, live chat, ticket system, knowledge base and ways to contact our support team. Coming soon.",
       "cta": "Back to Home",
-      "backToHome": "[ES: Volver al Inicio]"
+      "backToHome": "Back to Home"
     },
     "apiDocs": {
       "title": "API Documentation",
       "description": "This page will contain the complete API documentation, available endpoints, usage examples, authentication and developer guides. Coming soon.",
       "cta": "Back to Home",
-      "backToHome": "[ES: Volver al Inicio]"
+      "backToHome": "Back to Home"
     },
     "pricing": {
-      "title": "[ES: Precios]",
-      "subtitle": "[ES: Elige el plan perfecto para tus necesidades]",
-      "monthly": "[ES: Mensual]",
-      "yearly": "[ES: Anual]",
-      "save": "[ES: Ahorra]",
-      "mostPopular": "[ES: Más Popular]",
-      "getStarted": "[ES: Comenzar]",
-      "contactSales": "[ES: Contactar Ventas]",
-      "features": "[ES: Características]",
-      "unlimited": "[ES: Ilimitado]",
-      "support": "[ES: Soporte]",
-      "analytics": "[ES: Análisis]",
-      "customization": "[ES: Personalización]",
-      "integration": "[ES: Integración]",
-      "security": "[ES: Seguridad]",
-      "backup": "[ES: Respaldo]",
-      "api": "[ES: Acceso API]",
-      "sla": "[ES: SLA 99.9%]",
-      "priority": "[ES: Soporte Prioritario]",
-      "dedicated": "[ES: Gerente Dedicado]",
-      "onboarding": "[ES: Incorporación Personalizada]",
-      "training": "[ES: Entrenamiento]",
-      "compliance": "[ES: Cumplimiento]",
-      "audit": "[ES: Registros de Auditoría]"
+      "title": "Pricing",
+      "subtitle": "Choose the perfect plan for your needs",
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "save": "Save",
+      "mostPopular": "Most Popular",
+      "getStarted": "Get Started",
+      "contactSales": "Contact Sales",
+      "features": "Features",
+      "unlimited": "Unlimited",
+      "support": "Support",
+      "analytics": "Analytics",
+      "customization": "Customization",
+      "integration": "Integration",
+      "security": "Security",
+      "backup": "Backup",
+      "api": "API Access",
+      "sla": "SLA 99.9%",
+      "priority": "Priority Support",
+      "dedicated": "Dedicated Manager",
+      "onboarding": "Custom Onboarding",
+      "training": "Training",
+      "compliance": "Compliance",
+      "audit": "Audit Logs"
     },
     "analytics": {
-      "title": "[ES: Analíticas]",
-      "description": "[ES: Visualiza métricas y análisis detallados. Esta sección está en desarrollo y pronto mostrará dashboards interactivos.]",
-      "backToHome": "[ES: Volver al Inicio]"
+      "title": "Analytics",
+      "description": "View detailed metrics and analytics. This section is under development and will soon show interactive dashboards.",
+      "backToHome": "Back to Home"
     },
     "users": {
-      "title": "[ES: Gestión de Usuarios]",
-      "description": "[ES: Administra usuarios y permisos. Esta sección está en desarrollo y pronto incluirá herramientas completas de gestión.]",
-      "backToHome": "[ES: Volver al Inicio]"
+      "title": "User Management",
+      "description": "Manage users and permissions. This section is under development and will soon include complete administration tools.",
+      "backToHome": "Back to Home"
     },
     "documents": {
-      "title": "[ES: Gestión de Documentos]",
-      "description": "[ES: Organiza y gestiona documentos. Esta sección está en desarrollo y pronto permitirá subir, organizar y compartir archivos.]",
-      "backToHome": "[ES: Volver al Inicio]"
+      "title": "Document Management",
+      "description": "Organize and manage documents. This section is under development and will soon allow uploading, organizing and sharing files.",
+      "backToHome": "Back to Home"
     },
     "calendar": {
-      "title": "[ES: Calendario de Eventos]",
-      "description": "[ES: Gestiona eventos y citas. Esta sección está en desarrollo y pronto incluirá un calendario interactivo completo.]",
-      "backToHome": "[ES: Volver al Inicio]"
+      "title": "Event Calendar",
+      "description": "Manage events and appointments. This section is under development and will soon include a full interactive calendar.",
+      "backToHome": "Back to Home"
     },
     "messages": {
-      "title": "[ES: Centro de Mensajes]",
-      "description": "[ES: Gestiona comunicaciones y mensajes. Esta sección está en desarrollo y pronto incluirá un sistema de mensajería completo.]",
-      "backToHome": "[ES: Volver al Inicio]"
+      "title": "Message Center",
+      "description": "Manage communications and messages. This section is under development and will soon include a full messaging system.",
+      "backToHome": "Back to Home"
     },
     "settings": {
-      "title": "[ES: Configuración]",
-      "description": "[ES: Personaliza tu experiencia. Esta sección está en desarrollo y pronto incluirá opciones completas de configuración.]",
-      "backToHome": "[ES: Volver al Inicio]"
+      "title": "Settings",
+      "description": "Customize your experience. This section is under development and will soon include complete configuration options.",
+      "backToHome": "Back to Home"
     },
     "help": {
-      "title": "[ES: Centro de Ayuda]",
-      "description": "[ES: Encuentra respuestas y recursos de ayuda. Esta sección está en desarrollo y pronto incluirá una base de conocimientos completa.]",
-      "backToHome": "[ES: Volver al Inicio]"
+      "title": "Help Center",
+      "description": "Find answers and help resources. This section is under development and will soon include a complete knowledge base.",
+      "backToHome": "Back to Home"
     }
   },
 

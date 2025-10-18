@@ -38,12 +38,10 @@
     "responseTime": "Tiempo de respuesta",
     "completedTasks": "Tareas completadas",
     "overallProgress": "Progreso General",
-    "progress": "Progreso",
     "start": "Iniciar",
     "complete": "Completar",
     "skip": "Saltar",
     "confirm": "Confirmar",
-    "cancel": "Cancelar",
     "allTasksCompleted": "Todas las tareas completadas"
   },
   "navigation": {
@@ -270,18 +268,18 @@
       "documentUploadedDesc": "El archivo {filename} fue subido",
       "systemUpdate": "Actualización del Sistema",
       "systemUpdateDesc": "El sistema se ha actualizado exitosamente",
-      "paymentReceivedDescription": "[DA: Modtog betaling på {amount} fra {name}]",
-      "documentUploadedDescription": "[DA: {name} uploadede {filename}]",
-      "systemUpdateDescription": "[DA: System blev opdateret til version {version}]"
+      "paymentReceivedDescription": "Pago recibido de {name} por {amount}",
+      "documentUploadedDescription": "{name} subió {filename}",
+      "systemUpdateDescription": "El sistema se actualizó a la versión {version}"
     },
     "timeAgo": {
       "minutesAgo": "hace {count} minutos",
       "hourAgo": "hace 1 hora"
     },
     "greeting": {
-      "morning": "[DA: God morgen]",
-      "afternoon": "[DA: God eftermiddag]",
-      "evening": "[DA: God aften]"
+      "morning": "Buenos días",
+      "afternoon": "Buenas tardes",
+      "evening": "Buenas noches"
     },
     "navigation": {
       "dashboard": "Panel",

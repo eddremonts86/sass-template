@@ -26,7 +26,6 @@
     "signup": "Tilmeld",
     "project": "Projekt",
     "currentStatus": "Nuværende Status",
-    "progress": "Fremskridt",
     "recentActivity": "Seneste Aktivitet",
     "smartLayoutApp": "Smart Layout App",
     "react": "React",
@@ -43,7 +42,6 @@
     "complete": "Fuldfør",
     "skip": "Spring Over",
     "confirm": "Bekræft",
-    "cancel": "Annuller",
     "allTasksCompleted": "Alle opgaver fuldført"
   },
   "navigation": {
@@ -444,14 +442,14 @@
     "contact": {
       "title": "Kontakt",
       "description": "Kom i kontakt med os.",
-      "backToHome": "Tilbage til hjem",
-      "subtitle": "[ES: Ponte en contacto con nosotros]"
+      "backToHome": "Tilbage til Hjem",
+      "subtitle": "Kom i kontakt med os"
     },
     "features": {
       "title": "Funktioner",
       "description": "Opdag alle de kraftfulde funktioner vi tilbyder",
-      "backToHome": "Tilbage til hjem",
-      "subtitle": "[ES: Descubre todas las características poderosas que ofrecemos]"
+      "backToHome": "Tilbage til Hjem",
+      "subtitle": "Opdag alle de kraftfulde funktioner vi tilbyder"
     },
     "privacy": {
       "title": "Privatlivspolitik",
@@ -464,81 +462,81 @@
     "docs": {
       "title": "Dokumentation",
       "description": "Denne side vil indeholde den komplette applikationsdokumentation, brugsguider, API-reference og tutorials. Kommer snart.",
-      "cta": "Tilbage til hjem",
-      "backToHome": "[ES: Volver al Inicio]"
+      "cta": "Tilbage til Hjem",
+      "backToHome": "Tilbage til Hjem"
     },
     "support": {
       "title": "Teknisk Support",
       "description": "Denne side vil indeholde tekniske supportmuligheder, live chat, ticket-system, vidensbase og måder at kontakte vores supportteam på. Kommer snart.",
-      "cta": "Tilbage til hjem",
-      "backToHome": "[ES: Volver al Inicio]"
+      "cta": "Tilbage til Hjem",
+      "backToHome": "Tilbage til Hjem"
     },
     "apiDocs": {
       "title": "API Dokumentation",
       "description": "Denne side vil indeholde den komplette API-dokumentation, tilgængelige endpoints, brugseksempler, autentificering og udviklerguider. Kommer snart.",
-      "cta": "Tilbage til hjem",
-      "backToHome": "[ES: Volver al Inicio]"
+      "cta": "Tilbage til Hjem",
+      "backToHome": "Tilbage til Hjem"
     },
     "pricing": {
-      "title": "[ES: Precios]",
-      "subtitle": "[ES: Elige el plan perfecto para tus necesidades]",
-      "monthly": "[ES: Mensual]",
-      "yearly": "[ES: Anual]",
-      "save": "[ES: Ahorra]",
-      "mostPopular": "[ES: Más Popular]",
-      "getStarted": "[ES: Comenzar]",
-      "contactSales": "[ES: Contactar Ventas]",
-      "features": "[ES: Características]",
-      "unlimited": "[ES: Ilimitado]",
-      "support": "[ES: Soporte]",
-      "analytics": "[ES: Análisis]",
-      "customization": "[ES: Personalización]",
-      "integration": "[ES: Integración]",
-      "security": "[ES: Seguridad]",
-      "backup": "[ES: Respaldo]",
-      "api": "[ES: Acceso API]",
-      "sla": "[ES: SLA 99.9%]",
-      "priority": "[ES: Soporte Prioritario]",
-      "dedicated": "[ES: Gerente Dedicado]",
-      "onboarding": "[ES: Incorporación Personalizada]",
-      "training": "[ES: Entrenamiento]",
-      "compliance": "[ES: Cumplimiento]",
-      "audit": "[ES: Registros de Auditoría]"
+      "title": "Priser",
+      "subtitle": "Vælg den perfekte plan til dine behov",
+      "monthly": "Månedligt",
+      "yearly": "Årligt",
+      "save": "Spar",
+      "mostPopular": "Mest Populær",
+      "getStarted": "Kom i gang",
+      "contactSales": "Kontakt Salg",
+      "features": "Funktioner",
+      "unlimited": "Ubegrænset",
+      "support": "Support",
+      "analytics": "Analyser",
+      "customization": "Tilpasning",
+      "integration": "Integration",
+      "security": "Sikkerhed",
+      "backup": "Backup",
+      "api": "API Adgang",
+      "sla": "SLA 99.9%",
+      "priority": "Prioriteret Support",
+      "dedicated": "Dedikeret Manager",
+      "onboarding": "Skræddersyet Onboarding",
+      "training": "Træning",
+      "compliance": "Compliance",
+      "audit": "Revisionslog"
     },
     "analytics": {
-      "title": "[ES: Analíticas]",
-      "description": "[ES: Visualiza métricas y análisis detallados. Esta sección está en desarrollo y pronto mostrará dashboards interactivos.]",
-      "backToHome": "[ES: Volver al Inicio]"
+      "title": "Analyser",
+      "description": "Se detaljerede metrics og analyser. Denne sektion er under udvikling og vil snart vise interaktive dashboards.",
+      "backToHome": "Tilbage til Hjem"
     },
     "users": {
-      "title": "[ES: Gestión de Usuarios]",
-      "description": "[ES: Administra usuarios y permisos. Esta sección está en desarrollo y pronto incluirá herramientas completas de gestión.]",
-      "backToHome": "[ES: Volver al Inicio]"
+      "title": "Brugeradministration",
+      "description": "Administrer brugere og tilladelser. Denne sektion er under udvikling og vil snart inkludere komplette administrationsværktøjer.",
+      "backToHome": "Tilbage til Hjem"
     },
     "documents": {
-      "title": "[ES: Gestión de Documentos]",
-      "description": "[ES: Organiza y gestiona documentos. Esta sección está en desarrollo y pronto permitirá subir, organizar y compartir archivos.]",
-      "backToHome": "[ES: Volver al Inicio]"
+      "title": "Dokumentadministration",
+      "description": "Organiser og administrer dokumenter. Denne sektion er under udvikling og vil snart tillade upload, organisering og deling af filer.",
+      "backToHome": "Tilbage til Hjem"
     },
     "calendar": {
-      "title": "[ES: Calendario de Eventos]",
-      "description": "[ES: Gestiona eventos y citas. Esta sección está en desarrollo y pronto incluirá un calendario interactivo completo.]",
-      "backToHome": "[ES: Volver al Inicio]"
+      "title": "Begivenhedskalender",
+      "description": "Administrer begivenheder og aftaler. Denne sektion er under udvikling og vil snart inkludere en fuld interaktiv kalender.",
+      "backToHome": "Tilbage til Hjem"
     },
     "messages": {
-      "title": "[ES: Centro de Mensajes]",
-      "description": "[ES: Gestiona comunicaciones y mensajes. Esta sección está en desarrollo y pronto incluirá un sistema de mensajería completo.]",
-      "backToHome": "[ES: Volver al Inicio]"
+      "title": "Beskedcenter",
+      "description": "Administrer kommunikation og beskeder. Denne sektion er under udvikling og vil snart inkludere et komplet beskedsystem.",
+      "backToHome": "Tilbage til Hjem"
     },
     "settings": {
-      "title": "[ES: Configuración]",
-      "description": "[ES: Personaliza tu experiencia. Esta sección está en desarrollo y pronto incluirá opciones completas de configuración.]",
-      "backToHome": "[ES: Volver al Inicio]"
+      "title": "Indstillinger",
+      "description": "Tilpas din oplevelse. Denne sektion er under udvikling og vil snart inkludere komplette konfigurationsmuligheder.",
+      "backToHome": "Tilbage til Hjem"
     },
     "help": {
-      "title": "[ES: Centro de Ayuda]",
-      "description": "[ES: Encuentra respuestas y recursos de ayuda. Esta sección está en desarrollo y pronto incluirá una base de conocimientos completa.]",
-      "backToHome": "[ES: Volver al Inicio]"
+      "title": "Hjælpecenter",
+      "description": "Find svar og hjælperessourcer. Denne sektion er under udvikling og vil snart inkludere en komplet vidensbase.",
+      "backToHome": "Tilbage til Hjem"
     }
   },
   "language": {

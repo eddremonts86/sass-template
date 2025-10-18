@@ -110,9 +110,8 @@ export const FEATURES = {
     translationKeys: {
       title: 'hero.title',
       subtitle: 'hero.subtitle',
-      description: 'hero.description',
-      primaryCta: 'hero.primaryCta',
-      secondaryCta: 'hero.secondaryCta',
+      cta: 'hero.cta',
+      learnMore: 'hero.learnMore',
     },
   },
 
@@ -186,16 +185,10 @@ export const FEATURES = {
   cta: {
     primary: {
       translationKeys: {
-        title: 'cta.primary.title',
-        description: 'cta.primary.description',
-        button: 'cta.primary.button',
-      },
-    },
-    secondary: {
-      translationKeys: {
-        title: 'cta.secondary.title',
-        description: 'cta.secondary.description',
-        button: 'cta.secondary.button',
+        title: 'cta.title',
+        subtitle: 'cta.subtitle',
+        signup: 'cta.signup',
+        demo: 'cta.demo',
       },
     },
   },

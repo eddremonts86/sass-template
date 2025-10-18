@@ -57,6 +57,11 @@ const customJestConfig = {
   transform: {
     '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }],
   },
+
+  // Ensure ESM packages like next-intl are transpiled
+  transformIgnorePatterns: [
+    '/node_modules/(?!(next-intl|use-intl)/)'
+  ],
   
   // Module file extensions
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
