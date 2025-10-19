@@ -16,7 +16,9 @@ interface DashboardSidebarProps {
 /**
  * Dashboard sidebar component with navigation
  */
-export function DashboardSidebar({ className }: DashboardSidebarProps) {
+export function DashboardSidebar({
+  className,
+}: Readonly<DashboardSidebarProps>) {
   const t = useTranslations();
   const tSidebar = useTranslations('sidebar');
   const pathname = usePathname();
