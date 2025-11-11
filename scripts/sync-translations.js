@@ -282,4 +282,4 @@ Ejemplos:
   process.exit(success ? 0 : 1);
 }
 
-export { syncTranslations, cleanBackups };
+export { cleanBackups, syncTranslations };
