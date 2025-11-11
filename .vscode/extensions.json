@@ -113,8 +113,6 @@
     // Indent Rainbow - Colorea indentación
     "oderwat.indent-rainbow",
 
-    // Bracket Pair Colorizer - Colorea brackets (built-in en VS Code 1.60+)
-    "CoenraadS.bracket-pair-colorizer-2",
 
     // Color Highlight - Resalta colores en CSS/código
     "naumovs.color-highlight",
