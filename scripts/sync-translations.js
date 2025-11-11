@@ -9,13 +9,13 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const locales = ['en', 'es', 'da'];
-const localeDir = path.join(__dirname, '../src/lib/i18n/locales');
+const localeDir = path.join(__dirname, '../apps/frontend/src/lib/i18n/locales');
 
 /**
- * Crea una estructura de objeto anidado a partir de una clave con puntos
- * @param {string} key - Clave con puntos (ej: "pages.about.title")
- * @param {string} value - Valor a asignar
- * @returns {Object} Objeto anidado
+ * Creates a nested object structure from a dotted key
+ * @param {string} key - Dotted key (e.g., "pages.about.title")
+ * @param {string} value - Value to assign
+ * @returns {Object} Nested object
  */
 function createNestedObject(key, value) {
   const keys = key.split('.');
@@ -32,10 +32,10 @@ function createNestedObject(key, value) {
 }
 
 /**
- * Fusiona dos objetos de forma profunda
- * @param {Object} target - Objeto destino
- * @param {Object} source - Objeto fuente
- * @returns {Object} Objeto fusionado
+ * Deeply merges two objects
+ * @param {Object} target - Target object
+ * @param {Object} source - Source object
+ * @returns {Object} Merged object
  */
 function deepMerge(target, source) {
   const result = { ...target };
@@ -56,10 +56,10 @@ function deepMerge(target, source) {
 }
 
 /**
- * Obtiene el valor de una clave anidada en un objeto
- * @param {Object} obj - Objeto donde buscar
- * @param {string} key - Clave con puntos
- * @returns {string|undefined} Valor encontrado o undefined
+ * Gets the value of a nested key in an object
+ * @param {Object} obj - Object to search in
+ * @param {string} key - Dotted key
+ * @returns {string|undefined} Found value or undefined
  */
 function getNestedValue(obj, key) {
   const keys = key.split('.');
@@ -77,9 +77,9 @@ function getNestedValue(obj, key) {
 }
 
 /**
- * Sincroniza las traducciones agregando claves faltantes
- * @param {boolean} dryRun - Si es true, solo muestra lo que haría sin modificar archivos
- * @returns {boolean} true si se realizaron cambios o no hay problemas
+ * Synchronizes translations by adding missing keys
+ * @param {boolean} dryRun - If true, only shows what it would do without modifying files
+ * @returns {boolean} true if changes were made or no issues exist
  */
 function syncTranslations(dryRun = false) {
   console.log('🔄 Iniciando sincronización de traducciones...\n');
@@ -92,7 +92,7 @@ function syncTranslations(dryRun = false) {
   const allKeys = new Set();
   let hasErrors = false;
 
-  // Cargar todas las traducciones
+  // Load all translations
   for (const locale of locales) {
     const filePath = path.join(localeDir, `${locale}.json`);
     if (!fs.existsSync(filePath)) {
@@ -120,7 +120,7 @@ function syncTranslations(dryRun = false) {
 
   console.log(`\n📊 Total de claves únicas: ${allKeys.size}`);
 
-  // Encontrar claves faltantes y preparar actualizaciones
+  // Find missing keys and prepare updates
   const updates = {};
   let totalMissingKeys = 0;
 
@@ -137,7 +137,7 @@ function syncTranslations(dryRun = false) {
       for (const missingKey of missingKeys) {
         console.log(`   + ${missingKey}`);
 
-        // Intentar encontrar el valor en otros idiomas como referencia
+        // Try to find the value in other languages as reference
         let referenceValue = `[TODO: ${missingKey}]`;
         for (const otherLocale of locales) {
           if (otherLocale !== locale) {
@@ -149,7 +149,7 @@ function syncTranslations(dryRun = false) {
           }
         }
 
-        // Crear objeto anidado y fusionarlo
+        // Create nested object and merge it
         const nestedObj = createNestedObject(missingKey, referenceValue);
         updates[locale] = deepMerge(updates[locale], nestedObj);
       }
@@ -176,7 +176,7 @@ function syncTranslations(dryRun = false) {
     return true;
   }
 
-  // Aplicar cambios
+  // Apply changes
   console.log('\n💾 Aplicando cambios...');
 
   for (const locale of Object.keys(updates)) {
@@ -184,11 +184,11 @@ function syncTranslations(dryRun = false) {
     const backupPath = `${filePath}.backup.${Date.now()}`;
 
     try {
-      // Crear backup
+      // Create backup
       fs.copyFileSync(filePath, backupPath);
       console.log(`📋 Backup creado: ${path.basename(backupPath)}`);
 
-      // Escribir archivo actualizado
+      // Write updated file
       const updatedContent = JSON.stringify(updates[locale], null, 2) + '\n';
       fs.writeFileSync(filePath, updatedContent, 'utf8');
       console.log(`✅ Actualizado: ${locale}.json`);
@@ -218,7 +218,7 @@ function syncTranslations(dryRun = false) {
 }
 
 /**
- * Limpia archivos de backup antiguos
+ * Cleans up old backup files
  */
 function cleanBackups() {
   console.log('🧹 Limpiando archivos de backup...');
@@ -246,7 +246,7 @@ function cleanBackups() {
   );
 }
 
-// Manejo de argumentos de línea de comandos
+// Handle command line arguments
 if (import.meta.url === `file://${process.argv[1]}`) {
   const args = process.argv.slice(2);
   const dryRun = args.includes('--dry-run') || args.includes('-d');

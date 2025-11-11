@@ -36,62 +36,74 @@ const eslintConfig = [
   {
     ignores: [
       // Dependencies and cache
-      "node_modules/**",
-      ".pnp/**",
-      ".yarn/**",
+      "**/node_modules/**",
+      "**/.pnp/**",
+      "**/.yarn/**",
 
-      // Build and output
+      // Frontend build outputs
       ".next/**",
-      "out/**",
-      "build/**",
-      "dist/**",
-      "coverage/**",
+      "apps/frontend/.next/**",
+      "apps/frontend/out/**",
+      "apps/frontend/build/**",
+      "**/public/sw.js",
 
-      // Documentation and tools
-      "docs/**",
+      // Backend build outputs
+      "apps/backend/dist/**",
+      "apps/backend/build/**",
+      "apps/backend/.strapi/**",
+      "apps/backend/public/uploads/**",
+      "**/apps/backend/types/generated/**",
+
+      // Shared build outputs
+      "**/out/**",
+      "**/build/**",
+      "**/dist/**",
+      "**/coverage/**",
+      "storybook-static/**",
+      "**/storybook-static/**",
+
+      // Documentation
+      "apps/shared/docs/.vitepress/**",
+      "docs/api/**",
+      "**/docs/api/**",
+
+      // Git hooks and tools
       ".husky/**",
-      ".vscode/**",
-      ".clerk/**",
       "--version/**",
 
-      // Static assets
-      "public/**",
+      // IDE and config
+      "**/.vscode/**",
+      "**/.idea/**",
+      "**/.clerk/**",
 
-      // Generated Storybook
-      "storybook-static/**",
-
-      // Empty project folders
-      "src/styles/**",
-      "src/types/**",
-      "src/forms/**",
-      "src/tables/**",
-      "src/utils/**",
-
-      // Config and system files
-      "next-env.d.ts",
-      "*.config.js",
-      "*.config.mjs",
-      "*.config.ts",
-      "tailwind.config.*",
-      "postcss.config.*",
-      "jsdoc.config.*",
-      "*.tsbuildinfo",
-      ".DS_Store",
-      "*.log",
-      "*.env*",
-      ".prettierrc*",
-      ".prettierignore",
+      // Generated and config files
+      "**/next-env.d.ts",
+      "**/*.config.js",
+      "**/*.config.mjs",
+      "**/*.config.ts",
+      "**/tailwind.config.*",
+      "**/postcss.config.*",
+      "**/jsdoc.config.*",
+      "**/*.tsbuildinfo",
+      "**/.DS_Store",
+      "**/*.log",
+      "**/*.env*",
+      "**/.prettierrc*",
+      "**/.prettierignore",
 
       // Lock files and temporary
-      "pnpm-lock.yaml",
-      "yarn.lock",
-      "package-lock.json",
-      "tmp/**",
-      "temp/**",
+      "**/pnpm-lock.yaml",
+      "**/yarn.lock",
+      "**/package-lock.json",
+      "**/tmp/**",
+      "**/temp/**",
+
+      // Test reports
+      "tests/reports/**",
 
       // Project-specific files
-      "components.json",
-      ".trae-instructions.md",
+      "**/components.json",
+      "**/.trae-instructions.md",
     ],
   },
 ];

@@ -1,0 +1,69 @@
+{
+  "attributes": {
+    "bio": {
+      "description": "User biography",
+      "type": "text"
+    },
+    "clerkId": {
+      "description": "Clerk user ID",
+      "required": true,
+      "type": "string",
+      "unique": true
+    },
+    "email": {
+      "description": "User email address",
+      "required": true,
+      "type": "email",
+      "unique": true
+    },
+    "firstName": {
+      "description": "User first name",
+      "type": "string"
+    },
+    "imageUrl": {
+      "description": "Profile image URL",
+      "type": "string"
+    },
+    "isActive": {
+      "default": true,
+      "description": "Whether the user account is active",
+      "type": "boolean"
+    },
+    "lastName": {
+      "description": "User last name",
+      "type": "string"
+    },
+    "lastSignInAt": {
+      "description": "Last sign in timestamp",
+      "type": "datetime"
+    },
+    "locale": {
+      "default": "en",
+      "description": "User preferred locale",
+      "enum": ["en", "es", "da"],
+      "type": "enumeration"
+    },
+    "timezone": {
+      "description": "User timezone",
+      "type": "string"
+    },
+    "username": {
+      "description": "User username",
+      "type": "string",
+      "unique": true
+    }
+  },
+  "collectionName": "template_users",
+  "info": {
+    "description": "User data synced from Clerk authentication",
+    "displayName": "Template User",
+    "pluralName": "template-users",
+    "singularName": "template-user"
+  },
+  "kind": "collectionType",
+  "options": {
+    "comment": "",
+    "draftAndPublish": false
+  },
+  "pluginOptions": {}
+}

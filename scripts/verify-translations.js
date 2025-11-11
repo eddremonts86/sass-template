@@ -8,13 +8,13 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const locales = ['en', 'es', 'da'];
-const localeDir = path.join(__dirname, '../src/lib/i18n/locales');
+const localeDir = path.join(__dirname, '../apps/frontend/src/lib/i18n/locales');
 
 /**
- * Obtiene todas las claves de un objeto de traducciones de forma recursiva
- * @param {Object} obj - Objeto de traducciones
- * @param {string} prefix - Prefijo para las claves anidadas
- * @returns {Array<string>} Array de claves
+ * Gets all keys from a translations object recursively
+ * @param {Object} obj - Translations object
+ * @param {string} prefix - Prefix for nested keys
+ * @returns {Array<string>} Array of keys
  */
 function getAllKeys(obj, prefix = '') {
   let keys = [];
@@ -30,8 +30,8 @@ function getAllKeys(obj, prefix = '') {
 }
 
 /**
- * Verifica la sincronización de traducciones entre idiomas
- * @returns {boolean} true si todas las traducciones están sincronizadas
+ * Verifies translation synchronization between languages
+ * @returns {boolean} true if all translations are synchronized
  */
 function verifyTranslations() {
   console.log('🔍 Verificando sincronización de traducciones...\n');
@@ -40,7 +40,7 @@ function verifyTranslations() {
   const allKeys = new Set();
   let hasErrors = false;
 
-  // Verificar que existan todos los archivos de idioma
+  // Verify that all language files exist
   for (const locale of locales) {
     const filePath = path.join(localeDir, `${locale}.json`);
     if (!fs.existsSync(filePath)) {
@@ -70,7 +70,7 @@ function verifyTranslations() {
 
   console.log(`\n📊 Total de claves únicas encontradas: ${allKeys.size}`);
 
-  // Verificar claves faltantes en cada idioma
+  // Verify missing keys in each language
   let missingKeysFound = false;
   for (const locale of locales) {
     const localeKeys = new Set(getAllKeys(translations[locale]));
@@ -89,12 +89,12 @@ function verifyTranslations() {
     }
   }
 
-  // Verificar claves extra (que existen en un idioma pero no en otros)
+  // Verify extra keys (that exist in one language but not in others)
   let extraKeysFound = false;
   for (const locale of locales) {
     const localeKeys = new Set(getAllKeys(translations[locale]));
     const extraKeys = [...localeKeys].filter(key => {
-      // Verificar si esta clave existe en todos los otros idiomas
+      // Verify if this key exists in all other languages
       return !locales.every(otherLocale => {
         if (otherLocale === locale) return true;
         const otherKeys = new Set(getAllKeys(translations[otherLocale]));
@@ -113,7 +113,7 @@ function verifyTranslations() {
     }
   }
 
-  // Verificar valores vacíos o solo espacios en blanco
+  // Verify empty values or only whitespace
   let emptyValuesFound = false;
   for (const locale of locales) {
     const emptyKeys = [];
@@ -139,7 +139,7 @@ function verifyTranslations() {
     }
   }
 
-  // Resumen final
+  // Final summary
   console.log('\n' + '='.repeat(50));
   if (!missingKeysFound && !extraKeysFound && !emptyValuesFound) {
     console.log(
@@ -162,7 +162,7 @@ function verifyTranslations() {
   }
 }
 
-// Ejecutar verificación si se llama directamente
+// Execute verification if called directly
 if (import.meta.url === `file://${process.argv[1]}`) {
   const success = verifyTranslations();
   process.exit(success ? 0 : 1);

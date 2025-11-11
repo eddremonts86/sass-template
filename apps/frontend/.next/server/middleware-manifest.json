@@ -1,0 +1,44 @@
+{
+  "version": 3,
+  "middleware": {
+    "/": {
+      "files": [
+        "server/edge/chunks/_0821ed61._.js",
+        "server/edge/chunks/4b6e4_@opentelemetry_api_build_esm_9b4beb88._.js",
+        "server/edge/chunks/2abaa_@clerk_shared_dist_6b9d41b8._.js",
+        "server/edge/chunks/cf5bd_@clerk_backend_dist_3b7c4349._.js",
+        "server/edge/chunks/7f601_@clerk_nextjs_dist_esm_26e9cb06._.js",
+        "server/edge/chunks/d1733_next-intl_dist_esm_development_372019df._.js",
+        "server/edge/chunks/179b1_@formatjs_intl-localematcher_lib_c585be77._.js",
+        "server/edge/chunks/node_modules__pnpm_8d7c3327._.js",
+        "server/edge/chunks/[root-of-the-server]__26045b38._.js",
+        "server/edge/chunks/turbopack-apps_frontend_edge-wrapper_7d53bca7.js"
+      ],
+      "name": "middleware",
+      "page": "/",
+      "matchers": [
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?(?:\\/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*))(\\\\.json)?[\\/#\\?]?$",
+          "originalSource": "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?(?:\\/(api|trpc))(.*)(\\\\.json)?[\\/#\\?]?$",
+          "originalSource": "/(api|trpc)(.*)"
+        }
+      ],
+      "wasm": [],
+      "assets": [],
+      "env": {
+        "__NEXT_BUILD_ID": "development",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "DAt4sotj4+4s2ZFTOXCut01xALi0C+QF/7QRzhCCPoU=",
+        "__NEXT_PREVIEW_MODE_ID": "0d7ea5047f479fdd879aef73eeda1dbc",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "88b09264c01671eb084336b25bee89a7c8efcbc28d0a8a8d5e6dbab5a2ae2521",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "244c1b351b105dec3b7c76193799b68e98a888432ec00695343dba9760cf4b6f"
+      }
+    }
+  },
+  "sortedMiddleware": [
+    "/"
+  ],
+  "functions": {}
+}

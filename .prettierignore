@@ -1,58 +1,73 @@
-# Dependencias y cache
+# Dependencies and cache
 node_modules/
 .pnp/
 .yarn/
 
-# Build y output
+# Frontend build outputs (including legacy root .next)
 .next/
+apps/frontend/.next/
+apps/frontend/out/
+apps/frontend/build/
+
+# Backend build outputs
+apps/backend/dist/
+apps/backend/build/
+apps/backend/.strapi/
+apps/backend/public/uploads/
+
+# Shared build outputs
 out/
 build/
 dist/
 coverage/
+storybook-static/
+.vitepress/dist/
+.vitepress/cache/
 
-# Documentación y herramientas
-docs/
+# Documentation
+apps/shared/docs/.vitepress/dist/
+apps/shared/docs/.vitepress/cache/
+apps/shared/docs/.vitepress/config.mjs
+apps/shared/docs/api/
+docs/api/
+
+# Public assets (generated service workers and manifests)
+**/public/sw.js
+**/public/manifest.json
+
+# Git hooks and tools
 .husky/
-.vscode/
-.clerk/
 --version/
 
-# Assets estáticos
-public/
+# IDE
+.vscode/
+.idea/
+.clerk/
 
-# Carpetas vacías del proyecto
-src/styles/
-src/types/
-src/forms/
-src/tables/
-src/utils/
-
-# Archivos de configuración y sistema
+# Generated files
 next-env.d.ts
-*.config.js
-*.config.mjs
-*.config.ts
-tailwind.config.*
-postcss.config.*
-jsdoc.config.*
 *.tsbuildinfo
-.DS_Store
-*.log
-*.env*
-.prettierrc*
-.prettierignore
 
-# Archivos de lock y temporales
+# Lock files
 pnpm-lock.yaml
 yarn.lock
 package-lock.json
+
+# Logs and temp
+*.log
 tmp/
 temp/
+tests/reports/
 
-# Archivos específicos del proyecto
-components.json
-.trae-instructions.md
-
-# Archivos específicos de Prettier
+# Minified files
 *.min.js
 *.min.css
+
+# OS files
+.DS_Store
+
+# Config files (don't format)
+*.config.js
+*.config.mjs
+*.config.ts
+components.json

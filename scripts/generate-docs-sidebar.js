@@ -16,7 +16,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const DOCS_DIR = path.join(__dirname, '../docs');
+const DOCS_DIR = path.join(__dirname, '../apps/shared/docs');
 const CONFIG_FILE = path.join(DOCS_DIR, '.vitepress/config.mjs');
 const MAX_DEPTH = 5;
 const IGNORED_FOLDERS = ['.vitepress', 'public', 'node_modules', 'api'];

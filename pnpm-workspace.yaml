@@ -1,2 +1,7 @@
+packages:
+  - apps/*
+  - packages/*
+
 onlyBuiltDependencies:
   - '@vercel/speed-insights'
+  - better-sqlite3

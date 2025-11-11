@@ -87,7 +87,7 @@ describe('ProgressiveCard', () => {
       />
     );
 
-    // Las tareas dependientes deberían estar bloqueadas visualmente
+    // Dependent tasks should be visually blocked
     expect(screen.getByText('First Task')).toBeInTheDocument();
     expect(screen.getByText('Second Task')).toBeInTheDocument();
   });
@@ -115,7 +115,7 @@ describe('ProgressiveCard', () => {
       />
     );
 
-    // Verificar que las tareas se muestran correctamente
+    // Verify that tasks are displayed correctly
     expect(screen.getByText('First Task')).toBeInTheDocument();
     expect(screen.getByText('Second Task')).toBeInTheDocument();
   });
@@ -123,18 +123,18 @@ describe('ProgressiveCard', () => {
   it('calls onTaskComplete when a task is completed', async () => {
     render(<ProgressiveCard {...defaultProps} defaultExpanded={true} />);
 
-    // Buscar el contenedor de la primera tarea y hacer click
+    // Find the first task container and click
     const firstTaskContainer = screen.getByText('First Task').closest('div');
     expect(firstTaskContainer).toBeInTheDocument();
 
-    // Simular completar la tarea directamente
+    // Simulate completing the task directly
     fireEvent.click(firstTaskContainer!);
 
-    // Verificar que el callback fue llamado (puede necesitar ajuste según implementación)
-    expect(mockOnTaskComplete).toHaveBeenCalledTimes(0); // Ajustar según comportamiento real
+    // Verify that the callback was called (may need adjustment depending on implementation)
+    expect(mockOnTaskComplete).toHaveBeenCalledTimes(0); // Adjust according to actual behavioror
   });
 
-  // Test removido - onProgressUpdate no existe en la implementación actual
+  // Test removed - onProgressUpdate does not exist in current implementation
 
   it('displays priority badges correctly', () => {
     render(<ProgressiveCard {...defaultProps} defaultExpanded={true} />);
@@ -144,7 +144,7 @@ describe('ProgressiveCard', () => {
     expect(screen.getByText('low')).toBeInTheDocument();
   });
 
-  // Test removido - tiempo estimado no se muestra en la implementación actual
+  // Test removed - estimated time is not displayed in current implementation
 
   it('displays completion status correctly', () => {
     const completedTasks = mockSubTasks.map(task => ({
@@ -167,7 +167,7 @@ describe('ProgressiveCard', () => {
   it('shows task descriptions when expanded', () => {
     render(<ProgressiveCard {...defaultProps} defaultExpanded={true} />);
 
-    // Las descripciones deberían estar visibles cuando la tarjeta está expandida
+    // Descriptions should be visible when card is expanded
     expect(screen.getByText('Description for first task')).toBeInTheDocument();
     expect(screen.getByText('Description for second task')).toBeInTheDocument();
     expect(screen.getByText('Description for third task')).toBeInTheDocument();

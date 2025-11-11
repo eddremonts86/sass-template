@@ -25,7 +25,7 @@ module.exports = {
   },
 
   opts: {
-    destination: './docs/api/',
+    destination: './apps/shared/docs/api/',
     recurse: true,
     readme: './README.md',
     verbose: false

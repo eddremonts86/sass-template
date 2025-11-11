@@ -1,8 +1,10 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
-/node_modules
-/.pnp
+############################
+# Dependencies and cache
+############################
+node_modules/
+.pnp/
 .pnp.*
 .yarn/*
 !.yarn/patches
@@ -10,36 +12,131 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
-/coverage
+############################
+# Testing
+############################
+coverage/
+tests/reports/
+.eslintcache
 
-# next.js
-/.next/
-/out/
+############################
+# Next.js (Frontend)
+############################
+# Root level (legacy from pre-monorepo)
+.next/
+# Workspace specific
+apps/frontend/.next/
+apps/frontend/out/
+apps/frontend/build/
 
-# production
-/build
+############################
+# Strapi (Backend)
+############################
+apps/backend/dist/
+apps/backend/build/
+apps/backend/.strapi/
+apps/backend/.strapi-updater.json
+apps/backend/.strapi-cloud.json
+apps/backend/exports/
+apps/backend/license.txt
+apps/backend/*.sqlite
+apps/backend/*.sqlite3
+apps/backend/public/uploads/*
+!apps/backend/public/uploads/.gitkeep
 
-# misc
+############################
+# Shared build outputs
+############################
+out/
+build/
+dist/
+storybook-static/
+.vitepress/dist/
+.vitepress/cache/
+
+############################
+# Environment variables
+############################
+.env*
+!.env.example
+
+############################
+# OS files
+############################
 .DS_Store
-*.pem
+.AppleDouble
+.LSOverride
+Icon
+.Spotlight-V100
+.Trashes
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*~
 
-# debug
+############################
+# Logs and debugging
+############################
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+*.pid
+.tmp
 
-# env files (can opt-in for committing if needed)
-.env*
-
-# vercel
-.vercel
-
-# typescript
+############################
+# TypeScript
+############################
 *.tsbuildinfo
 next-env.d.ts
 
-# clerk configuration (can include secrets)
-/.clerk/
-tests/reports/*
+############################
+# IDE and editor
+############################
+.vscode/
+.idea/
+nbproject/
+*.swp
+*.swo
+*.swn
+*.swm
+
+############################
+# Certificates and keys
+############################
+*.pem
+ssl/
+
+############################
+# Authentication and secrets
+############################
+.clerk/
+.vercel/
+
+############################
+# Temporary files
+############################
+tmp/
+temp/
+*.seed
+*#
+
+############################
+# Husky git hooks
+############################
+--version/
+
+############################
+# Archives
+############################
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip

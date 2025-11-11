@@ -1,0 +1,4 @@
+# Frontend-specific ignores (rest handled by root .gitignore)
+
+# Clerk configuration (workspace-specific)
+.clerk/

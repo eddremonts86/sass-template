@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/edd/Projects/next-js-template/apps/frontend/src/app/%5Blocale%5D/%28auth%29/layout.tsx"],"sourcesContent":["import { ReactNode } from 'react';\n\ninterface AuthLayoutProps {\n  children: ReactNode;\n}\n\n/**\n * Layout for authentication pages\n */\nexport default function AuthLayout({ children }: AuthLayoutProps) {\n  return <div className=\"bg-background min-h-screen\">{children}</div>;\n}\n"],"names":[],"mappings":";;;;;;AASe,SAAS,WAAW,EAAE,QAAQ,EAAmB;IAC9D,qBAAO,6bAAC;QAAI,WAAU;kBAA8B;;;;;;AACtD","debugId":null}}]
+}

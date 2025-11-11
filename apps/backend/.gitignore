@@ -1,0 +1,19 @@
+# Backend-specific ignores (rest handled by root .gitignore)
+
+############################
+# Strapi-specific
+############################
+.strapi/
+.strapi-updater.json
+.strapi-cloud.json
+exports/
+license.txt
+
+# Uploads (keep .gitkeep)
+public/uploads/*
+!public/uploads/.gitkeep
+
+# Database files (if using SQLite in development)
+*.sqlite
+*.sqlite3
+*.db
