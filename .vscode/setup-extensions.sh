@@ -1,4 +1,5 @@
 #!/bin/bash
+# NOTE: This script requires GNU Bash. Please run with Bash only.
 
 # ============================================
 # Script de Configuración de VS Code
