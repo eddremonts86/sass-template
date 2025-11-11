@@ -1,17 +1,17 @@
 'use client';
 
-import React, { ReactNode, useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
-import { useUser } from '@clerk/nextjs';
-import { AIAssistantLayout } from './ai-assistant-layout';
-import { useAIGuidance, type TaskFragment } from '@/hooks/use-ai-guidance';
-import { ProgressiveCard } from '@/components/ui/progressive-card';
-import { Header } from '@/components/common/site/layout/header';
 import { Footer } from '@/components/common/site/layout/footer';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Header } from '@/components/common/site/layout/header';
 import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { ProgressiveCard } from '@/components/ui/progressive-card';
+import { useAIGuidance, type TaskFragment } from '@/hooks/use-ai-guidance';
 import { cn } from '@/lib/utils';
+import { useUser } from '@clerk/nextjs';
 import { useTranslations } from 'next-intl';
+import { usePathname } from 'next/navigation';
+import { ReactNode, useEffect, useState } from 'react';
+import { AIAssistantLayout } from './ai-assistant-layout';
 
 /**
  * Configuración del layout inteligente
@@ -227,8 +227,11 @@ export function SmartLayout({
       case 'ai-assisted':
         return (
           <AIAssistantLayout
-            projectName={t('smartLayoutApp')}
-            techStack={[t('react'), t('typescript'), t('tailwind')]}
+            appContext={{
+              projectName: t('smartLayoutApp'),
+              techStack: [t('react'), t('typescript'), t('tailwind')],
+              currentState: 'idle',
+            }}
             className="min-h-screen"
           >
             {children}
@@ -328,4 +331,4 @@ export function SmartLayout({
   return <div className={cn('smart-layout', className)}>{renderContent()}</div>;
 }
 
-export type { SmartLayoutProps, SmartLayoutConfig };
+export type { SmartLayoutConfig, SmartLayoutProps };

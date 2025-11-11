@@ -37,6 +37,7 @@ import { useAuthStore } from '@/stores/auth-store';
  */
 export function Footer() {
   const t = useTranslations('navigation');
+  const tFooter = useTranslations('footer');
   const { locale } = useAuthStore();
 
   const navigation = {
@@ -49,29 +50,33 @@ export function Footer() {
   };
 
   return (
-    &lt;footer className="border-t border-border">
-      &lt;div className="container py-8 md:py-12">
+    &lt;footer className="bg-background border-t">
+      &lt;div className="mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8">
         &lt;div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           {/* Brand */}
           &lt;div className="md:col-span-2">
-            &lt;Link href={`/${locale || 'en'}`} className="flex items-center space-x-2">
-              &lt;span className="font-bold text-lg">Template Trae&lt;/span>
+            &lt;Link
+              href={`/${locale || 'en'}`}
+              className="flex items-center space-x-2"
+            >
+              &lt;span className="text-lg font-bold">{tFooter('brand.name')}&lt;/span>
             &lt;/Link>
-            &lt;p className="mt-4 text-sm text-muted-foreground max-w-md">
-              A modern Next.js template with authentication, internationalization, 
-              and beautiful UI components. Built with the latest technologies.
+            &lt;p className="text-muted-foreground mt-4 max-w-md text-sm">
+              {tFooter('brand.description')}
             &lt;/p>
           &lt;/div>
 
           {/* Navigation */}
           &lt;div>
-            &lt;h3 className="text-sm font-semibold">Navigation&lt;/h3>
+            &lt;h3 className="text-sm font-semibold">
+              {tFooter('sections.navigation')}
+            &lt;/h3>
             &lt;ul className="mt-4 space-y-2">
-              {navigation.main.map((item) => (
+              {navigation.main.map(item => (
                 &lt;li key={item.name}>
                   &lt;Link
                     href={item.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-muted-foreground hover:text-foreground text-sm transition-colors"
                   >
                     {item.name}
                   &lt;/Link>
@@ -82,16 +87,18 @@ export function Footer() {
 
           {/* Resources */}
           &lt;div>
-            &lt;h3 className="text-sm font-semibold">Resources&lt;/h3>
+            &lt;h3 className="text-sm font-semibold">
+              {tFooter('sections.resources')}
+            &lt;/h3>
             &lt;ul className="mt-4 space-y-2">
               &lt;li>
                 &lt;Link
                   href="https://nextjs.org"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-muted-foreground hover:text-foreground text-sm transition-colors"
                 >
-                  Next.js
+                  {tFooter('resources.nextjs')}
                 &lt;/Link>
               &lt;/li>
               &lt;li>
@@ -99,9 +106,9 @@ export function Footer() {
                   href="https://ui.shadcn.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-muted-foreground hover:text-foreground text-sm transition-colors"
                 >
-                  Shadcn/ui
+                  {tFooter('resources.shadcn')}
                 &lt;/Link>
               &lt;/li>
               &lt;li>
@@ -109,9 +116,9 @@ export function Footer() {
                   href="https://clerk.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-muted-foreground hover:text-foreground text-sm transition-colors"
                 >
-                  Clerk
+                  {tFooter('resources.clerk')}
                 &lt;/Link>
               &lt;/li>
               &lt;li>
@@ -119,27 +126,29 @@ export function Footer() {
                   href="https://tailwindcss.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-muted-foreground hover:text-foreground text-sm transition-colors"
                 >
-                  Tailwind CSS
+                  {tFooter('resources.tailwind')}
                 &lt;/Link>
               &lt;/li>
             &lt;/ul>
           &lt;/div>
         &lt;/div>
 
-        &lt;div className="mt-8 border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center">
-          &lt;p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Template Trae. All rights reserved.
+        &lt;div className="border-border mt-8 flex flex-col items-center justify-between border-t pt-8 md:flex-row">
+          &lt;p className="text-muted-foreground text-sm">
+            © {new Date().getFullYear()} {tFooter('brand.name')}.{' '}
+            {tFooter('copyright')}
           &lt;/p>
-          &lt;p className="text-sm text-muted-foreground mt-2 md:mt-0">
-            Built with ❤️ using modern web technologies
+          &lt;p className="text-muted-foreground mt-2 text-sm md:mt-0">
+            {tFooter('builtWith')}
           &lt;/p>
         &lt;/div>
       &lt;/div>
     &lt;/footer>
   );
-}</code></pre>
+}
+</code></pre>
         </article>
     </section>
 
@@ -155,7 +164,7 @@ export function Footer() {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Sat Oct 04 2025 11:58:36 GMT+0200 (Central European Summer Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Tue Nov 11 2025 14:07:13 GMT+0100 (Central European Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

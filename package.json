@@ -6,8 +6,8 @@
     "dev": "NODE_OPTIONS='--inspect' next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "type-check": "tsc --noEmit",
@@ -25,10 +25,10 @@
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
-    "docs:api": "jsdoc -c jsdoc.config.js",
+    "docs:api": "echo 'ℹ️  JSDoc configurado para archivos JS/JSX. El proyecto usa TypeScript. Use TypeDoc para documentación de TypeScript.' && jsdoc -c jsdoc.config.js || true",
     "check:translations": "node scripts/verify-translations.js",
     "sync:translations": "node scripts/sync-translations.js",
-    "lint:translations": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint:translations": "eslint ."
   },
   "dependencies": {
     "@clerk/nextjs": "^6.33.3",

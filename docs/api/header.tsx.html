@@ -32,8 +32,8 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { UserButton, useAuth } from '@clerk/nextjs';
 import { Button } from '@/components/ui/button';
-import { ThemeToggle } from '@/components/common/theme-toggle';
-import { LanguageToggle } from '@/components/common/language-toggle';
+import { ThemeToggle } from '@/components/common/site/theme/theme-toggle';
+import { LanguageToggle } from '@/components/common/site/languge/language-toggle';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { useAuthStore } from '@/stores/auth-store';
@@ -44,6 +44,7 @@ import { useAuthStore } from '@/stores/auth-store';
 export function Header() {
   const t = useTranslations('navigation');
   const tAuth = useTranslations('auth');
+  const tHeader = useTranslations('header');
   const { isSignedIn } = useAuth();
   const { locale } = useAuthStore();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -60,13 +61,16 @@ export function Header() {
   ];
 
   return (
-    &lt;header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      &lt;div className="container flex h-14 max-w-screen-2xl items-center">
+    &lt;header className="border-border/40 bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur">
+      &lt;div className="mx-auto flex h-16 max-w-screen-2xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         &lt;div className="mr-4 hidden md:flex">
-          &lt;Link href={`/${locale || 'en'}`} className="mr-6 flex items-center space-x-2">
+          &lt;Link
+            href={`/${locale || 'en'}`}
+            className="mr-6 flex items-center space-x-2"
+          >
             &lt;span className="hidden font-bold sm:inline-block">
-              Template Trae
+              {tHeader('brand.name')}
             &lt;/span>
           &lt;/Link>
         &lt;/div>
@@ -82,49 +86,77 @@ export function Header() {
           ) : (
             &lt;Menu className="h-6 w-6" />
           )}
-          &lt;span className="sr-only">Toggle Menu&lt;/span>
+          &lt;span className="sr-only">{tHeader('menu.toggle')}&lt;/span>
         &lt;/Button>
+
+        {/* Mobile right-side controls (visible without opening menu) */}
+        &lt;div className="flex items-center space-x-2 md:hidden">
+          {isSignedIn ? (
+            &lt;UserButton
+              data-testid="user-button"
+              appearance={{
+                elements: {
+                  avatarBox: 'h-8 w-8',
+                },
+              }}
+            />
+          ) : (
+            &lt;Button variant="ghost" size="sm" asChild>
+              &lt;Link
+                href={`/${locale || 'en'}/sign-in`}
+                data-testid="sign-in-button"
+              >
+                {tAuth('signIn')}
+              &lt;/Link>
+            &lt;/Button>
+          )}
+        &lt;/div>
 
         {/* Desktop Navigation */}
         &lt;nav className="hidden md:flex md:flex-1 md:items-center md:justify-between">
           &lt;div className="flex items-center space-x-6 text-sm font-medium">
-            {navigation.map((item) => (
+            {navigation.map(item => (
               &lt;Link
                 key={item.name}
                 href={item.href}
-                className="transition-colors hover:text-foreground/80 text-foreground/60"
+                className="hover:text-foreground/80 text-foreground/60 transition-colors"
               >
                 {item.name}
               &lt;/Link>
             ))}
-            {isSignedIn &amp;&amp; authNavigation.map((item) => (
-              &lt;Link
-                key={item.name}
-                href={item.href}
-                className="transition-colors hover:text-foreground/80 text-foreground/60"
-              >
-                {item.name}
-              &lt;/Link>
-            ))}
+            {isSignedIn &amp;&amp;
+              authNavigation.map(item => (
+                &lt;Link
+                  key={item.name}
+                  href={item.href}
+                  className="hover:text-foreground/80 text-foreground/60 transition-colors"
+                >
+                  {item.name}
+                &lt;/Link>
+              ))}
           &lt;/div>
 
           {/* Right side controls */}
           &lt;div className="flex items-center space-x-2">
             &lt;LanguageToggle />
             &lt;ThemeToggle />
-            
+
             {isSignedIn ? (
-              &lt;UserButton 
+              &lt;UserButton
+                data-testid="user-button"
                 appearance={{
                   elements: {
-                    avatarBox: "h-8 w-8"
-                  }
+                    avatarBox: 'h-8 w-8',
+                  },
                 }}
               />
             ) : (
               &lt;div className="flex items-center space-x-2">
                 &lt;Button variant="ghost" size="sm" asChild>
-                  &lt;Link href={`/${locale || 'en'}/sign-in`}>
+                  &lt;Link
+                    href={`/${locale || 'en'}/sign-in`}
+                    data-testid="sign-in-button"
+                  >
                     {tAuth('signIn')}
                   &lt;/Link>
                 &lt;/Button>
@@ -140,48 +172,53 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen &amp;&amp; (
-          &lt;div className="absolute top-14 left-0 right-0 z-50 bg-background border-b border-border md:hidden">
-            &lt;nav className="container py-4">
+          &lt;div className="bg-background border-border absolute top-14 right-0 left-0 z-50 border-b md:hidden">
+            &lt;nav className="mx-auto max-w-screen-2xl px-4 py-2 sm:px-6 lg:px-8">
               &lt;div className="flex flex-col space-y-3">
-                {navigation.map((item) => (
+                {navigation.map(item => (
                   &lt;Link
                     key={item.name}
                     href={item.href}
-                    className="text-sm font-medium transition-colors hover:text-foreground/80 text-foreground/60"
+                    className="hover:text-foreground/80 text-foreground/60 text-sm font-medium transition-colors"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
                   &lt;/Link>
                 ))}
-                {isSignedIn &amp;&amp; authNavigation.map((item) => (
-                  &lt;Link
-                    key={item.name}
-                    href={item.href}
-                    className="text-sm font-medium transition-colors hover:text-foreground/80 text-foreground/60"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.name}
-                  &lt;/Link>
-                ))}
-                
-                &lt;div className="flex items-center justify-between pt-4 border-t border-border">
+                {isSignedIn &amp;&amp;
+                  authNavigation.map(item => (
+                    &lt;Link
+                      key={item.name}
+                      href={item.href}
+                      className="hover:text-foreground/80 text-foreground/60 text-sm font-medium transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.name}
+                    &lt;/Link>
+                  ))}
+
+                &lt;div className="border-border flex items-center justify-between border-t pt-4">
                   &lt;div className="flex items-center space-x-2">
                     &lt;LanguageToggle />
                     &lt;ThemeToggle />
                   &lt;/div>
-                  
+
                   {isSignedIn ? (
-                    &lt;UserButton 
+                    &lt;UserButton
+                      data-testid="user-button"
                       appearance={{
                         elements: {
-                          avatarBox: "h-8 w-8"
-                        }
+                          avatarBox: 'h-8 w-8',
+                        },
                       }}
                     />
                   ) : (
                     &lt;div className="flex items-center space-x-2">
                       &lt;Button variant="ghost" size="sm" asChild>
-                        &lt;Link href={`/${locale || 'en'}/sign-in`}>
+                        &lt;Link
+                          href={`/${locale || 'en'}/sign-in`}
+                          data-testid="sign-in-button"
+                        >
                           {tAuth('signIn')}
                         &lt;/Link>
                       &lt;/Button>
@@ -200,7 +237,8 @@ export function Header() {
       &lt;/div>
     &lt;/header>
   );
-}</code></pre>
+}
+</code></pre>
         </article>
     </section>
 
@@ -216,7 +254,7 @@ export function Header() {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Sat Oct 04 2025 11:58:36 GMT+0200 (Central European Summer Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Tue Nov 11 2025 14:07:13 GMT+0100 (Central European Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

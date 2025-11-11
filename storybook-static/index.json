@@ -1,0 +1,104 @@
+{
+  "v": 5,
+  "entries": {
+    "ui-button--documentation": {
+      "id": "ui-button--documentation",
+      "title": "UI/Button",
+      "name": "Documentation",
+      "importPath": "./src/components/ui/button.stories.tsx",
+      "type": "docs",
+      "tags": ["dev", "test", "autodocs"],
+      "storiesImports": []
+    },
+    "ui-button--default": {
+      "type": "story",
+      "id": "ui-button--default",
+      "name": "Default",
+      "title": "UI/Button",
+      "importPath": "./src/components/ui/button.stories.tsx",
+      "componentPath": "./src/components/ui/button.tsx",
+      "tags": ["dev", "test", "autodocs"]
+    },
+    "ui-button--destructive": {
+      "type": "story",
+      "id": "ui-button--destructive",
+      "name": "Destructive",
+      "title": "UI/Button",
+      "importPath": "./src/components/ui/button.stories.tsx",
+      "componentPath": "./src/components/ui/button.tsx",
+      "tags": ["dev", "test", "autodocs"]
+    },
+    "ui-button--outline": {
+      "type": "story",
+      "id": "ui-button--outline",
+      "name": "Outline",
+      "title": "UI/Button",
+      "importPath": "./src/components/ui/button.stories.tsx",
+      "componentPath": "./src/components/ui/button.tsx",
+      "tags": ["dev", "test", "autodocs"]
+    },
+    "ui-button--secondary": {
+      "type": "story",
+      "id": "ui-button--secondary",
+      "name": "Secondary",
+      "title": "UI/Button",
+      "importPath": "./src/components/ui/button.stories.tsx",
+      "componentPath": "./src/components/ui/button.tsx",
+      "tags": ["dev", "test", "autodocs"]
+    },
+    "ui-button--ghost": {
+      "type": "story",
+      "id": "ui-button--ghost",
+      "name": "Ghost",
+      "title": "UI/Button",
+      "importPath": "./src/components/ui/button.stories.tsx",
+      "componentPath": "./src/components/ui/button.tsx",
+      "tags": ["dev", "test", "autodocs"]
+    },
+    "ui-button--link": {
+      "type": "story",
+      "id": "ui-button--link",
+      "name": "Link",
+      "title": "UI/Button",
+      "importPath": "./src/components/ui/button.stories.tsx",
+      "componentPath": "./src/components/ui/button.tsx",
+      "tags": ["dev", "test", "autodocs"]
+    },
+    "ui-button--small": {
+      "type": "story",
+      "id": "ui-button--small",
+      "name": "Small",
+      "title": "UI/Button",
+      "importPath": "./src/components/ui/button.stories.tsx",
+      "componentPath": "./src/components/ui/button.tsx",
+      "tags": ["dev", "test", "autodocs"]
+    },
+    "ui-button--large": {
+      "type": "story",
+      "id": "ui-button--large",
+      "name": "Large",
+      "title": "UI/Button",
+      "importPath": "./src/components/ui/button.stories.tsx",
+      "componentPath": "./src/components/ui/button.tsx",
+      "tags": ["dev", "test", "autodocs"]
+    },
+    "ui-button--icon": {
+      "type": "story",
+      "id": "ui-button--icon",
+      "name": "Icon",
+      "title": "UI/Button",
+      "importPath": "./src/components/ui/button.stories.tsx",
+      "componentPath": "./src/components/ui/button.tsx",
+      "tags": ["dev", "test", "autodocs"]
+    },
+    "ui-button--disabled": {
+      "type": "story",
+      "id": "ui-button--disabled",
+      "name": "Disabled",
+      "title": "UI/Button",
+      "importPath": "./src/components/ui/button.stories.tsx",
+      "componentPath": "./src/components/ui/button.tsx",
+      "tags": ["dev", "test", "autodocs"]
+    }
+  }
+}
