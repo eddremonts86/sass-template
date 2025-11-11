@@ -6,8 +6,7 @@
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "never" // ESLint handles this
+    "source.fixAll.eslint": "explicit"
   },
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
