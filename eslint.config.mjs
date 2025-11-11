@@ -8,43 +8,66 @@ const eslintConfig = [
       "@typescript-eslint/no-unused-vars": "error",
       "@typescript-eslint/no-explicit-any": "warn",
       "@typescript-eslint/no-require-imports": "off",
+      // Enforce English-only comments (no Spanish/special characters)
+      "no-warning-comments": [
+        "warn",
+        {
+          terms: [
+            "obtener",
+            "crear",
+            "actualizar",
+            "eliminar",
+            "usuario",
+            "información",
+            "configuración",
+            "función",
+            "verificar",
+            "sincronizar",
+            "último",
+            "básica",
+            "hola",
+            "perfil",
+          ],
+          location: "anywhere",
+        },
+      ],
     },
   },
   {
     ignores: [
-      // Dependencias y cache
+      // Dependencies and cache
       "node_modules/**",
       ".pnp/**",
       ".yarn/**",
 
-      // Build y output
+      // Build and output
       ".next/**",
       "out/**",
       "build/**",
       "dist/**",
       "coverage/**",
 
-      // Documentación y herramientas
+      // Documentation and tools
       "docs/**",
       ".husky/**",
       ".vscode/**",
       ".clerk/**",
       "--version/**",
 
-      // Assets estáticos
+      // Static assets
       "public/**",
 
-      // Storybook generado
+      // Generated Storybook
       "storybook-static/**",
 
-      // Carpetas vacías del proyecto
+      // Empty project folders
       "src/styles/**",
       "src/types/**",
       "src/forms/**",
       "src/tables/**",
       "src/utils/**",
 
-      // Archivos de configuración y sistema
+      // Config and system files
       "next-env.d.ts",
       "*.config.js",
       "*.config.mjs",
@@ -59,14 +82,14 @@ const eslintConfig = [
       ".prettierrc*",
       ".prettierignore",
 
-      // Archivos de lock y temporales
+      // Lock files and temporary
       "pnpm-lock.yaml",
       "yarn.lock",
       "package-lock.json",
       "tmp/**",
       "temp/**",
 
-      // Archivos específicos del proyecto
+      // Project-specific files
       "components.json",
       ".trae-instructions.md",
     ],

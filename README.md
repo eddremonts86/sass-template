@@ -5,15 +5,18 @@ A comprehensive Next.js 15 template with authentication, internationalization, a
 ## ✨ Features
 
 - 🔐 **Authentication** - Clerk.js integration with sign-up/sign-in
-- 🌍 **Internationalization** - Multi-language support (EN, ES, FR)
+- 🗄️ **CMS & Database** - Strapi 5 integration with PostgreSQL support
+- 🌍 **Internationalization** - Multi-language support (EN, ES, DA)
 - 🎨 **Modern UI** - Shadcn/ui components with Tailwind CSS
 - 🌙 **Dark Mode** - Theme switching with system preference
 - 📱 **Responsive** - Mobile-first design
 - 🔒 **Protected Routes** - Authentication guards
 - 📊 **Dashboard** - Complete dashboard layout
-- 🧪 **Testing** - Jest and React Testing Library setup
+- 🧪 **Testing** - Jest, Playwright and React Testing Library
 - 📝 **TypeScript** - Full type safety
 - 🎯 **ESLint & Prettier** - Code quality and formatting
+- 📚 **Storybook** - Component documentation
+- 🔄 **Webhooks** - Automatic user sync Clerk → Strapi
 
 ## 🚀 Quick Start
 
@@ -38,7 +41,32 @@ NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_live_your_actual_key_here
 CLERK_SECRET_KEY=sk_live_your_actual_key_here
 ```
 
-### 3. Install and Run
+### 3. Configure Strapi 5 (Optional but Recommended)
+
+This template integrates with Strapi 5 for content management and user data storage.
+
+**Quick Setup:**
+
+1. See detailed instructions in [`docs/strapi-integration.md`](docs/strapi-integration.md)
+2. Install Strapi 5 in a separate directory
+3. Create the `template-users` collection
+4. Get your API token and update `.env.local`:
+
+```env
+NEXT_PUBLIC_STRAPI_API_URL=http://localhost:1337
+STRAPI_API_TOKEN=your_strapi_api_token_here
+CLERK_WEBHOOK_SECRET=your_webhook_secret_here
+```
+
+**Why Strapi?**
+
+- ✅ Store public user data separately from auth
+- ✅ Automatic sync via Clerk webhooks
+- ✅ Flexible content management
+- ✅ PostgreSQL support for production
+- ✅ REST API ready to use
+
+### 4. Install and Run
 
 ```bash
 pnpm install
@@ -113,6 +141,15 @@ Add new languages by creating message files in `/messages/` directory.
 - Configure Clerk settings in `src/lib/auth/clerk-provider.tsx`
 - Customize auth pages styling
 - Add custom user fields
+
+## 📖 Documentation & Guidelines
+
+- **Setup**: [Project Setup Guide](./SETUP.md)
+- **Strapi CMS**: [Integration Guide](./docs/strapi-integration.md) | [Quick Start](./docs/QUICK_START_STRAPI.md) | [Examples](./docs/strapi-examples.md)
+- **Contributing**: [Guidelines](./CONTRIBUTING.md) ⭐
+- **Code Quality**: [Standards](./.github/CODE_QUALITY.md) ⭐
+
+> ⭐ **Important**: All code, comments, and documentation must be in English. See [Contributing Guidelines](./CONTRIBUTING.md).
 
 ## 🚨 Troubleshooting
 
