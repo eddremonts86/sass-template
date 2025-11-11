@@ -1,77 +1,77 @@
 # API Documentation
 
-Esta sección contiene la documentación completa de la API del proyecto Template Trae, incluyendo componentes, hooks, utilidades y tipos.
+This section contains the complete API documentation for the Template Trae project, including components, hooks, utilities, and types.
 
-## 📚 Secciones
+## 📚 Sections
 
-### [Componentes UI](./components/)
-Documentación completa de todos los componentes de interfaz de usuario:
+### [UI Components](./components/)
+Complete documentation of all user interface components:
 - **Base Components**: Button, Input, Label, etc.
 - **Layout Components**: Container, Grid, Flex, etc.
 - **Form Components**: Form, Field, Validation, etc.
 - **Navigation Components**: Menu, Breadcrumb, Pagination, etc.
 - **Specialized Components**: DataTable, Modal, Toast, etc.
 
-### [Hooks Personalizados](./hooks/)
-Documentación de todos los hooks personalizados:
-- **useTheme**: Gestión de temas
-- **useLocalStorage**: Persistencia local
-- **useDebounce**: Debouncing de valores
+### [Custom Hooks](./hooks/)
+Documentation of all custom hooks:
+- **useTheme**: Theme management
+- **useLocalStorage**: Local persistence
+- **useDebounce**: Value debouncing
 - **useMediaQuery**: Responsive queries
-- **useAuth**: Autenticación con Clerk
+- **useAuth**: Authentication with Clerk
 
-### [Utilidades](./utils/)
-Funciones de utilidad y helpers:
-- **cn**: Merge de clases CSS
-- **formatters**: Formateo de datos
-- **validators**: Validación de datos
-- **constants**: Constantes del proyecto
+### [Utilities](./utils/)
+Utility functions and helpers:
+- **cn**: CSS class merging
+- **formatters**: Data formatting
+- **validators**: Data validation
+- **constants**: Project constants
 
 ### [Stores](./stores/)
-Gestión de estado con Zustand:
-- **authStore**: Estado de autenticación
-- **themeStore**: Estado del tema
-- **uiStore**: Estado de la interfaz
+State management with Zustand:
+- **authStore**: Authentication state
+- **themeStore**: Theme state
+- **uiStore**: Interface state
 
-### [Tipos TypeScript](./types/)
-Definiciones de tipos y interfaces:
-- **Component Types**: Tipos de componentes
-- **API Types**: Tipos de API
-- **Utility Types**: Tipos de utilidades
+### [TypeScript Types](./types/)
+Type and interface definitions:
+- **Component Types**: Component types
+- **API Types**: API types
+- **Utility Types**: Utility types
 
-## 🚀 Generación de Documentación
+## 🚀 Documentation Generation
 
-### Automática con JSDoc
+### Automatic with JSDoc
 
 ```bash
-# Instalar JSDoc globalmente
+# Install JSDoc globally
 npm install -g jsdoc
 
-# Generar documentación
+# Generate documentation
 jsdoc -c jsdoc.config.js
 ```
 
-### Manual con VitePress
+### Manual with VitePress
 
 ```bash
-# Ejecutar servidor de desarrollo
+# Run development server
 pnpm docs:dev
 
-# Construir documentación
+# Build documentation
 pnpm docs:build
 
-# Vista previa de la build
+# Preview build
 pnpm docs:preview
 ```
 
-## 📝 Estándares de Documentación
+## 📝 Documentation Standards
 
-### Para Componentes React
+### For React Components
 
 ```tsx
 /**
  * Button component with multiple variants and accessibility features
- * 
+ *
  * @component
  * @param {Object} props - Component props
  * @param {'default'|'destructive'|'outline'|'secondary'|'ghost'|'link'} props.variant - Button style variant
@@ -80,19 +80,19 @@ pnpm docs:preview
  * @param {string} [props.className] - Additional CSS classes
  * @param {boolean} [props.disabled=false] - Whether button is disabled
  * @param {Function} [props.onClick] - Click event handler
- * 
+ *
  * @example
  * // Basic usage
  * <Button variant="default" size="md">
  *   Click me
  * </Button>
- * 
+ *
  * @example
  * // Destructive action
  * <Button variant="destructive" onClick={handleDelete}>
  *   Delete Item
  * </Button>
- * 
+ *
  * @since 1.0.0
  * @accessibility Supports keyboard navigation and screen readers
  */
@@ -101,28 +101,28 @@ export function Button({ variant = 'default', size = 'default', ...props }) {
 }
 ```
 
-### Para Hooks Personalizados
+### For Custom Hooks
 
 ```tsx
 /**
  * Custom hook for managing theme state with persistence
- * 
+ *
  * @hook
  * @returns {Object} Theme management utilities
  * @returns {string} returns.theme - Current theme ('light' | 'dark' | 'system')
  * @returns {Function} returns.setTheme - Function to change theme
  * @returns {Function} returns.toggleTheme - Function to toggle between themes
  * @returns {boolean} returns.isDark - Whether current theme is dark
- * 
+ *
  * @example
  * const { theme, setTheme, toggleTheme, isDark } = useTheme()
- * 
+ *
  * // Change to dark theme
  * setTheme('dark')
- * 
+ *
  * // Toggle theme
  * toggleTheme()
- * 
+ *
  * @since 1.0.0
  */
 export function useTheme() {
@@ -130,28 +130,28 @@ export function useTheme() {
 }
 ```
 
-### Para Utilidades
+### For Utilities
 
 ```tsx
 /**
  * Merges CSS classes using clsx and tailwind-merge
- * 
+ *
  * @function
  * @param {...(string|Object|Array)} classes - Classes to merge
  * @returns {string} Merged and deduplicated CSS classes
- * 
+ *
  * @example
  * // Basic usage
  * cn('px-4 py-2', 'bg-blue-500', 'text-white')
  * // Returns: 'px-4 py-2 bg-blue-500 text-white'
- * 
+ *
  * @example
  * // With conditional classes
  * cn('base-class', {
  *   'active-class': isActive,
  *   'disabled-class': isDisabled
  * })
- * 
+ *
  * @since 1.0.0
  */
 export function cn(...classes: ClassValue[]): string {
@@ -159,31 +159,31 @@ export function cn(...classes: ClassValue[]): string {
 }
 ```
 
-## 🔧 Configuración JSDoc
+## 🔧 JSDoc Configuration
 
-El archivo `jsdoc.config.js` está configurado para:
+The `jsdoc.config.js` file is configured to:
 
-- **Incluir**: Componentes, hooks, utilidades, stores y tipos
-- **Excluir**: Tests, stories y node_modules
-- **Plugins**: Markdown y summarize
-- **Salida**: Directorio `docs/api/`
-- **TypeScript**: Soporte completo para TS/TSX
+- **Include**: Components, hooks, utilities, stores, and types
+- **Exclude**: Tests, stories, and node_modules
+- **Plugins**: Markdown and summarize
+- **Output**: Directory `docs/api/`
+- **TypeScript**: Full support for TS/TSX
 
-## 📖 Recursos Adicionales
+## 📖 Additional Resources
 
 - [JSDoc Official Documentation](https://jsdoc.app/)
 - [TypeScript JSDoc Reference](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html)
 - [React Component Documentation Best Practices](https://react-styleguidist.js.org/docs/documenting/)
 - [VitePress Documentation](https://vitepress.dev/)
 
-## 🤝 Contribuir a la Documentación
+## 🤝 Contributing to Documentation
 
-1. **Documenta todos los exports públicos**
-2. **Usa ejemplos claros y prácticos**
-3. **Incluye información de accesibilidad**
-4. **Mantén la documentación actualizada**
-5. **Sigue los estándares establecidos**
+1. **Document all public exports**
+2. **Use clear and practical examples**
+3. **Include accessibility information**
+4. **Keep documentation up to date**
+5. **Follow established standards**
 
 ---
 
-*Esta documentación se genera automáticamente a partir de los comentarios JSDoc en el código fuente.*
+*This documentation is automatically generated from JSDoc comments in the source code.*

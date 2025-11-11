@@ -19,50 +19,131 @@ export default defineConfig({
     ],
 
     sidebar: {
-      '/guide/': [
-        {
-          text: 'Guía de Inicio',
-          items: [
-            { text: 'Comenzar', link: '/guide/getting-started' },
-            { text: 'Configuración', link: '/guide/configuration' },
-            { text: 'Deployment', link: '/guide/deployment' }
-          ]
-        }
+      "/guide/": [
+            {
+                  text: 'Getting Started',
+                  items: [
+                        {
+                              text: 'Getting Started',
+                              link: '/guide/getting-started'
+                        },
+                        {
+                              text: 'Authentication',
+                              link: '/guide/authentication'
+                        },
+                        {
+                              text: 'Auto Sidebar',
+                              link: '/guide/auto-sidebar'
+                        },
+                        {
+                              text: 'I18n',
+                              link: '/guide/i18n'
+                        },
+                        {
+                              text: 'Theming',
+                              link: '/guide/theming'
+                        }
+                  ]
+            },
+            {
+                  text: 'Strapi Integration',
+                  items: [
+                        {
+                              text: 'Strapi Examples',
+                              link: '/guide/strapi/strapi-examples'
+                        },
+                        {
+                              text: 'Strapi Integration',
+                              link: '/guide/strapi/strapi-integration'
+                        },
+                        {
+                              text: 'Strapi Setup',
+                              link: '/guide/strapi/strapi-setup'
+                        },
+                        {
+                              text: 'Strapi Start Up',
+                              link: '/guide/strapi/strapi-start-up'
+                        }
+                  ]
+            }
       ],
-      '/components/': [
-        {
-          text: 'Componentes UI',
-          items: [
-            { text: 'Visión General', link: '/components/overview' },
-            { text: 'Button', link: '/components/button' },
-            { text: 'Input', link: '/components/input' },
-            { text: 'Form', link: '/components/form' },
-            { text: 'DataTable', link: '/components/data-table' }
-          ]
-        }
+      "/components/": [
+            {
+                  text: 'UI Components',
+                  items: [
+                        {
+                              text: 'Overview',
+                              link: '/components/overview'
+                        },
+                        {
+                              text: 'Button',
+                              link: '/components/button'
+                        },
+                        {
+                              text: 'Card',
+                              link: '/components/card'
+                        },
+                        {
+                              text: 'Form',
+                              link: '/components/form'
+                        },
+                        {
+                              text: 'Input',
+                              link: '/components/input'
+                        },
+                        {
+                              text: 'Modal',
+                              link: '/components/modal'
+                        }
+                  ]
+            },
+            {
+                  text: 'Layout',
+                  items: [
+                        {
+                              text: 'Footer',
+                              link: '/components/footer'
+                        },
+                        {
+                              text: 'Header',
+                              link: '/components/header'
+                        },
+                        {
+                              text: 'Navigation',
+                              link: '/components/navigation'
+                        },
+                        {
+                              text: 'Sidebar',
+                              link: '/components/sidebar'
+                        }
+                  ]
+            }
       ],
-      '/patterns/': [
-        {
-          text: 'Patrones de Diseño',
-          items: [
-            { text: 'Visión General', link: '/patterns/overview' },
-            { text: 'React Patterns', link: '/patterns/react' },
-            { text: 'JavaScript Patterns', link: '/patterns/javascript' }
-          ]
-        }
+      "/patterns/": [
+            {
+                  text: 'Design Patterns',
+                  items: [
+                        {
+                              text: 'Overview',
+                              link: '/patterns/overview'
+                        },
+                        {
+                              text: 'Design Patterns',
+                              link: '/patterns/design-patterns'
+                        },
+                        {
+                              text: 'Javascript',
+                              link: '/patterns/javascript'
+                        },
+                        {
+                              text: 'React',
+                              link: '/patterns/react'
+                        }
+                  ]
+            }
       ],
-      '/api/': [
-        {
-          text: 'Documentación API',
-          items: [
-            { text: 'Visión General', link: '/api/' },
-            { text: 'Componentes', link: '/api/components' },
-            { text: 'Hooks', link: '/api/hooks' },
-            { text: 'Utilidades', link: '/api/utils' }
-          ]
-        }
-      ]
-    },
+      "/api/": []
+},
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/your-username/sass-edd-template' }

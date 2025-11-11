@@ -112,11 +112,35 @@ src/
 
 ## 🔧 Available Scripts
 
+### Development
+
 - `pnpm dev` - Start development server
 - `pnpm build` - Build for production
 - `pnpm start` - Start production server
+
+### Code Quality
+
 - `pnpm lint` - Run ESLint
-- `pnpm test` - Run tests
+- `pnpm lint:fix` - Auto-fix ESLint issues
+- `pnpm format` - Format with Prettier
+- `pnpm format:check` - Check formatting
+- `pnpm type-check` - TypeScript validation
+
+### Testing
+
+- `pnpm test` - Run unit tests
+- `pnpm test:watch` - Run tests in watch mode
+- `pnpm test:coverage` - Run tests with coverage
+- `pnpm test:e2e` - Run E2E tests with Playwright
+
+### Documentation
+
+- `pnpm docs:dev` - Start VitePress documentation server
+- `pnpm docs:build` - Build documentation
+- `pnpm docs:preview` - Preview built documentation
+- `pnpm storybook` - Start Storybook component docs
+
+> **Note**: Documentation sidebar is automatically generated from file structure. See [Auto Sidebar Guide](./docs/guide/auto-sidebar.md) for details.
 
 ## 🌐 Internationalization
 

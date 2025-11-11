@@ -1,70 +1,70 @@
-# Componentes UI - Sass Edd Template incluye una biblioteca completa de componentes UI construidos con React, TypeScript y Tailwind CSS. Todos los componentes están diseñados para ser accesibles, reutilizables y fáciles de personalizar.
+# UI Components - Sass Edd Template includes a complete library of UI components built with React, TypeScript and Tailwind CSS. All components are designed to be accessible, reusable and easy to customize.
 
-## 🎨 Filosofía de Diseño
+## 🎨 Design Philosophy
 
-Nuestros componentes siguen estos principios:
+Our components follow these principles:
 
-- **Accesibilidad**: Todos los componentes cumplen con las pautas WCAG 2.1
-- **Composición**: Componentes que se pueden combinar para crear interfaces complejas
-- **Consistencia**: Diseño coherente en toda la aplicación
-- **Personalización**: Fácil de personalizar con props y clases CSS
+- **Accessibility**: All components comply with WCAG 2.1 guidelines
+- **Composition**: Components that can be combined to create complex interfaces
+- **Consistency**: Coherent design throughout the application
+- **Customization**: Easy to customize with props and CSS classes
 
-## 📦 Categorías de Componentes
+## 📦 Component Categories
 
-### 🧱 Componentes Base (UI)
+### 🧱 Base Components (UI)
 
-Componentes fundamentales basados en shadcn/ui:
+Fundamental components based on shadcn/ui:
 
-- **[Button](/components/button)** - Botones con múltiples variantes
-- **[Input](/components/input)** - Campos de entrada de texto
-- **[Card](/components/card)** - Contenedores de contenido
-- **[Modal](/components/modal)** - Diálogos y modales
-- **Badge** - Etiquetas y badges
-- **Avatar** - Imágenes de perfil
-- **Tooltip** - Información contextual
+- **[Button](/components/button)** - Buttons with multiple variants
+- **[Input](/components/input)** - Text input fields
+- **[Card](/components/card)** - Content containers
+- **[Modal](/components/modal)** - Dialogs and modals
+- **Badge** - Labels and badges
+- **Avatar** - Profile images
+- **Tooltip** - Contextual information
 
-### 🏗️ Componentes de Layout
+### 🏗️ Layout Components
 
-Componentes para estructurar la aplicación:
+Components for structuring the application:
 
-- **[Header](/components/header)** - Cabecera de la aplicación
-- **[Sidebar](/components/sidebar)** - Navegación lateral
-- **[Footer](/components/footer)** - Pie de página
-- **Container** - Contenedor responsivo
-- **Grid** - Sistema de rejilla
+- **[Header](/components/header)** - Application header
+- **[Sidebar](/components/sidebar)** - Side navigation
+- **[Footer](/components/footer)** - Page footer
+- **Container** - Responsive container
+- **Grid** - Grid system
 
-### 📝 Componentes de Formulario
+### 📝 Form Components
 
-Componentes especializados para formularios:
+Specialized components for forms:
 
-- **[Form](/components/form)** - Formularios con validación
-- **Select** - Selectores desplegables
-- **Checkbox** - Casillas de verificación
-- **Radio** - Botones de radio
-- **Switch** - Interruptores
-- **Textarea** - Áreas de texto
+- **[Form](/components/form)** - Forms with validation
+- **Select** - Dropdown selectors
+- **Checkbox** - Checkboxes
+- **Radio** - Radio buttons
+- **Switch** - Toggle switches
+- **Textarea** - Text areas
 
-### 🧭 Componentes de Navegación
+### 🧭 Navigation Components
 
-Componentes para navegación y routing:
+Components for navigation and routing:
 
-- **[Navigation](/components/navigation)** - Menús de navegación
-- **Breadcrumb** - Migas de pan
-- **Tabs** - Pestañas
-- **Pagination** - Paginación
+- **[Navigation](/components/navigation)** - Navigation menus
+- **Breadcrumb** - Breadcrumbs
+- **Tabs** - Tabs
+- **Pagination** - Pagination
 
-### 🎯 Componentes Especializados
+### 🎯 Specialized Components
 
-Componentes específicos de la aplicación:
+Application-specific components:
 
-- **LanguageToggle** - Selector de idioma
-- **ThemeToggle** - Selector de tema
-- **UserMenu** - Menú de usuario
-- **AuthGuard** - Protección de rutas
+- **LanguageToggle** - Language selector
+- **ThemeToggle** - Theme selector
+- **UserMenu** - User menu
+- **AuthGuard** - Route protection
 
-## 🚀 Uso Básico
+## 🚀 Basic Usage
 
-### Importación
+### Import
 
 ```tsx
 import { Button } from '@/components/ui/button'
@@ -72,7 +72,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 ```
 
-### Ejemplo Básico
+### Basic Example
 
 ```tsx
 import { Button } from '@/components/ui/button'
@@ -83,13 +83,13 @@ export function ExampleComponent() {
   return (
     <Card className="w-full max-w-md">
       <CardHeader>
-        <CardTitle>Formulario de Ejemplo</CardTitle>
+        <CardTitle>Example Form</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
-        <Input placeholder="Ingresa tu nombre" />
-        <Input type="email" placeholder="Ingresa tu email" />
+        <Input placeholder="Enter your name" />
+        <Input type="email" placeholder="Enter your email" />
         <Button className="w-full">
-          Enviar
+          Submit
         </Button>
       </CardContent>
     </Card>
@@ -97,14 +97,14 @@ export function ExampleComponent() {
 }
 ```
 
-## 🎨 Personalización
+## 🎨 Customization
 
-### Variantes de Componentes
+### Component Variants
 
-La mayoría de componentes incluyen múltiples variantes:
+Most components include multiple variants:
 
 ```tsx
-// Botones
+// Buttons
 <Button variant="default">Default</Button>
 <Button variant="destructive">Destructive</Button>
 <Button variant="outline">Outline</Button>
@@ -112,63 +112,63 @@ La mayoría de componentes incluyen múltiples variantes:
 <Button variant="ghost">Ghost</Button>
 <Button variant="link">Link</Button>
 
-// Tamaños
-<Button size="sm">Pequeño</Button>
+// Sizes
+<Button size="sm">Small</Button>
 <Button size="default">Default</Button>
-<Button size="lg">Grande</Button>
+<Button size="lg">Large</Button>
 ```
 
-### Clases CSS Personalizadas
+### Custom CSS Classes
 
-Todos los componentes aceptan la prop `className`:
+All components accept the `className` prop:
 
 ```tsx
 <Button className="bg-purple-600 hover:bg-purple-700">
-  Botón Personalizado
+  Custom Button
 </Button>
 ```
 
-### Temas
+### Themes
 
-Los componentes respetan automáticamente el tema activo (claro/oscuro):
+Components automatically respect the active theme (light/dark):
 
 ```tsx
-// Este componente se adapta automáticamente al tema
+// This component automatically adapts to the theme
 <Card className="bg-background text-foreground">
   <CardContent>
-    Contenido que respeta el tema
+    Content that respects the theme
   </CardContent>
 </Card>
 ```
 
-## 🔧 Composición Avanzada
+## 🔧 Advanced Composition
 
 ### Compound Components
 
-Muchos componentes utilizan el patrón Compound Component:
+Many components use the Compound Component pattern:
 
 ```tsx
 <Card>
   <CardHeader>
-    <CardTitle>Título</CardTitle>
-    <CardDescription>Descripción</CardDescription>
+    <CardTitle>Title</CardTitle>
+    <CardDescription>Description</CardDescription>
   </CardHeader>
   <CardContent>
-    <p>Contenido principal</p>
+    <p>Main content</p>
   </CardContent>
   <CardFooter>
-    <Button>Acción</Button>
+    <Button>Action</Button>
   </CardFooter>
 </Card>
 ```
 
 ### Render Props
 
-Algunos componentes utilizan render props para máxima flexibilidad:
+Some components use render props for maximum flexibility:
 
 ```tsx
 <AuthGuard
-  fallback={<div>Debes iniciar sesión</div>}
+  fallback={<div>You must log in</div>}
 >
   <ProtectedContent />
 </AuthGuard>
@@ -176,42 +176,42 @@ Algunos componentes utilizan render props para máxima flexibilidad:
 
 ## 📱 Responsive Design
 
-Todos los componentes están diseñados para ser responsivos:
+All components are designed to be responsive:
 
 ```tsx
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-  <Card>Tarjeta 1</Card>
-  <Card>Tarjeta 2</Card>
-  <Card>Tarjeta 3</Card>
+  <Card>Card 1</Card>
+  <Card>Card 2</Card>
+  <Card>Card 3</Card>
 </div>
 ```
 
-## ♿ Accesibilidad
+## ♿ Accessibility
 
-### Características de Accesibilidad
+### Accessibility Features
 
-- **Navegación por teclado**: Todos los componentes son navegables por teclado
-- **Screen readers**: Soporte completo para lectores de pantalla
-- **ARIA labels**: Etiquetas ARIA apropiadas
-- **Contraste**: Colores que cumplen con las pautas de contraste
-- **Focus management**: Gestión adecuada del foco
+- **Keyboard navigation**: All components are keyboard navigable
+- **Screen readers**: Full support for screen readers
+- **ARIA labels**: Appropriate ARIA labels
+- **Contrast**: Colors that meet contrast guidelines
+- **Focus management**: Proper focus management
 
-### Ejemplo con Accesibilidad
+### Accessibility Example
 
 ```tsx
 <Button
-  aria-label="Cerrar modal"
+  aria-label="Close modal"
   aria-describedby="modal-description"
   onClick={closeModal}
 >
   <X className="h-4 w-4" />
-  <span className="sr-only">Cerrar</span>
+  <span className="sr-only">Close</span>
 </Button>
 ```
 
 ## 🧪 Testing
 
-### Testing de Componentes
+### Component Testing
 
 ```tsx
 import { render, screen } from '@testing-library/react'
@@ -223,13 +223,13 @@ test('renders button with text', () => {
 })
 ```
 
-### Storybook (Próximamente)
+### Storybook (Coming Soon)
 
-Estamos trabajando en integrar Storybook para documentación interactiva de componentes.
+We are working on integrating Storybook for interactive component documentation.
 
-## 📚 Ejemplos Completos
+## 📚 Complete Examples
 
-### Formulario de Contacto
+### Contact Form
 
 ```tsx
 import { useState } from 'react'
@@ -254,12 +254,12 @@ export function ContactForm() {
   return (
     <Card className="w-full max-w-lg">
       <CardHeader>
-        <CardTitle>Contáctanos</CardTitle>
+        <CardTitle>Contact Us</CardTitle>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="name">Nombre</Label>
+            <Label htmlFor="name">Name</Label>
             <Input
               id="name"
               value={formData.name}
@@ -267,7 +267,7 @@ export function ContactForm() {
               required
             />
           </div>
-          
+
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
             <Input
@@ -278,9 +278,9 @@ export function ContactForm() {
               required
             />
           </div>
-          
+
           <div className="space-y-2">
-            <Label htmlFor="message">Mensaje</Label>
+            <Label htmlFor="message">Message</Label>
             <Textarea
               id="message"
               value={formData.message}
@@ -288,9 +288,9 @@ export function ContactForm() {
               required
             />
           </div>
-          
+
           <Button type="submit" className="w-full">
-            Enviar Mensaje
+            Send Message
           </Button>
         </form>
       </CardContent>
@@ -299,23 +299,23 @@ export function ContactForm() {
 }
 ```
 
-## 🔄 Próximas Actualizaciones
+## 🔄 Upcoming Updates
 
-- **Más componentes**: Datepicker, Combobox, Command palette
-- **Animaciones**: Integración con Framer Motion
-- **Storybook**: Documentación interactiva
-- **Testing**: Más ejemplos de testing
-- **Temas**: Más opciones de personalización
+- **More components**: Datepicker, Combobox, Command palette
+- **Animations**: Integration with Framer Motion
+- **Storybook**: Interactive documentation
+- **Testing**: More testing examples
+- **Themes**: More customization options
 
-## 🤝 Contribuir
+## 🤝 Contribute
 
-¿Quieres añadir un nuevo componente o mejorar uno existente? ¡Las contribuciones son bienvenidas!
+Want to add a new component or improve an existing one? Contributions are welcome!
 
-1. Revisa las [guías de contribución](https://github.com/your-username/template-trae/blob/main/CONTRIBUTING.md)
-2. Sigue las convenciones de código existentes
-3. Incluye tests y documentación
-4. Asegúrate de que sea accesible
+1. Review the [contribution guidelines](https://github.com/eddremonts86/sass-template)
+2. Follow existing code conventions
+3. Include tests and documentation
+4. Ensure it's accessible
 
 ---
 
-¿Tienes preguntas sobre algún componente específico? Consulta la documentación individual de cada componente o [crea un issue](https://github.com/your-username/template-trae/issues) en GitHub.
+Do you have questions about a specific component? Check the individual documentation for each component or [create an issue](https://github.com/eddremonts86/sass-template/issues) on GitHub.

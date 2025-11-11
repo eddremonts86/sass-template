@@ -1,8 +1,12 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { getAllKeys } = require('./verify-translations');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { getAllKeys } from './verify-translations.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const locales = ['en', 'es', 'da'];
 const localeDir = path.join(__dirname, '../src/lib/i18n/locales');
@@ -243,7 +247,7 @@ function cleanBackups() {
 }
 
 // Manejo de argumentos de línea de comandos
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   const args = process.argv.slice(2);
   const dryRun = args.includes('--dry-run') || args.includes('-d');
   const clean = args.includes('--clean') || args.includes('-c');
@@ -278,4 +282,4 @@ Ejemplos:
   process.exit(success ? 0 : 1);
 }
 
-module.exports = { syncTranslations, cleanBackups };
+export { syncTranslations, cleanBackups };

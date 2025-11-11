@@ -46,9 +46,14 @@ pnpm run build           # Must complete successfully
 - ✅ Function/variable names
 - ✅ Git commits (conventional commits format)
 - ✅ Pull request descriptions
-- ✅ Documentation files
+- ✅ **ALL documentation files (.md, .mdx)**
+- ✅ **ENTIRE docs/ folder content (VitePress documentation)**
+- ✅ README files
 - ✅ Error messages (except user-facing i18n)
 - ✅ Test descriptions
+- ✅ Storybook stories and documentation
+- ✅ API documentation
+- ✅ Component documentation
 
 ### Exceptions
 

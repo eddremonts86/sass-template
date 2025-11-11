@@ -1,26 +1,26 @@
-# Patrones de Diseño
+# Design Patterns
 
-Template Trae implementa los patrones de diseño más modernos y efectivos para React y JavaScript, siguiendo las mejores prácticas de [patterns.dev](https://patterns.dev) y la experiencia de la comunidad.
+Template Trae implements the most modern and effective design patterns for React and JavaScript, following best practices from [patterns.dev](https://patterns.dev) and community experience.
 
-## 🎯 Filosofía de Patrones
+## 🎯 Pattern Philosophy
 
-Nuestros patrones están diseñados para:
+Our patterns are designed for:
 
-- **Mantenibilidad**: Código fácil de entender y modificar
-- **Reutilización**: Componentes y lógica que se pueden usar en múltiples contextos
-- **Escalabilidad**: Arquitectura que crece con tu aplicación
-- **Performance**: Optimizaciones que mejoran la experiencia del usuario
-- **Testing**: Código que es fácil de testear y debuggear
+- **Maintainability**: Code that is easy to understand and modify
+- **Reusability**: Components and logic that can be used in multiple contexts
+- **Scalability**: Architecture that grows with your application
+- **Performance**: Optimizations that improve user experience
+- **Testing**: Code that is easy to test and debug
 
-## 📚 Patrones Implementados
+## 📚 Implemented Patterns
 
 ### 🔄 React Patterns
 
 #### 1. **Provider Pattern**
-Compartir estado y configuración global a través de la aplicación.
+Share global state and configuration throughout the application.
 
 ```tsx
-// Implementación
+// Implementation
 export function AppProvider({ children }: { children: ReactNode }) {
   return (
     <ClerkProvider>
@@ -33,7 +33,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   )
 }
 
-// Uso
+// Usage
 function App() {
   return (
     <AppProvider>
@@ -43,30 +43,30 @@ function App() {
 }
 ```
 
-**Beneficios:**
-- Estado global accesible desde cualquier componente
-- Evita prop drilling
-- Configuración centralizada
+**Benefits:**
+- Global state accessible from any component
+- Avoids prop drilling
+- Centralized configuration
 
 #### 2. **Custom Hooks Pattern**
-Encapsular lógica reutilizable en hooks personalizados.
+Encapsulate reusable logic in custom hooks.
 
 ```tsx
-// Hook personalizado
+// Custom hook
 export function useTheme() {
   const { theme, setTheme } = useAuthStore()
-  
+
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light')
   }
-  
+
   return { theme, setTheme, toggleTheme }
 }
 
-// Uso en componente
+// Usage in component
 function ThemeToggle() {
   const { theme, toggleTheme } = useTheme()
-  
+
   return (
     <Button onClick={toggleTheme}>
       {theme === 'light' ? '🌙' : '☀️'}
@@ -75,16 +75,16 @@ function ThemeToggle() {
 }
 ```
 
-**Beneficios:**
-- Lógica reutilizable entre componentes
-- Separación de concerns
-- Fácil testing
+**Benefits:**
+- Reusable logic across components
+- Separation of concerns
+- Easy testing
 
 #### 3. **Compound Component Pattern**
-Componentes que trabajan juntos para crear interfaces complejas.
+Components that work together to create complex interfaces.
 
 ```tsx
-// Implementación
+// Implementation
 export function Card({ children, ...props }) {
   return <div className="card" {...props}>{children}</div>
 }
@@ -101,71 +101,71 @@ Card.Footer = function CardFooter({ children }) {
   return <div className="card-footer">{children}</div>
 }
 
-// Uso
+// Usage
 <Card>
   <Card.Header>
-    <h3>Título</h3>
+    <h3>Title</h3>
   </Card.Header>
   <Card.Content>
-    <p>Contenido</p>
+    <p>Content</p>
   </Card.Content>
   <Card.Footer>
-    <Button>Acción</Button>
+    <Button>Action</Button>
   </Card.Footer>
 </Card>
 ```
 
-**Beneficios:**
-- API intuitiva y flexible
-- Componentes cohesivos
-- Fácil de extender
+**Benefits:**
+- Intuitive and flexible API
+- Cohesive components
+- Easy to extend
 
 #### 4. **Higher-Order Component (HOC) Pattern**
-Agregar funcionalidad a componentes existentes.
+Add functionality to existing components.
 
 ```tsx
-// HOC para autenticación
+// HOC for authentication
 export function withAuth<P extends object>(
   Component: React.ComponentType<P>
 ) {
   return function AuthenticatedComponent(props: P) {
     const { user } = useAuth()
-    
+
     if (!user) {
       return <LoginPrompt />
     }
-    
+
     return <Component {...props} />
   }
 }
 
-// Uso
+// Usage
 const ProtectedDashboard = withAuth(Dashboard)
 ```
 
-**Beneficios:**
-- Funcionalidad transversal
-- Reutilización de lógica
-- Composición de comportamientos
+**Benefits:**
+- Cross-cutting functionality
+- Logic reuse
+- Behavior composition
 
 #### 5. **Render Props Pattern**
-Compartir código entre componentes usando props que son funciones.
+Share code between components using props that are functions.
 
 ```tsx
-// Componente con render props
+// Component with render props
 export function DataFetcher({ url, children }) {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-  
+
   useEffect(() => {
     fetchData(url).then(setData).catch(setError).finally(() => setLoading(false))
   }, [url])
-  
+
   return children({ data, loading, error })
 }
 
-// Uso
+// Usage
 <DataFetcher url="/api/users">
   {({ data, loading, error }) => {
     if (loading) return <Spinner />
@@ -175,15 +175,15 @@ export function DataFetcher({ url, children }) {
 </DataFetcher>
 ```
 
-**Beneficios:**
-- Máxima flexibilidad
-- Lógica compartida
-- Control total del renderizado
+**Benefits:**
+- Maximum flexibility
+- Shared logic
+- Full rendering control
 
 ### 🔧 JavaScript Patterns
 
 #### 1. **Singleton Pattern**
-Una sola instancia para configuraciones globales.
+A single instance for global configurations.
 
 ```javascript
 class ConfigManager {
@@ -191,15 +191,15 @@ class ConfigManager {
     if (ConfigManager.instance) {
       return ConfigManager.instance
     }
-    
+
     this.config = {}
     ConfigManager.instance = this
   }
-  
+
   get(key) {
     return this.config[key]
   }
-  
+
   set(key, value) {
     this.config[key] = value
   }
@@ -209,21 +209,21 @@ const config = new ConfigManager()
 ```
 
 #### 2. **Observer Pattern**
-Notificación automática de cambios.
+Automatic change notifications.
 
 ```javascript
 class EventEmitter {
   constructor() {
     this.events = {}
   }
-  
+
   on(event, callback) {
     if (!this.events[event]) {
       this.events[event] = []
     }
     this.events[event].push(callback)
   }
-  
+
   emit(event, data) {
     if (this.events[event]) {
       this.events[event].forEach(callback => callback(data))
@@ -233,7 +233,7 @@ class EventEmitter {
 ```
 
 #### 3. **Factory Pattern**
-Crear objetos basados en configuración.
+Create objects based on configuration.
 
 ```javascript
 class ComponentFactory {
@@ -243,19 +243,19 @@ class ComponentFactory {
       input: () => new Input(props),
       modal: () => new Modal(props)
     }
-    
+
     return components[type]?.() || null
   }
 }
 ```
 
 #### 4. **Module Pattern**
-Encapsulación y organización del código.
+Code encapsulation and organization.
 
 ```javascript
 const ThemeManager = (function() {
   let currentTheme = 'light'
-  
+
   return {
     getTheme: () => currentTheme,
     setTheme: (theme) => {
@@ -269,24 +269,24 @@ const ThemeManager = (function() {
 ### 🏗️ Architectural Patterns
 
 #### 1. **Container/Presentational Pattern**
-Separación entre lógica de negocio y presentación.
+Separation between business logic and presentation.
 
 ```tsx
-// Container (lógica)
+// Container (logic)
 function UserListContainer() {
   const [users, setUsers] = useState([])
   const [loading, setLoading] = useState(true)
-  
+
   useEffect(() => {
     fetchUsers().then(setUsers).finally(() => setLoading(false))
   }, [])
-  
+
   const handleUserSelect = (user) => {
-    // Lógica de selección
+    // Selection logic
   }
-  
+
   return (
-    <UserListPresentation 
+    <UserListPresentation
       users={users}
       loading={loading}
       onUserSelect={handleUserSelect}
@@ -297,11 +297,11 @@ function UserListContainer() {
 // Presentational (UI)
 function UserListPresentation({ users, loading, onUserSelect }) {
   if (loading) return <Spinner />
-  
+
   return (
     <div>
       {users.map(user => (
-        <UserCard 
+        <UserCard
           key={user.id}
           user={user}
           onClick={() => onUserSelect(user)}
@@ -313,7 +313,7 @@ function UserListPresentation({ users, loading, onUserSelect }) {
 ```
 
 #### 2. **State Management Pattern**
-Gestión de estado con Zustand.
+State management with Zustand.
 
 ```tsx
 // Store
@@ -325,39 +325,39 @@ export const useAuthStore = create((set) => ({
   logout: () => set({ user: null })
 }))
 
-// Uso en componente
+// Usage in component
 function UserProfile() {
   const { user, logout } = useAuthStore()
-  
+
   return (
     <div>
-      <h1>Hola, {user?.name}</h1>
-      <Button onClick={logout}>Cerrar Sesión</Button>
+      <h1>Hello, {user?.name}</h1>
+      <Button onClick={logout}>Log Out</Button>
     </div>
   )
 }
 ```
 
-## 🚀 Patrones en Acción
+## 🚀 Patterns in Action
 
-### Ejemplo Completo: Dashboard con Múltiples Patrones
+### Complete Example: Dashboard with Multiple Patterns
 
 ```tsx
-// HOC para autenticación
+// HOC for authentication
 const withAuth = (Component) => (props) => {
   const { user } = useAuth()
   return user ? <Component {...props} /> : <LoginPage />
 }
 
-// Custom Hook para datos del dashboard
+// Custom Hook for dashboard data
 function useDashboardData() {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(true)
-  
+
   useEffect(() => {
     fetchDashboardData().then(setData).finally(() => setLoading(false))
   }, [])
-  
+
   return { data, loading }
 }
 
@@ -365,9 +365,9 @@ function useDashboardData() {
 function DashboardContainer() {
   const { data, loading } = useDashboardData()
   const { theme } = useTheme()
-  
+
   return (
-    <DashboardPresentation 
+    <DashboardPresentation
       data={data}
       loading={loading}
       theme={theme}
@@ -375,10 +375,10 @@ function DashboardContainer() {
   )
 }
 
-// Presentational Component con Compound Components
+// Presentational Component with Compound Components
 function DashboardPresentation({ data, loading, theme }) {
   if (loading) return <Spinner />
-  
+
   return (
     <div className={`dashboard theme-${theme}`}>
       <Card>
@@ -394,64 +394,62 @@ function DashboardPresentation({ data, loading, theme }) {
   )
 }
 
-// Componente final con HOC
+// Final component with HOC
 export const Dashboard = withAuth(DashboardContainer)
 ```
 
-## 📊 Beneficios de los Patrones
+## 📊 Pattern Benefits
 
-### ✅ **Mantenibilidad**
-- Código organizado y predecible
-- Separación clara de responsabilidades
-- Fácil localización de bugs
+### ✅ **Maintainability**
+- Organized and predictable code
+- Clear separation of responsibilities
+- Easy bug localization
 
-### ✅ **Reutilización**
-- Componentes que se pueden usar en múltiples contextos
-- Lógica compartida entre diferentes partes de la app
-- Menos duplicación de código
+### ✅ **Reusability**
+- Components that can be used in multiple contexts
+- Logic shared across different parts of the app
+- Less code duplication
 
-### ✅ **Escalabilidad**
-- Arquitectura que crece con la aplicación
-- Fácil añadir nuevas funcionalidades
-- Patrones consistentes en todo el proyecto
+### ✅ **Scalability**
+- Architecture that grows with the application
+- Easy to add new functionalities
+- Consistent patterns throughout the project
 
 ### ✅ **Testing**
-- Componentes aislados fáciles de testear
-- Lógica separada de la presentación
-- Mocks y stubs simplificados
+- Isolated components easy to test
+- Logic separated from presentation
+- Simplified mocks and stubs
 
 ### ✅ **Performance**
-- Optimizaciones automáticas
-- Lazy loading y code splitting
-- Memoización inteligente
+- Automatic optimizations
+- Lazy loading and code splitting
+- Intelligent memoization
 
-## 🔍 Cuándo Usar Cada Patrón
+## 🔍 When to Use Each Pattern
 
-| Patrón | Cuándo Usar | Evitar Cuando |
+| Pattern | When to Use | Avoid When |
 |--------|-------------|---------------|
-| **Provider** | Estado global, configuración | Estado local simple |
-| **Custom Hooks** | Lógica reutilizable | Lógica muy específica |
-| **Compound Components** | APIs complejas | Componentes simples |
-| **HOC** | Funcionalidad transversal | Lógica específica |
-| **Render Props** | Máxima flexibilidad | APIs simples |
-| **Container/Presentational** | Separar lógica de UI | Componentes muy simples |
+| **Provider** | Global state, configuration | Simple local state |
+| **Custom Hooks** | Reusable logic | Very specific logic |
+| **Compound Components** | Complex APIs | Simple components |
+| **HOC** | Cross-cutting functionality | Specific logic |
+| **Render Props** | Maximum flexibility | Simple APIs |
+| **Container/Presentational** | Separate logic from UI | Very simple components |## 📚 Additional Resources
 
-## 📚 Recursos Adicionales
+- **[Patterns.dev](https://patterns.dev)** - Complete guide to patterns
+- **[React Patterns](https://reactpatterns.com)** - React-specific patterns
+- **[JavaScript Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/)** - Classic JS patterns
+- **[Kent C. Dodds Blog](https://kentcdodds.com/blog)** - Articles on React patterns
 
-- **[Patterns.dev](https://patterns.dev)** - Guía completa de patrones
-- **[React Patterns](https://reactpatterns.com)** - Patrones específicos de React
-- **[JavaScript Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/)** - Patrones clásicos de JS
-- **[Kent C. Dodds Blog](https://kentcdodds.com/blog)** - Artículos sobre patrones React
+## 🔄 Upcoming Patterns
 
-## 🔄 Próximos Patrones
+We are working on implementing:
 
-Estamos trabajando en implementar:
-
-1. **Command Pattern** - Para acciones deshacer/rehacer
-2. **Strategy Pattern** - Para algoritmos intercambiables
-3. **Decorator Pattern** - Para funcionalidades adicionales
-4. **State Machine Pattern** - Para estados complejos
+1. **Command Pattern** - For undo/redo actions
+2. **Strategy Pattern** - For interchangeable algorithms
+3. **Decorator Pattern** - For additional functionalities
+4. **State Machine Pattern** - For complex states
 
 ---
 
-¿Quieres profundizar en algún patrón específico? Consulta nuestros [ejemplos prácticos](/patterns/react) o [implementaciones en JavaScript](/patterns/javascript).
+Want to dive deeper into a specific pattern? Check out our [practical examples](/patterns/react) or [JavaScript implementations](/patterns/javascript).

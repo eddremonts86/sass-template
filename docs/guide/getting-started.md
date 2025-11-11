@@ -1,47 +1,47 @@
-# Comenzando
+# Getting Started
 
-¡Bienvenido a Sass Edd Template! Esta guía te ayudará a configurar y ejecutar el proyecto en tu entorno local.
+Welcome to Sass Edd Template! This guide will help you set up and run the project in your local environment.
 
-## 📋 Prerrequisitos
+## 📋 Prerequisites
 
-Antes de comenzar, asegúrate de tener instalado:
+Before starting, make sure you have installed:
 
-- **Node.js** (versión 18 o superior)
-- **pnpm** (recomendado) o npm/yarn
+- **Node.js** (version 18 or higher)
+- **pnpm** (recommended) or npm/yarn
 - **Git**
-- Una cuenta en [Clerk](https://clerk.com) para autenticación
+- A [Clerk](https://clerk.com) account for authentication
 
-## 🚀 Instalación
+## 🚀 Installation
 
-### 1. Clonar el Repositorio
+### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/sass-edd-template.git
-cd sass-edd-template
+git clone https://github.com/eddremonts86/sass-template.git
+cd sass-template
 ```
 
-### 2. Instalar Dependencias
+### 2. Install Dependencies
 
 ```bash
-# Usando pnpm (recomendado)
+# Using pnpm (recommended)
 pnpm install
 
-# O usando npm
+# Or using npm
 npm install
 
-# O usando yarn
+# Or using yarn
 yarn install
 ```
 
-### 3. Configurar Variables de Entorno
+### 3. Configure Environment Variables
 
-Copia el archivo de ejemplo y configura las variables necesarias:
+Copy the example file and configure the necessary variables:
 
 ```bash
 cp .env.example .env.local
 ```
 
-Edita `.env.local` con tus valores:
+Edit `.env.local` with your values:
 
 ```env
 # Clerk Authentication
@@ -51,118 +51,121 @@ CLERK_SECRET_KEY=sk_test_your_secret_key_here
 # Next.js Configuration
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 
-# Database (opcional)
+# Database (optional)
 DATABASE_URL=your_database_url_here
 
-# Otras configuraciones
+# Other configurations
 NEXT_PUBLIC_ANALYTICS_ID=your_analytics_id_here
 ```
 
-### 4. Configurar Clerk
+### 4. Configure Clerk
 
-1. Ve a [Clerk Dashboard](https://dashboard.clerk.com)
-2. Crea una nueva aplicación
-3. Copia las claves API a tu archivo `.env.local`
-4. Configura las URLs permitidas:
+1. Go to [Clerk Dashboard](https://dashboard.clerk.com)
+2. Create a new application
+3. Copy the API keys to your `.env.local` file
+4. Configure allowed URLs:
    - **Frontend API**: `http://localhost:3000`
    - **Homepage URL**: `http://localhost:3000`
 
-### 5. Iniciar el Servidor de Desarrollo
+### 5. Start the Development Server
 
 ```bash
 pnpm dev
 ```
 
-¡Listo! Tu aplicación estará disponible en [http://localhost:3000](http://localhost:3000).
+Ready! Your application will be available at `http://localhost:3000`.
 
-## 🏗️ Estructura del Proyecto
+## 🏭️ Project Structure
 
 ```
 template-trae/
 ├── src/
-│   ├── app/                    # App Router de Next.js
-│   │   ├── [locale]/          # Rutas internacionalizadas
-│   │   ├── globals.css        # Estilos globales
-│   │   └── layout.tsx         # Layout raíz
-│   ├── components/            # Componentes React
-│   │   ├── ui/               # Componentes base (shadcn/ui)
-│   │   ├── common/           # Componentes comunes
-│   │   ├── dashboard/        # Componentes del dashboard
-│   │   ├── forms/            # Componentes de formularios
-│   │   └── layout/           # Componentes de layout
+│   ├── app/                    # Next.js App Router
+│   │   ├── [locale]/          # Internationalized routes
+│   │   ├── globals.css        # Global styles
+│   │   └── layout.tsx         # Root layout
+│   ├── components/            # React components
+│   │   ├── ui/               # Base components (shadcn/ui)
+│   │   ├── common/           # Common components
+│   │   ├── dashboard/        # Dashboard components
+│   │   ├── forms/            # Form components
+│   │   └── layout/           # Layout components
 │   ├── hooks/                # Custom hooks
-│   ├── lib/                  # Utilidades y configuraciones
-│   │   ├── auth/            # Configuración de autenticación
-│   │   ├── i18n/            # Configuración de i18n
-│   │   └── utils/           # Funciones utilitarias
-│   ├── stores/              # Gestión de estado (Zustand)
-│   ├── styles/              # Estilos adicionales
-│   ├── types/               # Definiciones de tipos TypeScript
-│   └── utils/               # Utilidades adicionales
-├── messages/                # Archivos de traducción
-├── public/                  # Archivos estáticos
-├── docs/                    # Documentación (VitePress)
+│   ├── lib/                  # Utilities and configurations
+│   │   ├── auth/            # Authentication configuration
+│   │   ├── i18n/            # i18n configuration
+│   │   └── utils/           # Utility functions
+│   ├── stores/              # State management (Zustand)
+│   ├── styles/              # Additional styles
+│   ├── types/               # TypeScript type definitions
+│   └── utils/               # Additional utilities
+├── messages/                # Translation files
+├── public/                  # Static files
+├── docs/                    # Documentation (VitePress)
 └── tests/                   # Tests
 ```
 
-## 🎯 Próximos Pasos
+## 🎯 Next Steps
 
-Ahora que tienes el proyecto funcionando, puedes:
+Now that you have the project running, you can:
 
-1. **[Explorar los Componentes](/components/overview)** - Conoce la biblioteca de componentes disponibles
-2. **[Configurar la Autenticación](/guide/authentication)** - Personaliza el flujo de autenticación
-3. **[Añadir Idiomas](/guide/i18n)** - Configura idiomas adicionales
-4. **[Personalizar Temas](/guide/theming)** - Modifica los colores y estilos
+1. **[Explore Components](/components/overview)** - Learn about the available component library
+2. **[Configure Authentication](/guide/authentication)** - Customize the authentication flow
+3. **[Add Languages](/guide/i18n)** - Configure additional languages
+4. **[Customize Themes](/guide/theming)** - Modify colors and styles
 
-## 🔧 Scripts Disponibles
+## 🔧 Available Scripts
 
-| Script | Descripción |
+| Script | Description |
 |--------|-------------|
-| `pnpm dev` | Inicia el servidor de desarrollo |
-| `pnpm build` | Construye la aplicación para producción |
-| `pnpm start` | Inicia el servidor de producción |
-| `pnpm lint` | Ejecuta ESLint |
-| `pnpm lint:fix` | Corrige errores de linting automáticamente |
-| `pnpm type-check` | Verifica tipos de TypeScript |
-| `pnpm docs:dev` | Inicia el servidor de documentación |
-| `pnpm docs:build` | Construye la documentación |
+| `pnpm dev` | Start the development server |
+| `pnpm build` | Build the application for production |
+| `pnpm start` | Start the production server |
+| `pnpm lint` | Run ESLint |
+| `pnpm lint:fix` | Fix linting errors automatically |
+| `pnpm type-check` | Verify TypeScript types |
+| `pnpm docs:dev` | Start the documentation server |
+| `pnpm docs:build` | Build the documentation |
 
-## 🐛 Solución de Problemas
+## 🐛 Troubleshooting
 
 ### Error: "Invalid publishableKey"
 
-Si ves este error, verifica que:
-1. Has configurado correctamente las claves de Clerk en `.env.local`
-2. Las claves no contienen espacios adicionales
-3. Has reiniciado el servidor después de cambiar las variables de entorno
+If you see this error, verify that:
 
-### Error de Compilación TypeScript
+1. You have correctly configured the Clerk keys in `.env.local`
+2. The keys don't contain extra spaces
+3. You have restarted the server after changing environment variables
 
-Si encuentras errores de TypeScript:
-1. Ejecuta `pnpm type-check` para ver los errores específicos
-2. Verifica que todas las dependencias estén instaladas
-3. Reinicia tu editor/IDE
+### TypeScript Compilation Error
 
-### Problemas con i18n
+If you encounter TypeScript errors:
 
-Si las traducciones no funcionan:
-1. Verifica que los archivos de mensajes existan en `messages/`
-2. Comprueba que el locale esté configurado correctamente
-3. Reinicia el servidor de desarrollo
+1. Run `pnpm type-check` to see specific errors
+2. Verify that all dependencies are installed
+3. Restart your editor/IDE
 
-## 📚 Recursos Adicionales
+### i18n Problems
 
-- [Documentación de Next.js](https://nextjs.org/docs)
-- [Documentación de Clerk](https://clerk.com/docs)
-- [Documentación de Tailwind CSS](https://tailwindcss.com/docs)
-- [Documentación de next-intl](https://next-intl-docs.vercel.app/)
+If translations don't work:
 
-## 🤝 ¿Necesitas Ayuda?
+1. Verify that message files exist in `messages/`
+2. Check that the locale is configured correctly
+3. Restart the development server
 
-Si tienes problemas o preguntas:
+## 📚 Additional Resources
 
-1. Revisa la [documentación completa](/guide/installation)
-2. Busca en los [issues de GitHub](https://github.com/your-username/template-trae/issues)
-3. Crea un nuevo issue si no encuentras la solución
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Clerk Documentation](https://clerk.com/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [next-intl Documentation](https://next-intl-docs.vercel.app/)
 
-¡Estamos aquí para ayudarte a tener éxito con Template Trae!
+## 🤝 Need Help?
+
+If you have problems or questions:
+
+1. Review the [complete documentation](/guide/getting-started)
+2. Search in [GitHub issues](https://github.com/eddremonts86/sass-template/issues)
+3. Create a new issue if you don't find the solution
+
+We're here to help you succeed with Template Trae!
