@@ -1,92 +1,92 @@
 {
-  // Extensiones RECOMENDADAS para este proyecto
-  // VS Code sugerirá instalar estas extensiones automáticamente
+  // RECOMMENDED extensions for this project
+  // VS Code will suggest installing these extensions automatically
   "recommendations": [
     // ============================================
-    // ESENCIALES - DESARROLLO
+    // ESSENTIAL - DEVELOPMENT
     // ============================================
-    // Prettier - Formateador de código
+    // Prettier - Code formatter
     "esbenp.prettier-vscode",
 
-    // ESLint - Linter de JavaScript/TypeScript
+    // ESLint - JavaScript/TypeScript linter
     "dbaeumer.vscode-eslint",
 
-    // TypeScript - Soporte mejorado
+    // TypeScript - Enhanced support
     "ms-vscode.vscode-typescript-next",
 
-    // Path Intellisense - Autocompletado de rutas
+    // Path Intellisense - Path autocomplete
     "christian-kohler.path-intellisense",
 
-    // npm Intellisense - Autocompletado de paquetes npm
+    // npm Intellisense - npm package autocomplete
     "christian-kohler.npm-intellisense",
 
-    // Auto Rename Tag - Renombra tags HTML/JSX automáticamente
+    // Auto Rename Tag - Automatically renames HTML/JSX tags
     "formulahendry.auto-rename-tag",
 
-    // Auto Close Tag - Cierra tags HTML/JSX automáticamente
+    // Auto Close Tag - Automatically closes HTML/JSX tags
     "formulahendry.auto-close-tag",
 
     // ============================================
-    // ESENCIALES - NEXT.JS & REACT
+    // ESSENTIAL - NEXT.JS & REACT
     // ============================================
     // ES7+ React/Redux/React-Native snippets
     "dsznajder.es7-react-js-snippets",
 
-    // React Refactor - Herramientas de refactorización
+    // React Refactor - Refactoring tools
     "planbcoding.vscode-react-refactor",
 
-    // Console Ninja - Debug en el editor
+    // Console Ninja - Debug in the editor
     "WallabyJs.console-ninja",
 
     // ============================================
     // TAILWIND CSS
     // ============================================
-    // Tailwind CSS IntelliSense - Autocompletado
+    // Tailwind CSS IntelliSense - Autocomplete
     "bradlc.vscode-tailwindcss",
 
-    // Tailwind Documentation - Documentación inline
+    // Tailwind Documentation - Inline documentation
     "austenc.tailwind-docs",
 
     // ============================================
-    // CALIDAD DE CÓDIGO
+    // CODE QUALITY
     // ============================================
-    // Error Lens - Muestra errores inline
+    // Error Lens - Shows inline errors
     "usernamehw.errorlens",
 
-    // SonarLint - Análisis estático de código
+    // SonarLint - Static code analysis
     "SonarSource.sonarlint-vscode",
 
-    // Code Spell Checker - Corrector ortográfico
+    // Code Spell Checker - Spell checker
     "streetsidesoftware.code-spell-checker",
 
     // Spanish - Code Spell Checker
     "streetsidesoftware.code-spell-checker-spanish",
 
-    // Better Comments - Comentarios mejorados
+    // Better Comments - Enhanced comments
     "aaron-bond.better-comments",
 
-    // TODO Highlight - Resalta TODOs
+    // TODO Highlight - Highlights TODOs
     "wayou.vscode-todo-highlight",
 
-    // Todo Tree - Vista de árbol de TODOs
+    // Todo Tree - TODO tree view
     "Gruntfuggly.todo-tree",
 
-    // Code Metrics - Métricas de complejidad
+    // Code Metrics - Complexity metrics
     "kisstkondoros.vscode-codemetrics",
 
-    // Import Cost - Muestra el tamaño de imports
+    // Import Cost - Shows import size
     "wix.vscode-import-cost",
 
     // ============================================
-    // GIT & CONTROL DE VERSIONES
+    // GIT & VERSION CONTROL
     // ============================================
-    // GitLens - Herramientas Git avanzadas
+    // GitLens - Advanced Git tools
     "eamodio.gitlens",
 
-    // Git Graph - Visualización de Git
+    // Git Graph - Git visualization
     "mhutchie.git-graph",
 
-    // GitHub Copilot - Asistente AI
+    // GitHub Copilot - AI assistant
     "GitHub.copilot",
 
     // GitHub Copilot Chat
@@ -95,106 +95,106 @@
     // ============================================
     // TESTING
     // ============================================
-    // Jest - Soporte para Jest
+    // Jest - Jest support
     "Orta.vscode-jest",
 
-    // Jest Runner - Ejecuta tests desde el editor
+    // Jest Runner - Run tests from editor
     "firsttris.vscode-jest-runner",
 
     // Playwright Test for VSCode
     "ms-playwright.playwright",
 
     // ============================================
-    // FORMATEO Y VISUALIZACIÓN
+    // FORMATTING & VISUALIZATION
     // ============================================
-    // Pretty TypeScript Errors - Errores más legibles
+    // Pretty TypeScript Errors - More readable errors
     "yoavbls.pretty-ts-errors",
 
-    // Indent Rainbow - Colorea indentación
+    // Indent Rainbow - Colors indentation
     "oderwat.indent-rainbow",
 
 
-    // Color Highlight - Resalta colores en CSS/código
+    // Color Highlight - Highlights colors in CSS/code
     "naumovs.color-highlight",
 
-    // Image Preview - Preview de imágenes
+    // Image Preview - Image preview
     "kisstkondoros.vscode-gutter-preview",
 
     // ============================================
-    // ICONOS Y TEMAS
+    // ICONS & THEMES
     // ============================================
-    // Material Icon Theme - Iconos mejorados
+    // Material Icon Theme - Enhanced icons
     "PKief.material-icon-theme",
 
-    // Material Theme - Temas de color
+    // Material Theme - Color themes
     "Equinusocio.vsc-material-theme",
 
     // ============================================
-    // MARKDOWN & DOCUMENTACIÓN
+    // MARKDOWN & DOCUMENTATION
     // ============================================
-    // Markdown All in One - Herramientas Markdown
+    // Markdown All in One - Markdown tools
     "yzhang.markdown-all-in-one",
 
     // Markdown Preview Enhanced
     "shd101wyy.markdown-preview-enhanced",
 
-    // MDX - Soporte para MDX
+    // MDX - MDX support
     "unifiedjs.vscode-mdx",
 
     // ============================================
-    // OTRAS UTILIDADES
+    // OTHER UTILITIES
     // ============================================
-    // DotENV - Resaltado de .env
+    // DotENV - .env highlighting
     "mikestead.dotenv",
 
-    // YAML - Soporte para YAML
+    // YAML - YAML support
     "redhat.vscode-yaml",
 
-    // EditorConfig - Soporte para .editorconfig
+    // EditorConfig - .editorconfig support
     "EditorConfig.EditorConfig",
 
-    // REST Client - Cliente HTTP
+    // REST Client - HTTP client
     "humao.rest-client",
 
-    // Project Manager - Gestión de proyectos
+    // Project Manager - Project management
     "alefragnani.project-manager",
 
-    // Thunder Client - Cliente API/REST
+    // Thunder Client - API/REST client
     "rangav.vscode-thunder-client",
 
     // ============================================
-    // PRODUCTIVIDAD
+    // PRODUCTIVITY
     // ============================================
-    // Auto Import - Auto importaciones
+    // Auto Import - Auto imports
     "steoates.autoimport",
 
-    // Move TS - Mover archivos TypeScript
+    // Move TS - Move TypeScript files
     "stringhamdb.move-ts",
 
-    // Paste JSON as Code - Convierte JSON a tipos
+    // Paste JSON as Code - Convert JSON to types
     "quicktype.quicktype",
 
-    // Turbo Console Log - Logs rápidos
+    // Turbo Console Log - Quick logs
     "ChakrounAnas.turbo-console-log",
 
-    // SVG Preview - Preview de SVG
+    // SVG Preview - SVG preview
     "SimonSiefke.svg-preview"
   ],
 
-  // Extensiones NO RECOMENDADAS (conflictos conocidos)
+  // NOT RECOMMENDED extensions (known conflicts)
   "unwantedRecommendations": [
-    // Conflictos con ESLint
+    // Conflicts with ESLint
     "dbaeumer.jshint",
     "ms-vscode.vscode-typescript-tslint-plugin",
 
-    // Conflictos con Prettier
+    // Conflicts with Prettier
     "HookyQR.beautify",
     "esbenp.beautify",
 
-    // Funcionalidad duplicada (built-in en VS Code)
+    // Duplicate functionality (built-in to VS Code)
     "eg2.vscode-npm-script",
 
-    // Conflictos con Tailwind CSS IntelliSense
+    // Conflicts with Tailwind CSS IntelliSense
     "bradlc.vscode-tailwindcss-legacy"
   ]
 }
