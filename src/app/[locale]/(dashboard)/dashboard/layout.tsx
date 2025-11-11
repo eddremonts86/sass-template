@@ -3,11 +3,11 @@ import { redirect } from 'next/navigation';
 
 export default async function DashboardLayout(props: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
   const { children, params } = props;
   // Next.js dynamic route params can be async in RSC; ensure resolution
-  const { locale } = await Promise.resolve(params);
+  const { locale } = await params;
 
   const { userId } = await auth();
   if (process.env.NODE_ENV !== 'production') {

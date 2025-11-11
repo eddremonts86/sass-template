@@ -1,0 +1,171 @@
+{
+  // ============================================
+  // CONFIGURACIÓN DE DICCIONARIOS PERSONALIZADOS
+  // ============================================
+
+  // Palabras específicas del proyecto que no están en el diccionario
+  "words": [
+    // Proyecto
+    "Trae",
+    "SAAS",
+
+    // Tecnologías y Frameworks
+    "clsx",
+    "lucide",
+    "pnpm",
+    "shadcn",
+    "tailwindcss",
+    "tanstack",
+    "nextjs",
+    "Intl",
+    "zustand",
+    "browserslist",
+    "TURBOPACK",
+    "jsdom",
+    "Geist",
+    "beasties",
+    "critters",
+    "Radix",
+    "Vitepress",
+
+    // Autenticación
+    "Clerk",
+    "CLERKJS",
+    "NEXTAUTH",
+    "signin",
+    "signup",
+    "signout",
+
+    // Servicios
+    "Upstash",
+    "Vercel",
+    "Sentry",
+    "Storybook",
+    "Chromatic",
+    "Husky",
+
+    // Desarrollo
+    "codegen",
+    "tsconfig",
+    "typedefs",
+    "JSDOC",
+    "eslintrc",
+    "i18n",
+    "l10n",
+
+    // Formatos
+    "webp",
+    "avif",
+
+    // Variables de entorno
+    "PUBLISHABLE",
+
+    // Términos técnicos
+    "middlewares",
+    "utils",
+    "composables",
+    "async",
+    "hydration",
+    "prefetch",
+    "debounce",
+    "memoize",
+    "viewport",
+    "polyfill",
+    "transpile",
+    "treeshaking",
+
+    // Conceptos de diseño
+    "autosave",
+    "colorscheme",
+    "breakpoint",
+    "navbar",
+    "sidebar",
+    "dropdown",
+    "tooltip",
+    "breadcrumb",
+    "breadcrumbs",
+
+    // React/Next.js específicos
+    "unmount",
+    "rerender",
+    "rerenders",
+    "hookform",
+    "forwardref",
+    "useeffect",
+    "usestate",
+    "usememo",
+    "usecallback",
+    "useref",
+    "usecontext",
+
+    // Testing
+    "testid",
+    "beforeeach",
+    "aftereach",
+    "beforeall",
+    "afterall",
+    "toequal",
+    "tocontain",
+    "tohavebeencalled",
+
+    // Git/GitHub
+    "commitlint",
+    "prebuild",
+    "postbuild",
+    "preinstall",
+    "postinstall",
+
+    // Nombres de archivos/directorios comunes
+    "gitignore",
+    "prettierrc",
+    "prettierignore",
+    "eslintignore",
+    "dockerignore",
+    "npmignore",
+    "editorconfig"
+  ],
+
+  // Expresiones regulares para ignorar
+  "ignoreRegExpList": [
+    // Ignore hex colors
+    "/#[0-9A-Fa-f]{3,8}/g",
+    // Ignore URLs
+    "/https?:\\/\\/[^\\s]+/g",
+    // Ignore imports
+    "/import\\s+.*from\\s+['\"].*['\"]/g",
+    // Ignore classNames
+    "/className=['\"][^'\"]*['\"]/g"
+  ],
+
+  // Archivos a ignorar
+  "ignorePaths": [
+    "node_modules",
+    ".next",
+    "out",
+    "build",
+    "dist",
+    "coverage",
+    "*.log",
+    "pnpm-lock.yaml",
+    "package-lock.json",
+    "yarn.lock",
+    ".git",
+    ".vscode",
+    "public"
+  ],
+
+  // Configuración de idiomas
+  "language": "en,es",
+
+  // Habilitar para todos los archivos
+  "enableFiletypes": [
+    "typescript",
+    "typescriptreact",
+    "javascript",
+    "javascriptreact",
+    "markdown",
+    "mdx",
+    "json",
+    "jsonc"
+  ]
+}

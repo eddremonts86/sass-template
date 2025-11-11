@@ -257,6 +257,7 @@
       "systemUpdateDescription": "El sistema se ha actualizado exitosamente"
     },
     "welcome": "Bienvenido",
+    "welcomeMessage": "Aquí tienes una vista general de tu panel",
     "recentActivityDesc": "Tu actividad más reciente y actualizaciones",
     "activities": {
       "newUserRegistration": "Registro de Nuevo Usuario",

@@ -279,6 +279,8 @@
       "hourAgo": "{count} time siden"
     },
     "welcomeBack": "Velkommen tilbage",
+    "welcome": "Velkommen tilbage",
+    "welcomeMessage": "Her er en oversigt over dit dashboard",
     "goodMorning": "God morgen",
     "goodAfternoon": "God eftermiddag",
     "goodEvening": "God aften",

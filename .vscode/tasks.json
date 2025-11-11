@@ -1,0 +1,475 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    // ============================================
+    // DESARROLLO
+    // ============================================
+    {
+      "label": "🚀 Dev Server",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["dev"],
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "custom",
+        "pattern": {
+          "regexp": "^([^\\s].*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Compiling",
+          "endsPattern": "(Compiled|Failed to compile)"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false,
+        "echo": true,
+        "showReuseMessage": true,
+        "clear": false,
+        "group": "dev"
+      },
+      "runOptions": {
+        "runOn": "default"
+      }
+    },
+    {
+      "label": "🏗️  Build Production",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["build"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": true,
+        "echo": true,
+        "showReuseMessage": true,
+        "clear": true,
+        "group": "build"
+      },
+      "problemMatcher": ["$tsc"]
+    },
+    {
+      "label": "▶️  Start Production",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["start"],
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false,
+        "echo": true,
+        "showReuseMessage": true,
+        "clear": false,
+        "group": "dev"
+      }
+    },
+
+    // ============================================
+    // CALIDAD DE CÓDIGO
+    // ============================================
+    {
+      "label": "🔍 Lint",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["lint"],
+      "group": {
+        "kind": "test",
+        "isDefault": false
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false,
+        "echo": true,
+        "showReuseMessage": true,
+        "clear": true,
+        "group": "quality"
+      },
+      "problemMatcher": ["$eslint-stylish"]
+    },
+    {
+      "label": "🔧 Lint & Fix",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["lint:fix"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false,
+        "echo": true,
+        "showReuseMessage": true,
+        "clear": true,
+        "group": "quality"
+      },
+      "problemMatcher": ["$eslint-stylish"]
+    },
+    {
+      "label": "💅 Format",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["format"],
+      "presentation": {
+        "reveal": "silent",
+        "panel": "shared",
+        "focus": false,
+        "echo": false,
+        "showReuseMessage": false,
+        "clear": false,
+        "group": "quality"
+      }
+    },
+    {
+      "label": "✅ Format Check",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["format:check"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false,
+        "echo": true,
+        "showReuseMessage": true,
+        "clear": true,
+        "group": "quality"
+      }
+    },
+    {
+      "label": "🔤 Type Check",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["type-check"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false,
+        "echo": true,
+        "showReuseMessage": true,
+        "clear": true,
+        "group": "quality"
+      },
+      "problemMatcher": ["$tsc"]
+    },
+
+    // ============================================
+    // TESTING
+    // ============================================
+    {
+      "label": "🧪 Test",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["test"],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": true,
+        "echo": true,
+        "showReuseMessage": true,
+        "clear": true,
+        "group": "test"
+      }
+    },
+    {
+      "label": "🧪 Test Watch",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["test:watch"],
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false,
+        "echo": true,
+        "showReuseMessage": true,
+        "clear": false,
+        "group": "test"
+      }
+    },
+    {
+      "label": "📊 Test Coverage",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["test:coverage"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": true,
+        "echo": true,
+        "showReuseMessage": true,
+        "clear": true,
+        "group": "test"
+      }
+    },
+    {
+      "label": "🎭 E2E Tests",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["test:e2e"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": true,
+        "echo": true,
+        "showReuseMessage": true,
+        "clear": true,
+        "group": "test"
+      }
+    },
+    {
+      "label": "🎭 E2E Tests UI",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["test:e2e:ui"],
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false,
+        "echo": true,
+        "showReuseMessage": true,
+        "clear": false,
+        "group": "test"
+      }
+    },
+    {
+      "label": "📈 E2E Report",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["test:e2e:report"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false,
+        "echo": true,
+        "showReuseMessage": true,
+        "clear": false,
+        "group": "test"
+      }
+    },
+
+    // ============================================
+    // STORYBOOK
+    // ============================================
+    {
+      "label": "📚 Storybook",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["storybook"],
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false,
+        "echo": true,
+        "showReuseMessage": true,
+        "clear": false,
+        "group": "storybook"
+      }
+    },
+    {
+      "label": "📚 Build Storybook",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["build-storybook"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": true,
+        "echo": true,
+        "showReuseMessage": true,
+        "clear": true,
+        "group": "storybook"
+      }
+    },
+
+    // ============================================
+    // DOCUMENTACIÓN
+    // ============================================
+    {
+      "label": "📖 Docs Dev",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["docs:dev"],
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false,
+        "echo": true,
+        "showReuseMessage": true,
+        "clear": false,
+        "group": "docs"
+      }
+    },
+    {
+      "label": "📖 Docs Build",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["docs:build"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": true,
+        "echo": true,
+        "showReuseMessage": true,
+        "clear": true,
+        "group": "docs"
+      }
+    },
+    {
+      "label": "📖 API Docs",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["docs:api"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false,
+        "echo": true,
+        "showReuseMessage": true,
+        "clear": true,
+        "group": "docs"
+      }
+    },
+
+    // ============================================
+    // TRADUCCIONES
+    // ============================================
+    {
+      "label": "🌍 Check Translations",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["check:translations"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false,
+        "echo": true,
+        "showReuseMessage": true,
+        "clear": true,
+        "group": "i18n"
+      }
+    },
+    {
+      "label": "🌍 Sync Translations",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["sync:translations"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false,
+        "echo": true,
+        "showReuseMessage": true,
+        "clear": true,
+        "group": "i18n"
+      }
+    },
+
+    // ============================================
+    // TAREAS COMPUESTAS
+    // ============================================
+    {
+      "label": "✨ Full Quality Check",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "🔍 Lint",
+        "✅ Format Check",
+        "🔤 Type Check",
+        "🧪 Test"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": true,
+        "echo": true,
+        "showReuseMessage": true,
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "🔧 Fix All",
+      "dependsOrder": "sequence",
+      "dependsOn": ["💅 Format", "🔧 Lint & Fix"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false,
+        "echo": true,
+        "showReuseMessage": true,
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+
+    // ============================================
+    // LIMPIEZA
+    // ============================================
+    {
+      "label": "🧹 Clean Build",
+      "type": "shell",
+      "command": "rm",
+      "args": ["-rf", ".next", "out", "build", "dist", ".turbo"],
+      "presentation": {
+        "reveal": "silent",
+        "panel": "shared",
+        "focus": false,
+        "echo": false,
+        "showReuseMessage": false,
+        "clear": false
+      }
+    },
+    {
+      "label": "🧹 Clean All",
+      "type": "shell",
+      "command": "rm",
+      "args": [
+        "-rf",
+        ".next",
+        "out",
+        "build",
+        "dist",
+        ".turbo",
+        "node_modules",
+        "coverage"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false,
+        "echo": true,
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
+    {
+      "label": "📦 Reinstall Dependencies",
+      "type": "shell",
+      "command": "rm -rf node_modules pnpm-lock.yaml && pnpm install",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": true,
+        "echo": true,
+        "showReuseMessage": true,
+        "clear": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,355 @@
+{
+  // Snippets personalizados para Next.js 16 + TypeScript + i18n
+
+  // ============================================
+  // REACT & NEXT.JS COMPONENTS
+  // ============================================
+  "Next.js Page Component": {
+    "prefix": "nxpage",
+    "body": [
+      "import { Metadata } from 'next';",
+      "import { useTranslations } from 'next-intl';",
+      "",
+      "export const metadata: Metadata = {",
+      "  title: '${1:Page Title}',",
+      "  description: '${2:Page Description}',",
+      "};",
+      "",
+      "export default function ${3:PageName}() {",
+      "  const t = useTranslations('${4:namespace}');",
+      "",
+      "  return (",
+      "    <div>",
+      "      <h1>{t('${5:key}')}</h1>",
+      "      $0",
+      "    </div>",
+      "  );",
+      "}"
+    ],
+    "description": "Next.js page component with metadata and i18n"
+  },
+
+  "Next.js Client Component": {
+    "prefix": "nxclient",
+    "body": [
+      "'use client';",
+      "",
+      "import { useTranslations } from 'next-intl';",
+      "",
+      "interface ${1:ComponentName}Props {",
+      "  $2",
+      "}",
+      "",
+      "export function ${1:ComponentName}({ $3 }: ${1:ComponentName}Props) {",
+      "  const t = useTranslations('${4:namespace}');",
+      "",
+      "  return (",
+      "    <div>",
+      "      $0",
+      "    </div>",
+      "  );",
+      "}"
+    ],
+    "description": "Client component with i18n"
+  },
+
+  "Next.js Layout Component": {
+    "prefix": "nxlayout",
+    "body": [
+      "import { Metadata } from 'next';",
+      "",
+      "export const metadata: Metadata = {",
+      "  title: '${1:Layout Title}',",
+      "  description: '${2:Layout Description}',",
+      "};",
+      "",
+      "export default function ${3:LayoutName}({",
+      "  children,",
+      "}: {",
+      "  children: React.ReactNode;",
+      "}) {",
+      "  return (",
+      "    <div>",
+      "      $0",
+      "      {children}",
+      "    </div>",
+      "  );",
+      "}"
+    ],
+    "description": "Next.js layout component"
+  },
+
+  "React Component with Props": {
+    "prefix": "rcp",
+    "body": [
+      "interface ${1:ComponentName}Props {",
+      "  ${2:prop}: ${3:type};",
+      "}",
+      "",
+      "export function ${1:ComponentName}({ ${2:prop} }: ${1:ComponentName}Props) {",
+      "  return (",
+      "    <div>",
+      "      $0",
+      "    </div>",
+      "  );",
+      "}"
+    ],
+    "description": "React component with typed props"
+  },
+
+  // ============================================
+  // HOOKS
+  // ============================================
+  "Custom Hook": {
+    "prefix": "ushook",
+    "body": [
+      "import { useState, useEffect } from 'react';",
+      "",
+      "/**",
+      " * ${1:Hook description}",
+      " */",
+      "export function use${2:HookName}() {",
+      "  const [${3:state}, set${3/(.*)/${1:/capitalize}/}] = useState${4:<type>}(${5:initialValue});",
+      "",
+      "  useEffect(() => {",
+      "    $0",
+      "  }, []);",
+      "",
+      "  return { ${3:state}, set${3/(.*)/${1:/capitalize}/} };",
+      "}"
+    ],
+    "description": "Custom React hook with JSDoc"
+  },
+
+  "useTranslations Hook": {
+    "prefix": "ust",
+    "body": [
+      "const t = useTranslations('${1:namespace}');"
+    ],
+    "description": "next-intl useTranslations hook"
+  },
+
+  // ============================================
+  // ZUSTAND STORE
+  // ============================================
+  "Zustand Store": {
+    "prefix": "zstore",
+    "body": [
+      "import { create } from 'zustand';",
+      "import { persist } from 'zustand/middleware';",
+      "",
+      "interface ${1:StoreName}State {",
+      "  ${2:property}: ${3:type};",
+      "  set${2/(.*)/${1:/capitalize}/}: (${2:property}: ${3:type}) => void;",
+      "  reset: () => void;",
+      "}",
+      "",
+      "const initialState = {",
+      "  ${2:property}: ${4:initialValue},",
+      "};",
+      "",
+      "export const use${1:StoreName}Store = create<${1:StoreName}State>()(",
+      "  persist(",
+      "    (set) => ({",
+      "      ...initialState,",
+      "      set${2/(.*)/${1:/capitalize}/}: (${2:property}) => set({ ${2:property} }),",
+      "      reset: () => set(initialState),",
+      "    }),",
+      "    {",
+      "      name: '${1/(.*)/\\L${1:/downcase}/}-store',",
+      "    }",
+      "  )",
+      ");",
+      "$0"
+    ],
+    "description": "Zustand store with persistence"
+  },
+
+  // ============================================
+  // LOGGER
+  // ============================================
+  "Import Logger": {
+    "prefix": "ilog",
+    "body": [
+      "import { log } from '@/lib/logger';"
+    ],
+    "description": "Import Winston logger"
+  },
+
+  "Log Error": {
+    "prefix": "logerr",
+    "body": [
+      "log.error('${1:message}', { ${2:context} }${3:, error});"
+    ],
+    "description": "Log error with context"
+  },
+
+  "Log Warning": {
+    "prefix": "logwarn",
+    "body": [
+      "log.warn('${1:message}', { ${2:context} });"
+    ],
+    "description": "Log warning with context"
+  },
+
+  "Log Info": {
+    "prefix": "loginfo",
+    "body": [
+      "log.info('${1:message}', { ${2:context} });"
+    ],
+    "description": "Log info with context"
+  },
+
+  // ============================================
+  // API ROUTES
+  // ============================================
+  "Next.js API Route": {
+    "prefix": "nxapi",
+    "body": [
+      "import { NextRequest, NextResponse } from 'next/server';",
+      "import { log } from '@/lib/logger';",
+      "",
+      "export async function ${1|GET,POST,PUT,PATCH,DELETE|}(request: NextRequest) {",
+      "  try {",
+      "    $0",
+      "    ",
+      "    return NextResponse.json({ ${2:data} });",
+      "  } catch (error) {",
+      "    log.error('${3:Error message}', { error });",
+      "    return NextResponse.json(",
+      "      { error: '${4:Error response}' },",
+      "      { status: 500 }",
+      "    );",
+      "  }",
+      "}"
+    ],
+    "description": "Next.js App Router API route handler"
+  },
+
+  // ============================================
+  // TESTS
+  // ============================================
+  "Jest Test Suite": {
+    "prefix": "jtest",
+    "body": [
+      "import { render, screen } from '@testing-library/react';",
+      "import { ${1:ComponentName} } from './${1:ComponentName}';",
+      "",
+      "jest.mock('next-intl', () => ({",
+      "  useTranslations: () => (key: string) => key,",
+      "}));",
+      "",
+      "describe('${1:ComponentName}', () => {",
+      "  it('${2:should render correctly}', () => {",
+      "    render(<${1:ComponentName} $3 />);",
+      "    $0",
+      "  });",
+      "});"
+    ],
+    "description": "Jest test suite for component"
+  },
+
+  "Playwright Test": {
+    "prefix": "ptest",
+    "body": [
+      "import { test, expect } from '@playwright/test';",
+      "",
+      "test.describe('${1:Feature Name}', () => {",
+      "  test('${2:should work correctly}', async ({ page }) => {",
+      "    await page.goto('/${3:route}');",
+      "    $0",
+      "  });",
+      "});"
+    ],
+    "description": "Playwright E2E test"
+  },
+
+  // ============================================
+  // JSDOC
+  // ============================================
+  "JSDoc Function": {
+    "prefix": "jsdoc",
+    "body": [
+      "/**",
+      " * ${1:Function description}",
+      " * ",
+      " * @param {${2:type}} ${3:paramName} - ${4:Parameter description}",
+      " * @returns {${5:type}} ${6:Return description}",
+      " */",
+      "$0"
+    ],
+    "description": "JSDoc function documentation"
+  },
+
+  "JSDoc Component": {
+    "prefix": "jsdoccomp",
+    "body": [
+      "/**",
+      " * ${1:Component description}",
+      " * ",
+      " * @component",
+      " * @example",
+      " * ```tsx",
+      " * <${2:ComponentName} ${3:prop}=\"${4:value}\" />",
+      " * ```",
+      " */",
+      "$0"
+    ],
+    "description": "JSDoc component documentation"
+  },
+
+  // ============================================
+  // UTILITIES
+  // ============================================
+  "Try-Catch Block": {
+    "prefix": "tryc",
+    "body": [
+      "try {",
+      "  $0",
+      "} catch (error) {",
+      "  log.error('${1:Error message}', { error });",
+      "}"
+    ],
+    "description": "Try-catch with logger"
+  },
+
+  "Async Try-Catch": {
+    "prefix": "atryc",
+    "body": [
+      "try {",
+      "  const ${1:result} = await ${2:promise};",
+      "  $0",
+      "} catch (error) {",
+      "  log.error('${3:Error message}', { error });",
+      "}"
+    ],
+    "description": "Async try-catch with logger"
+  },
+
+  "Import Paths": {
+    "prefix": "imp@",
+    "body": [
+      "import ${1:module} from '@/${2:path}';"
+    ],
+    "description": "Import with path alias"
+  },
+
+  // ============================================
+  // TAILWIND CSS
+  // ============================================
+  "cn Utility": {
+    "prefix": "cn",
+    "body": [
+      "className={cn(${1:'default-classes'}, ${2:condition} && '${3:conditional-classes}')}"
+    ],
+    "description": "cn utility for conditional classes"
+  },
+
+  "Responsive Classes": {
+    "prefix": "resp",
+    "body": [
+      "className=\"${1:base} sm:${2:sm} md:${3:md} lg:${4:lg} xl:${5:xl}\""
+    ],
+    "description": "Responsive Tailwind classes"
+  }
+}

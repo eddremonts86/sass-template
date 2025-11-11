@@ -1,44 +1,204 @@
 {
   "version": "0.2.0",
   "configurations": [
+    // ============================================
+    // NEXT.JS DEBUGGING
+    // ============================================
     {
-      "name": "Next.js: debug server-side",
+      "name": "🐛 Next.js: Debug Server-Side",
       "type": "node-terminal",
       "request": "launch",
-      "command": "npm run dev"
+      "command": "pnpm run dev",
+      "serverReadyAction": {
+        "pattern": "- Local:.+(https?://.+)",
+        "uriFormat": "%s",
+        "action": "openExternally"
+      },
+      "skipFiles": ["<node_internals>/**", "node_modules/**"]
     },
     {
-      "name": "Next.js: debug client-side",
+      "name": "🌐 Next.js: Debug Client-Side (Chrome)",
       "type": "chrome",
       "request": "launch",
-      "url": "http://localhost:3000"
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}",
+      "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "webpack://_N_E/*": "${webRoot}/*",
+        "webpack:///./*": "${webRoot}/*",
+        "webpack:///src/*": "${webRoot}/src/*",
+        "webpack:///*": "*"
+      },
+      "userDataDir": "${workspaceFolder}/.vscode/chrome-debug-profile",
+      "runtimeArgs": [
+        "--disable-web-security",
+        "--disable-features=IsolateOrigins,site-per-process"
+      ]
     },
     {
-      "name": "Next.js: debug client-side (Firefox)",
+      "name": "🦊 Next.js: Debug Client-Side (Firefox)",
       "type": "firefox",
       "request": "launch",
       "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}",
       "reAttach": true,
       "pathMappings": [
         {
           "url": "webpack://_N_E",
           "path": "${workspaceFolder}"
+        },
+        {
+          "url": "webpack:///",
+          "path": "${workspaceFolder}"
         }
-      ]
+      ],
+      "firefoxArgs": ["-start-debugger-server"]
     },
     {
-      "name": "Next.js: debug full stack",
+      "name": "🔥 Next.js: Debug Full Stack",
       "type": "node",
       "request": "launch",
       "program": "${workspaceFolder}/node_modules/next/dist/bin/next",
+      "args": ["dev", "--turbopack"],
+      "cwd": "${workspaceFolder}",
       "runtimeArgs": ["--inspect"],
-      "skipFiles": ["<node_internals>/**"],
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**", "node_modules/**"],
+      "env": {
+        "NODE_ENV": "development"
+      },
       "serverReadyAction": {
         "action": "debugWithChrome",
         "killOnServerStop": true,
         "pattern": "- Local:.+(https?://.+)",
         "uriFormat": "%s",
         "webRoot": "${workspaceFolder}"
+      }
+    },
+
+    // ============================================
+    // TESTING DEBUGGING
+    // ============================================
+    {
+      "name": "🧪 Debug Jest Tests",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/jest",
+      "args": [
+        "--runInBand",
+        "--no-cache",
+        "--watchAll=false",
+        "${file}"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": ["<node_internals>/**", "node_modules/**"]
+    },
+    {
+      "name": "🧪 Debug Current Jest Test",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/jest",
+      "args": [
+        "${fileBasenameNoExtension}",
+        "--runInBand",
+        "--no-cache",
+        "--watchAll=false"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": ["<node_internals>/**", "node_modules/**"]
+    },
+    {
+      "name": "🎭 Debug Playwright Tests",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/playwright",
+      "args": ["test", "--debug"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**", "node_modules/**"]
+    },
+    {
+      "name": "🎭 Debug Current Playwright Test",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/playwright",
+      "args": ["test", "${file}", "--debug"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**", "node_modules/**"]
+    },
+
+    // ============================================
+    // NODE SCRIPTS DEBUGGING
+    // ============================================
+    {
+      "name": "🔧 Debug Node Script",
+      "type": "node",
+      "request": "launch",
+      "program": "${file}",
+      "skipFiles": ["<node_internals>/**"],
+      "console": "integratedTerminal",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    {
+      "name": "🌍 Debug Translation Scripts",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/scripts/verify-translations.js",
+      "skipFiles": ["<node_internals>/**"],
+      "console": "integratedTerminal"
+    },
+
+    // ============================================
+    // STORYBOOK DEBUGGING
+    // ============================================
+    {
+      "name": "📚 Debug Storybook",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm run storybook",
+      "serverReadyAction": {
+        "pattern": "Local:.+(https?://.+)",
+        "uriFormat": "%s",
+        "action": "openExternally"
+      }
+    },
+
+    // ============================================
+    // CONFIGURACIONES COMPUESTAS
+    // ============================================
+    {
+      "name": "🚀 Full Stack Debug (Server + Client)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/next/dist/bin/next",
+      "args": ["dev"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"],
+      "serverReadyAction": {
+        "pattern": "- Local:.+(https?://.+)",
+        "uriFormat": "%s",
+        "action": "debugWithChrome"
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "🎯 Debug Full Application",
+      "configurations": [
+        "🐛 Next.js: Debug Server-Side",
+        "🌐 Next.js: Debug Client-Side (Chrome)"
+      ],
+      "stopAll": true,
+      "presentation": {
+        "order": 1
       }
     }
   ]

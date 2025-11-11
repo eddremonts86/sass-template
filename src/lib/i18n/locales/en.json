@@ -257,6 +257,7 @@
       "systemUpdateDescription": "System updated to version {version}"
     },
     "welcome": "Welcome",
+    "welcomeMessage": "Here's an overview of your dashboard",
     "recentActivityDesc": "Your latest activity and updates",
     "activities": {
       "newUserRegistration": "New User Registration",

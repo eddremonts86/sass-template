@@ -1,5 +1,469 @@
 {
-    "cSpell.words": [
-        "Trae"
-    ]
+  // ============================================
+  // EDITOR CONFIGURATION
+  // ============================================
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never" // ESLint handles this
+  },
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.trimAutoWhitespace": true,
+  "editor.rulers": [80, 120],
+  "editor.wordWrap": "on",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.inlineSuggest.enabled": true,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.snippetSuggestions": "top",
+  "editor.linkedEditing": true,
+  "editor.stickyScroll.enabled": true,
+
+  // ============================================
+  // FILES CONFIGURATION
+  // ============================================
+  "files.eol": "\n",
+  "files.encoding": "utf8",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.autoSave": "onFocusChange",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true,
+    "**/.next": true,
+    "**/out": true,
+    "**/build": true,
+    "**/dist": true,
+    "**/.turbo": true,
+    "**/coverage": true,
+    "**/.cache": true,
+    "**/logs": true,
+    "**/*.log": true
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/.next/**": true,
+    "**/.turbo/**": true,
+    "**/coverage/**": true
+  },
+  "files.associations": {
+    "*.css": "tailwindcss",
+    "*.mdx": "markdown"
+  },
+
+  // ============================================
+  // SEARCH CONFIGURATION
+  // ============================================
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.next": true,
+    "**/out": true,
+    "**/build": true,
+    "**/dist": true,
+    "**/coverage": true,
+    "**/.turbo": true,
+    "**/pnpm-lock.yaml": true,
+    "**/package-lock.json": true,
+    "**/yarn.lock": true,
+    "**/*.log": true
+  },
+
+  // ============================================
+  // TYPESCRIPT CONFIGURATION
+  // ============================================
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.suggest.autoImports": true,
+  "typescript.suggest.completeFunctionCalls": true,
+  "typescript.preferences.includePackageJsonAutoImports": "on",
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.variableTypes.enabled": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.enumMemberValues.enabled": true,
+
+  // ============================================
+  // JAVASCRIPT CONFIGURATION
+  // ============================================
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.suggest.autoImports": true,
+  "javascript.preferences.quoteStyle": "single",
+  "javascript.format.enable": false, // Let Prettier handle this
+  "javascript.validate.enable": true,
+
+  // ============================================
+  // ESLINT CONFIGURATION
+  // ============================================
+  "eslint.enable": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "eslint.run": "onType",
+  "eslint.format.enable": false, // Prettier handles formatting
+  "eslint.lintTask.enable": true,
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+
+  // ============================================
+  // PRETTIER CONFIGURATION
+  // ============================================
+  "prettier.enable": true,
+  "prettier.requireConfig": true,
+  "prettier.useEditorConfig": false,
+
+  // ============================================
+  // TAILWIND CSS CONFIGURATION
+  // ============================================
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+    ["(?:const|let|var)\\s+\\w+\\s*=\\s*['\"`]([^'\"`]*)['\"`]"]
+  ],
+  "tailwindCSS.includeLanguages": {
+    "typescript": "javascript",
+    "typescriptreact": "javascript"
+  },
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "classList",
+    "ngClass"
+  ],
+  "tailwindCSS.lint.cssConflict": "warning",
+  "tailwindCSS.lint.invalidApply": "error",
+  "tailwindCSS.lint.invalidScreen": "error",
+  "tailwindCSS.lint.invalidVariant": "error",
+  "tailwindCSS.lint.invalidConfigPath": "error",
+  "tailwindCSS.lint.invalidTailwindDirective": "error",
+  "tailwindCSS.lint.recommendedVariantOrder": "warning",
+
+  // ============================================
+  // EMMET CONFIGURATION
+  // ============================================
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.showSuggestionsAsSnippets": true,
+
+  // ============================================
+  // GIT CONFIGURATION
+  // ============================================
+  "git.enabled": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "git.ignoreLimitWarning": true,
+  "git.fetchOnPull": true,
+  "git.pruneOnFetch": true,
+  "git.branchProtection": ["main", "master", "production"],
+
+  // ============================================
+  // SPELL CHECKER CONFIGURATION
+  // ============================================
+  "cSpell.enabled": true,
+  "cSpell.language": "en,es",
+  "cSpell.words": [
+    "Trae",
+    "clsx",
+    "lucide",
+    "pnpm",
+    "shadcn",
+    "tailwindcss",
+    "tanstack",
+    "nextjs",
+    "middlewares",
+    "Intl",
+    "zustand",
+    "NEXTAUTH",
+    "signin",
+    "signup",
+    "webp",
+    "avif",
+    "eslintrc",
+    "browserslist",
+    "TURBOPACK",
+    "jsdom",
+    "Clerk",
+    "CLERKJS",
+    "signup",
+    "signin",
+    "signout",
+    "codegen",
+    "tsconfig",
+    "typedefs",
+    "Geist",
+    "beasties",
+    "critters",
+    "Upstash",
+    "Vercel",
+    "Sentry",
+    "Radix",
+    "Storybook",
+    "Chromatic",
+    "Vitepress",
+    "Husky",
+    "JSDOC",
+    "SAAS",
+    "PWA",
+    "i18n",
+    "l10n"
+  ],
+  "cSpell.ignorePaths": [
+    "node_modules",
+    ".next",
+    "out",
+    "build",
+    "dist",
+    "coverage",
+    "*.log",
+    "pnpm-lock.yaml",
+    "package-lock.json",
+    ".git",
+    ".vscode",
+    "public"
+  ],
+
+  // ============================================
+  // PATH INTELLISENSE CONFIGURATION
+  // ============================================
+  "path-intellisense.mappings": {
+    "@": "${workspaceFolder}/src",
+    "@/components": "${workspaceFolder}/src/components",
+    "@/lib": "${workspaceFolder}/src/lib",
+    "@/hooks": "${workspaceFolder}/src/hooks",
+    "@/stores": "${workspaceFolder}/src/stores",
+    "@/utils": "${workspaceFolder}/src/utils",
+    "@/types": "${workspaceFolder}/src/types"
+  },
+
+  // ============================================
+  // IMPORT COST CONFIGURATION
+  // ============================================
+  "importCost.largePackageSize": 100,
+  "importCost.mediumPackageSize": 50,
+  "importCost.smallPackageSize": 20,
+  "importCost.showCalculatingDecoration": true,
+
+  // ============================================
+  // ERROR LENS CONFIGURATION
+  // ============================================
+  "errorLens.enabled": true,
+  "errorLens.enabledDiagnosticLevels": ["error", "warning", "info"],
+  "errorLens.followCursor": "activeLine",
+  "errorLens.gutterIconsEnabled": true,
+
+  // ============================================
+  // BETTER COMMENTS CONFIGURATION
+  // ============================================
+  "better-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "*",
+      "color": "#98C379",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    }
+  ],
+
+  // ============================================
+  // TODO TREE CONFIGURATION
+  // ============================================
+  "todo-tree.general.tags": ["TODO", "FIXME", "BUG", "HACK", "NOTE", "XXX"],
+  "todo-tree.highlights.defaultHighlight": {
+    "icon": "alert",
+    "type": "text",
+    "foreground": "#FFFFFF",
+    "background": "#FF8C00",
+    "opacity": 50
+  },
+
+  // ============================================
+  // TESTING CONFIGURATION
+  // ============================================
+  "jest.autoRun": "off",
+  "jest.showCoverageOnLoad": false,
+  "jest.runMode": "on-demand",
+
+  // ============================================
+  // MARKDOWN CONFIGURATION
+  // ============================================
+  "markdown.preview.fontSize": 14,
+  "markdown.preview.lineHeight": 1.6,
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
+  },
+
+  // ============================================
+  // JSON CONFIGURATION
+  // ============================================
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // ============================================
+  // JAVASCRIPT/TYPESCRIPT CONFIGURATION
+  // ============================================
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // ============================================
+  // CSS/SCSS CONFIGURATION
+  // ============================================
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.suggest.insertMode": "replace"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // ============================================
+  // HTML CONFIGURATION
+  // ============================================
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // ============================================
+  // GITHUB COPILOT CONFIGURATION
+  // ============================================
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": false,
+    "markdown": true
+  },
+  "github.copilot.editor.enableAutoCompletions": true,
+
+  // ============================================
+  // TERMINAL CONFIGURATION
+  // ============================================
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.enableBell": false,
+
+  // ============================================
+  // NPM CONFIGURATION
+  // ============================================
+  "npm.packageManager": "pnpm",
+  "npm.enableScriptExplorer": true,
+
+  // ============================================
+  // EXPLORER CONFIGURATION
+  // ============================================
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.sortOrder": "type",
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "package.json": "package-lock.json, pnpm-lock.yaml, yarn.lock",
+    "tsconfig.json": "tsconfig.*.json",
+    "next.config.*": "next-env.d.ts",
+    ".env": ".env.*, .env.local, .env.development, .env.production",
+    "tailwind.config.*": "postcss.config.*",
+    "README.md": "SETUP.md, CONTRIBUTING.md, LICENSE, CHANGELOG.md",
+    ".eslintrc.*": ".eslintignore, .prettierrc*, .prettierignore",
+    ".gitignore": ".gitattributes, .editorconfig"
+  },
+
+  // ============================================
+  // WORKBENCH CONFIGURATION
+  // ============================================
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "welcomePageInEmptyWorkbench",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.closeOnFileDelete": true,
+  "workbench.tree.indent": 16,
+
+  // ============================================
+  // SECURITY CONFIGURATION
+  // ============================================
+  "security.workspace.trust.untrustedFiles": "prompt",
+
+  // ============================================
+  // BREADCRUMBS CONFIGURATION
+  // ============================================
+  "breadcrumbs.enabled": true,
+  "breadcrumbs.filePath": "on",
+  "breadcrumbs.symbolPath": "on"
 }
