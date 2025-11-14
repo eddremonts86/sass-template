@@ -1,0 +1,71 @@
+{
+  "folders": [
+    {
+      "name": "Root",
+      "path": ".",
+    },
+    {
+      "name": "Frontend",
+      "path": "apps/frontend",
+    },
+    {
+      "name": "Backend (Strapi)",
+      "path": "apps/backend",
+    },
+    {
+      "name": "Shared Docs",
+      "path": "apps/shared",
+    },
+  ],
+  "settings": {
+    // Workspace-specific settings
+    "files.associations": {
+      "*.css": "tailwindcss",
+    },
+    "search.exclude": {
+      "**/apps/backend/.tmp": true,
+      "**/apps/backend/build": true,
+      "**/apps/backend/public/uploads": true,
+      "**/apps/frontend/.next": true,
+      "**/apps/shared/storybook-static": true,
+    },
+  },
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "bradlc.vscode-tailwindcss",
+      "yoavbls.pretty-typescript-errors",
+      "wix.vscode-import-cost",
+      "usernamehw.errorlens",
+      "dsznajder.es7-react-js-snippets",
+      "formulahendry.auto-rename-tag",
+      "burkeholland.simple-react-snippets",
+      "kisstkondoros.vscode-gutter-preview",
+      "streetsidesoftware.code-spell-checker",
+      "ms-vscode.vscode-typescript-next",
+      "orta.vscode-jest",
+      "ms-playwright.playwright",
+      "eamodio.gitlens",
+      "mhutchie.git-graph",
+      "christian-kohler.path-intellisense",
+      "editorconfig.editorconfig",
+      "mikestead.dotenv",
+      "ms-vscode-remote.remote-containers",
+      "yzhang.markdown-all-in-one",
+      "bierner.markdown-mermaid",
+      "gruntfuggly.todo-tree",
+      "aaron-bond.better-comments",
+      "wayou.vscode-todo-highlight",
+    ],
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [],
+    "compounds": [],
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [],
+  },
+}

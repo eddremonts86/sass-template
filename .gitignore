@@ -96,7 +96,6 @@ next-env.d.ts
 ############################
 # IDE and editor
 ############################
-.vscode/
 .idea/
 nbproject/
 *.swp

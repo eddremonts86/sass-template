@@ -1,0 +1,205 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Dev: Frontend",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["--filter", "frontend", "dev"],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "isBackground": true
+    },
+    {
+      "label": "Dev: Backend (Strapi)",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["--filter", "backend", "develop"],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "isBackground": true
+    },
+    {
+      "label": "Dev: Full Stack",
+      "dependsOn": ["Dev: Frontend", "Dev: Backend (Strapi)"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Build: Frontend",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["--filter", "frontend", "build"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$tsc"]
+    },
+    {
+      "label": "Build: Backend",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["--filter", "backend", "build"],
+      "group": "build",
+      "problemMatcher": ["$tsc"]
+    },
+    {
+      "label": "Lint: Check",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["lint"],
+      "problemMatcher": ["$eslint-stylish"],
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "Lint: Fix",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["lint:fix"],
+      "problemMatcher": ["$eslint-stylish"],
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "Format: Check",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["format:check"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Format: Write",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["format"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Type Check",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["type-check"],
+      "problemMatcher": ["$tsc"],
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "Test: Unit",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["test"],
+      "problemMatcher": [],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Test: Unit (Watch)",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["test:watch"],
+      "problemMatcher": [],
+      "isBackground": true,
+      "group": "test"
+    },
+    {
+      "label": "Test: E2E",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["test:e2e"],
+      "problemMatcher": [],
+      "group": "test"
+    },
+    {
+      "label": "Test: E2E (UI)",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["test:e2e:ui"],
+      "problemMatcher": [],
+      "isBackground": true,
+      "group": "test"
+    },
+    {
+      "label": "Test: Coverage",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["test:coverage"],
+      "problemMatcher": [],
+      "group": "test"
+    },
+    {
+      "label": "Quality: Full Check",
+      "dependsOn": [
+        "Lint: Check",
+        "Format: Check",
+        "Type Check",
+        "Build: Frontend"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "Storybook: Dev",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["storybook"],
+      "problemMatcher": [],
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Docs: Dev",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["docs:dev"],
+      "problemMatcher": [],
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Clean: All",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["clean"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Install: Dependencies",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["install"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Check: Translations",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["check:translations"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Sync: Translations",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["sync:translations"],
+      "problemMatcher": []
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+{
+  "React Component": {
+    "prefix": "rfc",
+    "body": [
+      "interface ${1:ComponentName}Props {",
+      "  $2",
+      "}",
+      "",
+      "export default function ${1:ComponentName}({ $3 }: ${1:ComponentName}Props) {",
+      "  return (",
+      "    <div>",
+      "      $0",
+      "    </div>",
+      "  );",
+      "}"
+    ],
+    "description": "React Functional Component with TypeScript"
+  },
+  "React Component with Props": {
+    "prefix": "rfcp",
+    "body": [
+      "import type { ReactNode } from 'react';",
+      "",
+      "interface ${1:ComponentName}Props {",
+      "  children?: ReactNode;",
+      "  className?: string;",
+      "  $2",
+      "}",
+      "",
+      "export default function ${1:ComponentName}({",
+      "  children,",
+      "  className,",
+      "  $3",
+      "}: ${1:ComponentName}Props) {",
+      "  return (",
+      "    <div className={className}>",
+      "      {children}",
+      "      $0",
+      "    </div>",
+      "  );",
+      "}"
+    ],
+    "description": "React Component with children and className props"
+  },
+  "Next.js Page": {
+    "prefix": "npage",
+    "body": [
+      "interface ${1:Page}Props {",
+      "  params: Promise<{ locale: string }>;",
+      "  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;",
+      "}",
+      "",
+      "export default async function ${1:Page}({ params }: ${1:Page}Props) {",
+      "  const { locale } = await params;",
+      "",
+      "  return (",
+      "    <div>",
+      "      $0",
+      "    </div>",
+      "  );",
+      "}"
+    ],
+    "description": "Next.js App Router Page with params"
+  },
+  "Next.js Layout": {
+    "prefix": "nlayout",
+    "body": [
+      "import type { ReactNode } from 'react';",
+      "",
+      "interface ${1:Layout}Props {",
+      "  children: ReactNode;",
+      "  params: Promise<{ locale: string }>;",
+      "}",
+      "",
+      "export default async function ${1:Layout}({ children, params }: ${1:Layout}Props) {",
+      "  const { locale } = await params;",
+      "",
+      "  return (",
+      "    <>",
+      "      {children}",
+      "    </>",
+      "  );",
+      "}"
+    ],
+    "description": "Next.js App Router Layout"
+  },
+  "API Route Handler": {
+    "prefix": "napi",
+    "body": [
+      "import { NextRequest, NextResponse } from 'next/server';",
+      "",
+      "export async function GET(request: NextRequest) {",
+      "  try {",
+      "    $0",
+      "    return NextResponse.json({ success: true });",
+      "  } catch (error) {",
+      "    console.error('Error:', error);",
+      "    return NextResponse.json(",
+      "      { error: 'Internal Server Error' },",
+      "      { status: 500 }",
+      "    );",
+      "  }",
+      "}"
+    ],
+    "description": "Next.js API Route Handler"
+  },
+  "Custom Hook": {
+    "prefix": "hook",
+    "body": [
+      "import { useState, useEffect } from 'react';",
+      "",
+      "export function use${1:HookName}($2) {",
+      "  const [state, setState] = useState($3);",
+      "",
+      "  useEffect(() => {",
+      "    $0",
+      "  }, []);",
+      "",
+      "  return { state };",
+      "}"
+    ],
+    "description": "Custom React Hook"
+  },
+  "Zustand Store": {
+    "prefix": "zustand",
+    "body": [
+      "import { create } from 'zustand';",
+      "import { persist } from 'zustand/middleware';",
+      "",
+      "interface ${1:Store}State {",
+      "  $2",
+      "}",
+      "",
+      "export const use${1:Store} = create<${1:Store}State>()(",
+      "  persist(",
+      "    (set) => ({",
+      "      $3",
+      "    }),",
+      "    {",
+      "      name: '${4:store-name}',",
+      "    }",
+      "  )",
+      ");"
+    ],
+    "description": "Zustand Store with persistence"
+  },
+  "shadcn/ui Component Import": {
+    "prefix": "shad",
+    "body": [
+      "import { ${1:Component} } from '@/components/ui/${2:component}';$0"
+    ],
+    "description": "Import shadcn/ui component"
+  },
+  "Tailwind cn utility": {
+    "prefix": "cn",
+    "body": [
+      "className={cn(",
+      "  '$1',",
+      "  $2",
+      ")}"
+    ],
+    "description": "Tailwind cn utility for conditional classes"
+  },
+  "React Testing Library Test": {
+    "prefix": "rtl",
+    "body": [
+      "import { render, screen } from '@testing-library/react';",
+      "import '@testing-library/jest-dom';",
+      "import ${1:Component} from './${2:component}';",
+      "",
+      "describe('${1:Component}', () => {",
+      "  it('renders correctly', () => {",
+      "    render(<${1:Component} />);",
+      "    $0",
+      "  });",
+      "});"
+    ],
+    "description": "React Testing Library test boilerplate"
+  },
+  "Playwright Test": {
+    "prefix": "pwtest",
+    "body": [
+      "import { test, expect } from '@playwright/test';",
+      "",
+      "test.describe('${1:Feature}', () => {",
+      "  test('${2:should work correctly}', async ({ page }) => {",
+      "    await page.goto('${3:/}');",
+      "    $0",
+      "  });",
+      "});"
+    ],
+    "description": "Playwright E2E test"
+  },
+  "Strapi Service": {
+    "prefix": "strapi",
+    "body": [
+      "import { strapiClient } from '../client';",
+      "import { flattenStrapiResponse, flattenStrapiCollection } from '../utils';",
+      "import type { ${1:Entity} } from '@/types/strapi';",
+      "",
+      "export async function get${1:Entity}(id: string): Promise<${1:Entity} | null> {",
+      "  try {",
+      "    const response = await strapiClient.get(`/${2:entities}/${id}`);",
+      "    return flattenStrapiResponse(response);",
+      "  } catch (error) {",
+      "    console.error('Error fetching ${1:entity}:', error);",
+      "    return null;",
+      "  }",
+      "}",
+      "",
+      "export async function getAll${1:Entity}s(): Promise<${1:Entity}[]> {",
+      "  try {",
+      "    const response = await strapiClient.get('/${2:entities}');",
+      "    return flattenStrapiCollection(response);",
+      "  } catch (error) {",
+      "    console.error('Error fetching ${1:entity}s:', error);",
+      "    return [];",
+      "  }",
+      "}"
+    ],
+    "description": "Strapi service functions"
+  },
+  "Use Translation": {
+    "prefix": "usetrans",
+    "body": [
+      "import { useTranslations } from 'next-intl';",
+      "",
+      "const t = useTranslations('${1:namespace}');$0"
+    ],
+    "description": "next-intl useTranslations hook"
+  },
+  "Server Translation": {
+    "prefix": "servertrans",
+    "body": [
+      "import { getTranslations } from 'next-intl/server';",
+      "",
+      "const t = await getTranslations('${1:namespace}');$0"
+    ],
+    "description": "next-intl getTranslations for server components"
+  }
+}

@@ -82,6 +82,27 @@ export default defineConfig({
                               link: '/guide/strapi/strapi-start-up'
                         }
                   ]
+            },
+            {
+                  text: 'VsCodeConfig',
+                  items: [
+                        {
+                              text: 'Quick Reference Guide',
+                              link: '/guide/vsCodeConfig/Quick_Reference_Guide'
+                        },
+                        {
+                              text: 'Index',
+                              link: '/guide/vsCodeConfig/INDEX'
+                        },
+                        {
+                              text: 'Readme',
+                              link: '/guide/vsCodeConfig/README'
+                        },
+                        {
+                              text: 'VS Code Configuration',
+                              link: '/guide/vsCodeConfig/VS_Code_Configuration'
+                        }
+                  ]
             }
       ],
       "/components/": [

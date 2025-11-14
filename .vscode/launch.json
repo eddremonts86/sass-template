@@ -3,15 +3,25 @@
   "configurations": [
     {
       "name": "Next.js: debug server-side",
-      "type": "node-terminal",
-      "request": "launch",
-      "command": "npm run dev"
+      "type": "node",
+      "request": "attach",
+      "port": 9229,
+      "skipFiles": ["<node_internals>/**"],
+      "sourceMaps": true,
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/**",
+        "!**/node_modules/**"
+      ]
     },
     {
       "name": "Next.js: debug client-side",
       "type": "chrome",
       "request": "launch",
-      "url": "http://localhost:3000"
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/apps/frontend",
+      "sourceMapPathOverrides": {
+        "webpack://_N_E/*": "${webRoot}/*"
+      }
     },
     {
       "name": "Next.js: debug client-side (Firefox)",
@@ -22,7 +32,7 @@
       "pathMappings": [
         {
           "url": "webpack://_N_E",
-          "path": "${workspaceFolder}"
+          "path": "${workspaceFolder}/apps/frontend"
         }
       ]
     },
@@ -30,15 +40,85 @@
       "name": "Next.js: debug full stack",
       "type": "node",
       "request": "launch",
-      "program": "${workspaceFolder}/node_modules/next/dist/bin/next",
-      "runtimeArgs": ["--inspect"],
-      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/apps/frontend/node_modules/.bin/next",
+      "args": ["dev"],
+      "cwd": "${workspaceFolder}/apps/frontend",
+      "console": "integratedTerminal",
       "serverReadyAction": {
-        "action": "debugWithChrome",
-        "killOnServerStop": true,
-        "pattern": "- Local:.+(https?://.+)",
+        "pattern": "started server on .+, url: (https?://.+)",
         "uriFormat": "%s",
-        "webRoot": "${workspaceFolder}"
+        "action": "debugWithChrome"
+      }
+    },
+    {
+      "name": "Jest: Current File",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/jest",
+      "args": [
+        "${fileBasenameNoExtension}",
+        "--config",
+        "jest.config.js",
+        "--runInBand",
+        "--no-cache"
+      ],
+      "cwd": "${workspaceFolder}/apps/frontend",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Jest: All Tests",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/jest",
+      "args": [
+        "--config",
+        "jest.config.js",
+        "--runInBand",
+        "--no-cache"
+      ],
+      "cwd": "${workspaceFolder}/apps/frontend",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Playwright: Current Test",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/playwright",
+      "args": [
+        "test",
+        "${file}",
+        "--headed"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Strapi: debug server",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/apps/backend",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["run", "develop"],
+      "protocol": "inspector",
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "console": "integratedTerminal"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Full Stack Debug",
+      "configurations": [
+        "Next.js: debug server-side",
+        "Next.js: debug client-side"
+      ],
+      "presentation": {
+        "hidden": false,
+        "group": "",
+        "order": 1
       }
     }
   ]

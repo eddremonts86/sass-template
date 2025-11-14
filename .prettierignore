@@ -71,3 +71,6 @@ tests/reports/
 *.config.mjs
 *.config.ts
 components.json
+.vscode/QUICK_REFERENCE.md
+.vscode/SETUP_SUMMARY.md
+.vscode/INDEX.md
