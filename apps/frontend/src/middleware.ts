@@ -1,16 +1,10 @@
-import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
+import { clerkMiddleware } from '@clerk/nextjs/server';
 import createMiddleware from 'next-intl/middleware';
+import { isProtectedRoute } from './isProtectedRoute';
 import { routing } from './lib/i18n/routing';
 
 // Create i18n middleware
 const intlMiddleware = createMiddleware(routing);
-
-// Define protected routes that REQUIRE authentication (dashboard, profile, etc.)
-const isProtectedRoute = createRouteMatcher([
-  '/:locale/dashboard(.*)',
-  '/:locale/profile(.*)',
-  '/:locale/settings(.*)',
-]);
 
 export default clerkMiddleware(
   async (auth, req) => {

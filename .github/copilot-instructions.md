@@ -4,7 +4,7 @@
 
 ## Project Overview
 
-**Next.js 15.5.4** template with App Router featuring:
+**Next.js 16.0.3** template with App Router featuring:
 
 - **Authentication**: Clerk.js with automatic Strapi sync
 - **CMS**: Strapi 5 integration with PostgreSQL
@@ -512,7 +512,7 @@ images: {
 ```typescript
 // ✅ ALWAYS await params
 export default async function Page({ params }: Props) {
-  const { locale } = await params; // Next.js 15+ requirement
+  const { locale } = await params; // Next.js 15+ requirement (mandatory in 16)
   // ...
 }
 
@@ -615,7 +615,7 @@ console.error(error);
 - ESLint auto-fix on save: enabled
 - TypeScript validation: enabled
 
-**Last Updated**: 2025-11-11
+**Last Updated**: 2025-11-14
 **Template Version**: 0.1.0
-**Next.js Version**: 15.5.4
-**React Version**: 19.1.0
+**Next.js Version**: 16.0.3
+**React Version**: 19.2.0

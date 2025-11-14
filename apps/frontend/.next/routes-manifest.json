@@ -1,1 +1,277 @@
-{"version":3,"caseSensitive":false,"basePath":"","rewrites":{"beforeFiles":[],"afterFiles":[{"source":"/api/:path*","destination":"/api/:path*","has":[{"type":"header","key":"cache-control","value":"public, max-age=3600, s-maxage=86400"}],"regex":"^\\/api(?:\\/((?:[^\\/]+?)(?:\\/(?:[^\\/]+?))*))?(?:\\/)?$","check":true}],"fallback":[]},"redirects":[{"source":"/:path+/","destination":"/:path+","permanent":true,"internal":true,"regex":"^(?:\\/((?:[^\\/]+?)(?:\\/(?:[^\\/]+?))*))\\/$"}],"headers":[{"source":"/(.*)","headers":[{"key":"X-Frame-Options","value":"DENY"},{"key":"X-Content-Type-Options","value":"nosniff"},{"key":"Referrer-Policy","value":"strict-origin-when-cross-origin"},{"key":"Permissions-Policy","value":"camera=(), microphone=(), geolocation=()"},{"key":"Strict-Transport-Security","value":"max-age=31536000; includeSubDomains; preload"},{"key":"Content-Security-Policy","value":"default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://clerk.dev https://*.clerk.accounts.dev https://vercel.live https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; font-src 'self' data:; connect-src 'self' https://clerk.dev https://*.clerk.accounts.dev https://vitals.vercel-insights.com https://vercel.live wss://ws-us3.pusher.com; frame-src 'self' https://clerk.dev https://*.clerk.accounts.dev; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"}],"regex":"^(?:\\/(.*))(?:\\/)?$"}]}
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000; includeSubDomains; preload"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://clerk.dev https://*.clerk.accounts.dev https://vercel.live https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; font-src 'self' data:; connect-src 'self' https://clerk.dev https://*.clerk.accounts.dev https://vitals.vercel-insights.com https://vercel.live wss://ws-us3.pusher.com; frame-src 'self' https://clerk.dev https://*.clerk.accounts.dev; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+        }
+      ],
+      "regex": "^(?:/(.*))(?:/)?$"
+    }
+  ],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [
+      {
+        "source": "/api/:path*",
+        "destination": "/api/:path*",
+        "has": [
+          {
+            "type": "header",
+            "key": "cache-control",
+            "value": "public, max-age=3600, s-maxage=86400"
+          }
+        ],
+        "regex": "^/api(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))?(?:/)?$"
+      }
+    ],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/[locale]",
+      "regex": "^/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/[locale]/about",
+      "regex": "^/([^/]+?)/about(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/about(?:/)?$"
+    },
+    {
+      "page": "/[locale]/api-docs",
+      "regex": "^/([^/]+?)/api\\-docs(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/api\\-docs(?:/)?$"
+    },
+    {
+      "page": "/[locale]/contact",
+      "regex": "^/([^/]+?)/contact(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/contact(?:/)?$"
+    },
+    {
+      "page": "/[locale]/dashboard",
+      "regex": "^/([^/]+?)/dashboard(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/dashboard(?:/)?$"
+    },
+    {
+      "page": "/[locale]/dashboard/analytics",
+      "regex": "^/([^/]+?)/dashboard/analytics(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/dashboard/analytics(?:/)?$"
+    },
+    {
+      "page": "/[locale]/dashboard/calendar",
+      "regex": "^/([^/]+?)/dashboard/calendar(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/dashboard/calendar(?:/)?$"
+    },
+    {
+      "page": "/[locale]/dashboard/documents",
+      "regex": "^/([^/]+?)/dashboard/documents(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/dashboard/documents(?:/)?$"
+    },
+    {
+      "page": "/[locale]/dashboard/help",
+      "regex": "^/([^/]+?)/dashboard/help(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/dashboard/help(?:/)?$"
+    },
+    {
+      "page": "/[locale]/dashboard/messages",
+      "regex": "^/([^/]+?)/dashboard/messages(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/dashboard/messages(?:/)?$"
+    },
+    {
+      "page": "/[locale]/dashboard/settings",
+      "regex": "^/([^/]+?)/dashboard/settings(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/dashboard/settings(?:/)?$"
+    },
+    {
+      "page": "/[locale]/dashboard/users",
+      "regex": "^/([^/]+?)/dashboard/users(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/dashboard/users(?:/)?$"
+    },
+    {
+      "page": "/[locale]/docs",
+      "regex": "^/([^/]+?)/docs(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/docs(?:/)?$"
+    },
+    {
+      "page": "/[locale]/features",
+      "regex": "^/([^/]+?)/features(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/features(?:/)?$"
+    },
+    {
+      "page": "/[locale]/pricing",
+      "regex": "^/([^/]+?)/pricing(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/pricing(?:/)?$"
+    },
+    {
+      "page": "/[locale]/sign-in/[[...sign-in]]",
+      "regex": "^/([^/]+?)/sign\\-in(?:/(.+?))?(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale",
+        "nxtPsignin": "nxtPsign-in"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/sign\\-in(?:/(?<nxtPsignin>.+?))?(?:/)?$"
+    },
+    {
+      "page": "/[locale]/sign-up/[[...sign-up]]",
+      "regex": "^/([^/]+?)/sign\\-up(?:/(.+?))?(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale",
+        "nxtPsignup": "nxtPsign-up"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/sign\\-up(?:/(?<nxtPsignup>.+?))?(?:/)?$"
+    },
+    {
+      "page": "/[locale]/support",
+      "regex": "^/([^/]+?)/support(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/support(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/api/users/me",
+      "regex": "^/api/users/me(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/users/me(?:/)?$"
+    },
+    {
+      "page": "/api/webhooks/clerk",
+      "regex": "^/api/webhooks/clerk(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/webhooks/clerk(?:/)?$"
+    },
+    {
+      "page": "/favicon.ico",
+      "regex": "^/favicon\\.ico(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/favicon\\.ico(?:/)?$"
+    },
+    {
+      "page": "/offline",
+      "regex": "^/offline(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/offline(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

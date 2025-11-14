@@ -1,7 +1,27 @@
 {
   "/[locale]/(auth)/sign-in/[[...sign-in]]/page": "app/[locale]/(auth)/sign-in/[[...sign-in]]/page.js",
   "/[locale]/(auth)/sign-up/[[...sign-up]]/page": "app/[locale]/(auth)/sign-up/[[...sign-up]]/page.js",
+  "/[locale]/(dashboard)/dashboard/analytics/page": "app/[locale]/(dashboard)/dashboard/analytics/page.js",
+  "/[locale]/(dashboard)/dashboard/calendar/page": "app/[locale]/(dashboard)/dashboard/calendar/page.js",
+  "/[locale]/(dashboard)/dashboard/documents/page": "app/[locale]/(dashboard)/dashboard/documents/page.js",
+  "/[locale]/(dashboard)/dashboard/help/page": "app/[locale]/(dashboard)/dashboard/help/page.js",
+  "/[locale]/(dashboard)/dashboard/messages/page": "app/[locale]/(dashboard)/dashboard/messages/page.js",
+  "/[locale]/(dashboard)/dashboard/page": "app/[locale]/(dashboard)/dashboard/page.js",
   "/[locale]/(dashboard)/dashboard/settings/page": "app/[locale]/(dashboard)/dashboard/settings/page.js",
+  "/[locale]/(dashboard)/dashboard/users/page": "app/[locale]/(dashboard)/dashboard/users/page.js",
+  "/[locale]/about/page": "app/[locale]/about/page.js",
+  "/[locale]/api-docs/page": "app/[locale]/api-docs/page.js",
+  "/[locale]/contact/page": "app/[locale]/contact/page.js",
+  "/[locale]/docs/page": "app/[locale]/docs/page.js",
+  "/[locale]/features/page": "app/[locale]/features/page.js",
   "/[locale]/page": "app/[locale]/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js"
+  "/[locale]/pricing/page": "app/[locale]/pricing/page.js",
+  "/[locale]/support/page": "app/[locale]/support/page.js",
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/users/me/route": "app/api/users/me/route.js",
+  "/api/webhooks/clerk/route": "app/api/webhooks/clerk/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/offline/page": "app/offline/page.js",
+  "/page": "app/page.js"
 }

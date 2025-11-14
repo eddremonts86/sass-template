@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///Users/edd/Projects/next-js-template/apps/frontend/src/app/%5Blocale%5D/%28dashboard%29/dashboard/layout.tsx"],"sourcesContent":["import { auth } from '@clerk/nextjs/server';\nimport { redirect } from 'next/navigation';\n\nexport default async function DashboardLayout(props: {\n  children: React.ReactNode;\n  params: Promise<{ locale: string }>;\n}) {\n  const { children, params } = props;\n  // Next.js dynamic route params can be async in RSC; ensure resolution\n  const { locale } = await params;\n\n  const { userId } = await auth();\n  if (process.env.NODE_ENV !== 'production') {\n    console.log('[dashboard layout] userId', userId);\n  }\n\n  // If unauthenticated, redirect to locale-specific sign-in\n  if (!userId) {\n    redirect(`/${locale}/sign-in`);\n  }\n\n  return children;\n}\n"],"names":[],"mappings":";;;;AAAA;AACA;AAAA;;;AAEe,eAAe,gBAAgB,KAG7C;IACC,MAAM,EAAE,QAAQ,EAAE,MAAM,EAAE,GAAG;IAC7B,sEAAsE;IACtE,MAAM,EAAE,MAAM,EAAE,GAAG,MAAM;IAEzB,MAAM,EAAE,MAAM,EAAE,GAAG,MAAM,IAAA,wYAAI;IAC7B,wCAA2C;QACzC,QAAQ,GAAG,CAAC,6BAA6B;IAC3C;IAEA,0DAA0D;IAC1D,IAAI,CAAC,QAAQ;QACX,IAAA,gZAAQ,EAAC,CAAC,CAAC,EAAE,OAAO,QAAQ,CAAC;IAC/B;IAEA,OAAO;AACT","debugId":null}}]
-}

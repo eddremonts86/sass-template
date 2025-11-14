@@ -9,13 +9,16 @@ import { headers } from 'next/headers';
 import { NextResponse } from 'next/server';
 import { Webhook } from 'svix';
 
-const WEBHOOK_SECRET = process.env.CLERK_WEBHOOK_SECRET;
-
-if (!WEBHOOK_SECRET) {
-  throw new Error('Please add CLERK_WEBHOOK_SECRET to .env.local');
-}
-
 export async function POST(req: Request) {
+  const WEBHOOK_SECRET = process.env.CLERK_WEBHOOK_SECRET;
+
+  if (!WEBHOOK_SECRET) {
+    console.error('CLERK_WEBHOOK_SECRET is not set');
+    return NextResponse.json(
+      { error: 'Server configuration error' },
+      { status: 500 }
+    );
+  }
   try {
     // Get headers
     const headerPayload = await headers();
@@ -36,7 +39,7 @@ export async function POST(req: Request) {
     const body = JSON.stringify(payload);
 
     // Create Svix Webhook instance
-    const wh = new Webhook(WEBHOOK_SECRET!);
+    const wh = new Webhook(WEBHOOK_SECRET);
 
     let evt: WebhookEvent;
 
