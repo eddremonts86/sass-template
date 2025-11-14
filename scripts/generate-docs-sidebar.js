@@ -322,7 +322,7 @@ function main() {
   const sidebarConfig = generateSidebarConfig();
 
   console.log('📝 Generated sidebar configuration:');
-  console.log(JSON.stringify(sidebarConfig, null, 2));
+  // console.log(JSON.stringify(sidebarConfig, null, 2));
 
   console.log('\n💾 Updating config file...');
 

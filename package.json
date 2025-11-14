@@ -6,8 +6,8 @@
   "description": "Next.js + Strapi monorepo template with TypeScript, Clerk auth, and PostgreSQL",
   "scripts": {
     "setup": "bash scripts/setup-node-version.sh",
-    "dev": "pnpm run --parallel dev & pnpm docs:dev",
-    "dev:all": "pnpm run --filter @template/frontend dev & pnpm run --filter @template/backend dev & pnpm docs:dev",
+    "dev": "concurrently --names \"FRONTEND,DOCS\" --prefix-colors \"cyan,green\" \"pnpm dev:frontend\" \"pnpm docs:dev\"",
+    "dev:all": "concurrently --names \"FRONTEND,BACKEND,DOCS\" --prefix-colors \"cyan,magenta,green\" \"pnpm dev:frontend\" \"pnpm dev:backend\" \"pnpm docs:dev\"",
     "dev:frontend": "pnpm run --filter @template/frontend dev",
     "dev:backend": "pnpm run --filter @template/backend dev",
     "build": "pnpm run --parallel build",
@@ -52,6 +52,7 @@
     "@typescript-eslint/parser": "^8.46.0",
     "axe-core": "^4.10.3",
     "chromatic": "^13.3.0",
+    "concurrently": "^9.2.1",
     "eslint": "^9.37.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",

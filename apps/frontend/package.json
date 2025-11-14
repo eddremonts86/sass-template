@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@clerk/nextjs": "^6.33.3",
+    "@clerk/nextjs": "^6.35.1",
     "@radix-ui/react-avatar": "^1.1.10",
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-dropdown-menu": "^2.1.16",
@@ -49,10 +49,17 @@
   "private": true,
   "scripts": {
     "build": "next build --turbopack",
-    "dev": "NODE_OPTIONS='--inspect' next dev --turbopack",
+    "dev": "next dev --turbopack --port 3004",
+    "dev:debug": "NODE_OPTIONS=\"--inspect=9230\" next dev --turbopack --port 3004",
     "lint": "eslint .",
     "migrate:strapi": "tsx src/lib/strapi/migrations/index.ts",
     "start": "next start",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:headed": "playwright test --headed",
     "type-check": "tsc --noEmit"
   },
   "type": "module",

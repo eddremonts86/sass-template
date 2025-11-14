@@ -1,6 +1,7 @@
 import path from 'path';
+import type { StrapiConfig } from './types';
 
-export default ({ env }) => {
+export default ({ env }: StrapiConfig) => {
   const client = env('DATABASE_CLIENT', 'sqlite');
 
   const connections = {
@@ -70,7 +71,7 @@ export default ({ env }) => {
   return {
     connection: {
       client,
-      ...connections[client],
+      ...connections[client as keyof typeof connections],
       acquireConnectionTimeout: env.int('DATABASE_CONNECTION_TIMEOUT', 60000),
     },
   };

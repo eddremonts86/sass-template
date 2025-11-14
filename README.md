@@ -97,6 +97,8 @@ A **complete monorepo starter** that combines the best of modern web development
 
 ## 🚀 Quick Start
 
+> **New to this template?** Follow our [QUICK_START.md](./QUICK_START.md) guide for a 5-minute setup!
+
 ### Prerequisites
 
 - **Node.js**: 22.21.0 (managed via `.nvmrc`)
@@ -199,19 +201,25 @@ Auto-sync users from Clerk to Strapi:
 
 ```bash
 # Start all services (frontend + backend + docs)
-pnpm dev
+pnpm dev:all
 
 # Or start individually
-pnpm dev:frontend  # Frontend only (port 3000)
+pnpm dev:frontend  # Frontend only (port 3004)
 pnpm dev:backend   # Strapi only (port 1337)
 pnpm docs:dev      # Documentation (port 5173)
 ```
 
 **Access points:**
 
-- 🌐 Frontend: [http://localhost:3000](http://localhost:3000)
+- 🌐 Frontend: [http://localhost:3004](http://localhost:3004)
 - 🗄️ Strapi Admin: [http://localhost:1337/admin](http://localhost:1337/admin)
 - 📚 Documentation: [http://localhost:5173](http://localhost:5173)
+
+### Need Help?
+
+- 📖 **[Quick Start Guide](./QUICK_START.md)** - Get running in 5 minutes
+- 🔑 **[Credentials Setup](./SETUP_CREDENTIALS.md)** - Detailed guide for API tokens and webhooks
+- 📚 **[Full Setup Guide](./SETUP.md)** - Complete setup documentation
 
 ## 📁 Monorepo Structure
 

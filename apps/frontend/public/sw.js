@@ -14,12 +14,13 @@ const STATIC_ASSETS = [
 ];
 
 // Install event - cache static assets
-self.addEventListener('install', (event) => {
+self.addEventListener('install', event => {
   console.log('Service Worker installing...');
-  
+
   event.waitUntil(
-    caches.open(STATIC_CACHE)
-      .then((cache) => {
+    caches
+      .open(STATIC_CACHE)
+      .then(cache => {
         console.log('Caching static assets');
         return cache.addAll(STATIC_ASSETS);
       })
@@ -30,17 +31,20 @@ self.addEventListener('install', (event) => {
 });
 
 // Activate event - clean up old caches
-self.addEventListener('activate', (event) => {
+self.addEventListener('activate', event => {
   console.log('Service Worker activating...');
-  
+
   event.waitUntil(
-    caches.keys()
-      .then((cacheNames) => {
+    caches
+      .keys()
+      .then(cacheNames => {
         return Promise.all(
-          cacheNames.map((cacheName) => {
-            if (cacheName !== STATIC_CACHE && 
-                cacheName !== DYNAMIC_CACHE && 
-                cacheName !== IMAGE_CACHE) {
+          cacheNames.map(cacheName => {
+            if (
+              cacheName !== STATIC_CACHE &&
+              cacheName !== DYNAMIC_CACHE &&
+              cacheName !== IMAGE_CACHE
+            ) {
               console.log('Deleting old cache:', cacheName);
               return caches.delete(cacheName);
             }
@@ -54,7 +58,7 @@ self.addEventListener('activate', (event) => {
 });
 
 // Fetch event - implement caching strategies
-self.addEventListener('fetch', (event) => {
+self.addEventListener('fetch', event => {
   const { request } = event;
   const url = new URL(request.url);
 
@@ -85,17 +89,17 @@ async function handleImageRequest(request) {
   try {
     const cache = await caches.open(IMAGE_CACHE);
     const cachedResponse = await cache.match(request);
-    
+
     if (cachedResponse) {
       return cachedResponse;
     }
-    
+
     const networkResponse = await fetch(request);
-    
+
     if (networkResponse.ok) {
       cache.put(request, networkResponse.clone());
     }
-    
+
     return networkResponse;
   } catch (error) {
     console.log('Image request failed:', error);
@@ -109,17 +113,17 @@ async function handleStaticAssets(request) {
   try {
     const cache = await caches.open(STATIC_CACHE);
     const cachedResponse = await cache.match(request);
-    
+
     if (cachedResponse) {
       return cachedResponse;
     }
-    
+
     const networkResponse = await fetch(request);
-    
+
     if (networkResponse.ok) {
       cache.put(request, networkResponse.clone());
     }
-    
+
     return networkResponse;
   } catch (error) {
     console.log('Static asset request failed:', error);
@@ -131,23 +135,23 @@ async function handleStaticAssets(request) {
 async function handleAPIRequest(request) {
   try {
     const networkResponse = await fetch(request);
-    
+
     if (networkResponse.ok) {
       const cache = await caches.open(DYNAMIC_CACHE);
       cache.put(request, networkResponse.clone());
     }
-    
+
     return networkResponse;
   } catch (error) {
     console.log('API request failed, trying cache:', error);
-    
+
     const cache = await caches.open(DYNAMIC_CACHE);
     const cachedResponse = await cache.match(request);
-    
+
     if (cachedResponse) {
       return cachedResponse;
     }
-    
+
     throw error;
   }
 }
@@ -157,9 +161,9 @@ async function handlePageRequest(request) {
   try {
     const cache = await caches.open(DYNAMIC_CACHE);
     const cachedResponse = await cache.match(request);
-    
+
     const networkPromise = fetch(request)
-      .then((networkResponse) => {
+      .then(networkResponse => {
         if (networkResponse.ok) {
           cache.put(request, networkResponse.clone());
         }
@@ -169,26 +173,26 @@ async function handlePageRequest(request) {
         // Network failed, return cached version if available
         return cachedResponse;
       });
-    
+
     // Return cached version immediately if available, otherwise wait for network
     return cachedResponse || networkPromise;
   } catch (error) {
     console.log('Page request failed:', error);
-    
+
     // Return offline page if available
     const cache = await caches.open(STATIC_CACHE);
     const offlinePage = await cache.match('/offline');
-    
+
     if (offlinePage) {
       return offlinePage;
     }
-    
+
     throw error;
   }
 }
 
 // Background sync for failed requests
-self.addEventListener('sync', (event) => {
+self.addEventListener('sync', event => {
   if (event.tag === 'background-sync') {
     event.waitUntil(doBackgroundSync());
   }
@@ -201,9 +205,9 @@ async function doBackgroundSync() {
 }
 
 // Push notification handling
-self.addEventListener('push', (event) => {
+self.addEventListener('push', event => {
   console.log('Push notification received:', event);
-  
+
   const options = {
     body: event.data ? event.data.text() : 'New notification',
     icon: '/icon-192x192.png',
@@ -211,44 +215,40 @@ self.addEventListener('push', (event) => {
     vibrate: [100, 50, 100],
     data: {
       dateOfArrival: Date.now(),
-      primaryKey: 1
+      primaryKey: 1,
     },
     actions: [
       {
         action: 'explore',
         title: 'Explore',
-        icon: '/icon-192x192.png'
+        icon: '/icon-192x192.png',
       },
       {
         action: 'close',
         title: 'Close',
-        icon: '/icon-192x192.png'
-      }
-    ]
+        icon: '/icon-192x192.png',
+      },
+    ],
   };
-  
-  event.waitUntil(
-    self.registration.showNotification('Template Trae', options)
-  );
+
+  event.waitUntil(self.registration.showNotification('Template Trae', options));
 });
 
 // Notification click handling
-self.addEventListener('notificationclick', (event) => {
+self.addEventListener('notificationclick', event => {
   console.log('Notification clicked:', event);
-  
+
   event.notification.close();
-  
+
   if (event.action === 'explore') {
-    event.waitUntil(
-      clients.openWindow('/')
-    );
+    event.waitUntil(clients.openWindow('/'));
   }
 });
 
 // Message handling from main thread
-self.addEventListener('message', (event) => {
+self.addEventListener('message', event => {
   console.log('Message received in SW:', event.data);
-  
+
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }

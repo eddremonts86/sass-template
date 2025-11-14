@@ -1,49 +1,49 @@
 {
   "node": {
-    "7f5ebc17a1e13cc00a9c3cce59c24c5a55ff3eb14c": {
+    "7f76fb230726a9258a7d95897d88774e2fc5baa74e": {
       "workers": {
         "app/[locale]/(dashboard)/dashboard/analytics/page": {
-          "moduleId": 41517,
+          "moduleId": 15464,
           "async": false,
           "exportedName": "detectKeylessEnvDriftAction",
-          "filename": "node_modules/.pnpm/@clerk+nextjs@6.33.3_next@16.0.3_@babel+core@7.28.5_@opentelemetry+api@1.9.0_@playwrigh_117cd0833a387540a2e44c2dc05830f0/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+          "filename": "node_modules/.pnpm/@clerk+nextjs@6.35.1_next@16.0.3_@babel+core@7.28.5_@opentelemetry+api@1.9.0_@playwrigh_d0c42ae68a8458a3fb36d456b0fe0fd3/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
         }
       },
       "layer": {
         "app/[locale]/(dashboard)/dashboard/analytics/page": "action-browser"
       },
       "exportedName": "detectKeylessEnvDriftAction",
-      "filename": "node_modules/.pnpm/@clerk+nextjs@6.33.3_next@16.0.3_@babel+core@7.28.5_@opentelemetry+api@1.9.0_@playwrigh_117cd0833a387540a2e44c2dc05830f0/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+      "filename": "node_modules/.pnpm/@clerk+nextjs@6.35.1_next@16.0.3_@babel+core@7.28.5_@opentelemetry+api@1.9.0_@playwrigh_d0c42ae68a8458a3fb36d456b0fe0fd3/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
     },
-    "7f8f1d999bc38a64413ca52fefc81ade4df55b0559": {
+    "7f16de57e72fdf9d6cf028d4b9a4287fe7202b74e0": {
       "workers": {
         "app/[locale]/(dashboard)/dashboard/analytics/page": {
-          "moduleId": 41517,
+          "moduleId": 15464,
           "async": false,
           "exportedName": "invalidateCacheAction",
-          "filename": "node_modules/.pnpm/@clerk+nextjs@6.33.3_next@16.0.3_@babel+core@7.28.5_@opentelemetry+api@1.9.0_@playwrigh_117cd0833a387540a2e44c2dc05830f0/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js"
+          "filename": "node_modules/.pnpm/@clerk+nextjs@6.35.1_next@16.0.3_@babel+core@7.28.5_@opentelemetry+api@1.9.0_@playwrigh_d0c42ae68a8458a3fb36d456b0fe0fd3/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js"
         }
       },
       "layer": {
         "app/[locale]/(dashboard)/dashboard/analytics/page": "action-browser"
       },
       "exportedName": "invalidateCacheAction",
-      "filename": "node_modules/.pnpm/@clerk+nextjs@6.33.3_next@16.0.3_@babel+core@7.28.5_@opentelemetry+api@1.9.0_@playwrigh_117cd0833a387540a2e44c2dc05830f0/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js"
+      "filename": "node_modules/.pnpm/@clerk+nextjs@6.35.1_next@16.0.3_@babel+core@7.28.5_@opentelemetry+api@1.9.0_@playwrigh_d0c42ae68a8458a3fb36d456b0fe0fd3/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js"
     },
-    "7f986210ab0b153482c20b0c63f579e86b8243cc09": {
+    "7f356cee4c3f318fd641287bd4485be648db80db34": {
       "workers": {
         "app/[locale]/(dashboard)/dashboard/analytics/page": {
-          "moduleId": 41517,
+          "moduleId": 15464,
           "async": false,
           "exportedName": "createOrReadKeylessAction",
-          "filename": "node_modules/.pnpm/@clerk+nextjs@6.33.3_next@16.0.3_@babel+core@7.28.5_@opentelemetry+api@1.9.0_@playwrigh_117cd0833a387540a2e44c2dc05830f0/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+          "filename": "node_modules/.pnpm/@clerk+nextjs@6.35.1_next@16.0.3_@babel+core@7.28.5_@opentelemetry+api@1.9.0_@playwrigh_d0c42ae68a8458a3fb36d456b0fe0fd3/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
         }
       },
       "layer": {
         "app/[locale]/(dashboard)/dashboard/analytics/page": "action-browser"
       },
       "exportedName": "createOrReadKeylessAction",
-      "filename": "node_modules/.pnpm/@clerk+nextjs@6.33.3_next@16.0.3_@babel+core@7.28.5_@opentelemetry+api@1.9.0_@playwrigh_117cd0833a387540a2e44c2dc05830f0/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+      "filename": "node_modules/.pnpm/@clerk+nextjs@6.35.1_next@16.0.3_@babel+core@7.28.5_@opentelemetry+api@1.9.0_@playwrigh_d0c42ae68a8458a3fb36d456b0fe0fd3/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
     }
   },
   "edge": {}

@@ -1,4 +1,6 @@
-export default ({ env }) => ({
+import type { StrapiConfig } from './types';
+
+export default ({ env }: StrapiConfig) => ({
   host: env('HOST', '0.0.0.0'),
   port: env.int('PORT', 1337),
   app: {
