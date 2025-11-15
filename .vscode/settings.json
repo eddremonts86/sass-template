@@ -344,7 +344,7 @@
 
   // Workbench Configuration
   "workbench.colorTheme": "Aura Dracula Spirit (Soft)",
-  "workbench.iconTheme": "vs-seti",
+  "workbench.iconTheme": "symbols",
   "workbench.editor.enablePreview": false,
   "workbench.editor.closeOnFileDelete": true,
   "workbench.startupEditor": "welcomePageInEmptyWorkbench",
